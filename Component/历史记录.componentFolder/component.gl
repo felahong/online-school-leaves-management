@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="" />
+  <Method MethodDir="ControlMethod" FileName="f_selectCondition.method" Code="f_selectCondition" Name="" />
+  <Method MethodDir="ControlMethod" FileName="JGB_search_OnClick.method" Code="JGB_search_OnClick" Name="JGB_search_单击事件" />
+  <Method MethodDir="UserMethod" FileName="f_selectRecords.method" Code="f_selectRecords" Name="查询数据" />
+</Methods>

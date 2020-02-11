@@ -1,0 +1,53 @@
+﻿<form type="1002" code="HistoryForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[1240]]></property>
+    <property name="Height"><![CDATA[540]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[BorderLayout]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_loadForm]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[历史请假_学生端]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGGroupBox Code="JGGB_applying" LabelText="所有请假信息" Height="511" Width="1194" PercentHeight="94.6%" PercentWidth="96.3%" Top="21" Left="16" TabIndex="12" LastModifiedTime="2019-07-18 15:09:28" LastModifiedUser="15013952708">
+      <JGPanel Code="JGPanel1" Height="490" Width="1192" PercentHeight="100%" PercentWidth="100%" Top="20" TabIndex="13" Dock="Fill" BorderWidth="0" LayoutType="BorderLayout" IsForGroupBox="True" LastModifiedTime="2019-07-18 14:32:31" LastModifiedUser="15013952708">
+        <JGDataGrid Code="JGDataGrid1" LabelText="列表" Width="1168" Height="474" PercentHeight="96.7%" PercentWidth="98%" Top="13" Left="3" TabIndex="2" AdaLineHeight="True" TableName="leaveEntity" LastModifiedTime="2019-07-18 14:49:01" LastModifiedUser="15013952708">
+          <JGTextBoxColumn Code="JGTextBoxColumn1" ColumnName="lid" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="请假单编号" LastModifiedTime="2019-07-18 14:45:57" LastModifiedUser="15013952708" TableName="leaveEntity" Width="136" />
+          <JGTextBoxColumn Code="JGTextBoxColumn2" ColumnName="applicantId" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="学号" LastModifiedTime="2019-07-18 14:45:39" LastModifiedUser="15013952708" TableName="leaveEntity" TextLength="20" Width="78" />
+          <JGTextBoxColumn Code="JGTextBoxColumn3" ColumnName="applicantName" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="姓名" LastModifiedTime="2019-07-18 14:45:06" LastModifiedUser="15013952708" TableName="leaveEntity" Width="78" />
+          <JGTextBoxColumn Code="JGTextBoxColumn10" ColumnName="applyTime" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="申请时间" LastModifiedTime="2019-07-18 14:49:01" LastModifiedUser="15013952708" TableName="leaveEntity" Width="70" />
+          <JGDateTimePickerColumn Code="JGDateTimePickerColumn1" ColumnName="startTime" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="开始时间" LastModifiedTime="2019-07-18 14:47:06" LastModifiedUser="15013952708" TableName="leaveEntity" Width="86" />
+          <JGDateTimePickerColumn Code="JGDateTimePickerColumn2" ColumnName="endTime" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="结束时间" LastModifiedTime="2019-07-18 14:44:53" LastModifiedUser="15013952708" TableName="leaveEntity" Width="86" />
+          <JGIntegerBoxColumn Code="JGIntegerBoxColumn1" ColumnName="applyLength" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="时长" LastModifiedTime="2019-07-18 14:43:45" LastModifiedUser="15013952708" TableName="leaveEntity" Width="54" />
+          <JGTextBoxColumn Code="JGTextBoxColumn5" ColumnName="level" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="等级名" LastModifiedTime="2019-07-18 14:43:50" LastModifiedUser="15013952708" TableName="leaveEntity" Width="54" />
+          <JGTextBoxColumn Code="JGTextBoxColumn6" ColumnName="sort" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="事由" LastModifiedTime="2019-07-18 14:44:00" LastModifiedUser="15013952708" TableName="leaveEntity" Width="56" />
+          <JGTextBoxColumn Code="JGTextBoxColumn7" ColumnName="reason" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="申请原因" LastModifiedTime="2019-07-18 14:31:21" LastModifiedUser="15013952708" TableName="leaveEntity" />
+          <JGTextBoxColumn Code="JGTextBoxColumn8" ColumnName="statusName" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="状态名" LastModifiedTime="2019-07-18 14:31:22" LastModifiedUser="15013952708" TableName="leaveEntity" />
+          <JGTextBoxColumn Code="JGTextBoxColumn9" ColumnName="remark" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="备注" LastModifiedTime="2019-07-18 14:47:04" LastModifiedUser="15013952708" TableName="leaveEntity" Width="136" />
+        </JGDataGrid>
+      </JGPanel>
+    </JGGroupBox>
+  </controls>
+  <outputs />
+  <inputs>
+    <variable code="userId" name="用户id" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="userName" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="origin" name="来源" fieldType="integer" defaultValue="1" description="1：待办事项" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <remark><![CDATA[]]></remark>
+</form>

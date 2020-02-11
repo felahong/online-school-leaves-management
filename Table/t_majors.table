@@ -1,0 +1,41 @@
+﻿<Table id="44b69cc932c04fc9bcb82a72f521dcc6" code="t_majors" name="专业表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 19:43:05]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-17 17:16:30]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="68ce686c3f304ac38a43f26f46ef807e" code="majorId" name="id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="19ef352222644931bef37c05708ecb0f" code="majorName" name="专业名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="106fcc497c904974b229b462f0009c02" code="collegeId" name="学院id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[3a1739fe1457420c8107f2e76d504d44]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="majorName"><![CDATA[计算机科学与技术]]></ColumnData>
+      <ColumnData code="collegeId"><![CDATA[c04]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[dae2b52e200240129470c92a332b2d81]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0305]]></ColumnData>
+      <ColumnData code="majorName"><![CDATA[自动化]]></ColumnData>
+      <ColumnData code="collegeId"><![CDATA[c03]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

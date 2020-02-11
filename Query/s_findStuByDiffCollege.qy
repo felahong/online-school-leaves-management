@@ -1,0 +1,27 @@
+﻿<Query id="7bed4ac1222f4a63965a273e8f38df9d" code="s_findStuByDiffCollege" name="查询某个教师管理下的学生" type="VSql" APICode="">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[user_20190504002]]></Creator>
+  <CreationTime><![CDATA[2019-07-24 14:57:49]]></CreationTime>
+  <Modifier><![CDATA[lingang19]]></Modifier>
+  <ModificationTime><![CDATA[2019-08-06 00:11:47]]></ModificationTime>
+  <VSql><![CDATA[--select sno from t_students s where s.majorId in ((select m.majorId from t_majors m where m.collegeId = :cid))
+
+select * from t_leaves where applicantId in ((select sno from t_students s where s.majorId in ((select m.majorId from t_majors m where m.collegeId = :cid))))]]></VSql>
+  <Columns>
+    <Column id="Column_0" code="sno" name="" dataType="char" length="" precision="">
+      <Remark></Remark>
+    </Column>
+  </Columns>
+  <Params>
+    <Param code="cid" name="教师所属学院" dataType="char">
+      <InitValue><![CDATA[c04]]></InitValue>
+      <Remark><![CDATA[]]></Remark>
+    </Param>
+  </Params>
+  <DataItems>
+    <DataItem type="Table" key="t_leaves" tokenIndexes="8" />
+    <DataItem type="Table" key="t_students" tokenIndexes="24" />
+    <DataItem type="Table" key="t_majors" tokenIndexes="46" />
+    <DataItem type="QueryParam" key="cid" tokenIndexes="59" />
+  </DataItems>
+</Query>

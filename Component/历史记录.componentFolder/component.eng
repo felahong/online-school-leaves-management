@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EntityGraphConfig version="2.0">
+  <Graphs>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>stuInfoEntity</Code>
+      <Top>64</Top>
+      <Left>336</Left>
+      <Width>132</Width>
+      <Height>107</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>statusEntity</Code>
+      <Top>89</Top>
+      <Left>517</Left>
+      <Width>132</Width>
+      <Height>84</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>classEntity</Code>
+      <Top>206</Top>
+      <Left>326</Left>
+      <Width>132</Width>
+      <Height>107</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>leaveLevelEntity</Code>
+      <Top>231</Top>
+      <Left>530</Left>
+      <Width>132</Width>
+      <Height>84</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>leaveEntity</Code>
+      <Top>20</Top>
+      <Left>123</Left>
+      <Width>132</Width>
+      <Height>482</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>selectEntity</Code>
+      <Top>151</Top>
+      <Left>758</Left>
+      <Width>132</Width>
+      <Height>108</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+  </Graphs>
+</EntityGraphConfig>

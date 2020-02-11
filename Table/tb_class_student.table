@@ -1,0 +1,40 @@
+﻿<Table id="fef90e4bd96e424883be01a730e17db6" code="tb_class_student" name="班级学生对应表">
+  <Remark><![CDATA[班级和学生对应]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 18:40:02]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-05-22 18:41:11]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="3cc6d44cf8ea44c6b06a79d0bb7ff414" code="classId" name="班级Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="0a8c27a68d9c4a829cf87f53aa67537c" code="stuNum" name="学生学号" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[677351e3e7be4c2482580648e0ae5672]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="stuNum"><![CDATA[03170831]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[ff31c37b4fc9474a81528e953bf76296]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="stuNum"><![CDATA[03171210]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[a76cbcff811e493c9ed8860572163da7]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[031708]]></ColumnData>
+      <ColumnData code="stuNum"><![CDATA[03170830]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

@@ -1,0 +1,46 @@
+﻿<form type="1002" code="form2" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[test_sideBar]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGButton Code="JGButton2" LabelText="比较" PercentHeight="5.8%" PercentWidth="5.4%" Top="145" Left="246" TabIndex="3" LastModifiedTime="2019-07-10 21:21:45" LastModifiedUser="15013952708" />
+    <JGButton Code="JGButton1" LabelText="变化" PercentHeight="5.8%" PercentWidth="5.4%" Top="145" Left="120" TabIndex="2" Anchor="Top, Bottom, Left, Right" OnClick="JGButton1_OnClick" LastModifiedTime="2019-07-10 21:21:37" LastModifiedUser="15013952708" />
+    <JGButtonGroup Code="JGButtonGroup1" Width="265" Height="29" Top="37" Left="88" PercentHeight="6.4%" PercentWidth="27.6%" TabIndex="1" LastModifiedTime="2019-07-10 21:17:45" LastModifiedUser="15013952708">
+      <JGButtonGroupItem Code="JGButtonGroupItem1" LabelText="按钮1">
+        <JGButtonGroupItem Code="JGButtonGroupItem2" LabelText="按钮1.1" />
+      </JGButtonGroupItem>
+      <JGButtonGroupItem Code="JGButtonGroupItem3" LabelText="按钮2" />
+      <JGButtonGroupItem Code="JGButtonGroupItem4" LabelText="按钮3" />
+    </JGButtonGroup>
+    <JGNavigator Code="JGNavigator1" Height="259" PercentHeight="57.6%" PercentWidth="20.2%" Top="25" Left="418" TabIndex="1" LastModifiedTime="2019-07-10 19:43:43" LastModifiedUser="15013952708">
+      <JGNavbarPanel Code="JGNavbarPanel5" LabelText="菜单1">
+        <JGNavbarNode Code="JGNavbarNode1" LabelText="节点1.1" />
+        <JGNavbarNode Code="JGNavbarNode2" LabelText="节点1.2" />
+      </JGNavbarPanel>
+      <JGNavbarPanel Code="JGNavbarPanel2" LabelText="菜单2">
+        <JGNavbarNode Code="JGNavbarNode3" LabelText="节点2.1" />
+        <JGNavbarNode Code="JGNavbarNode4" LabelText="节点2.2" />
+      </JGNavbarPanel>
+      <JGNavbarPanel Code="JGNavbarPanel3" LabelText="菜单3" />
+      <JGNavbarPanel Code="JGNavbarPanel4" LabelText="菜单4" />
+    </JGNavigator>
+  </controls>
+  <outputs />
+  <inputs />
+  <remark><![CDATA[]]></remark>
+</form>

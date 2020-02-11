@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/17 18:08:10-->
+<Methods>
+  <Method Code="f_load" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-17 18:09:16">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":null,"entityType":"window","entityName":"info","itemqueryparam":null,"items":[{"destName":"info.sname","sourceName":"t_students.sname","type":"entityField"},{"destName":"info.sno","sourceName":"t_students.sno","type":"entityField"}],"orderBy":null,"sourceName":"t_students","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>info</EntityName><SourceType>Table</SourceType><SourceName>t_students</SourceName><dsWhere><![CDATA[<NewDataSet />]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>281320a3255141d59930aa35ebff8c5f</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>281320a3255141d59930aa35ebff8c5f</MasterID><DestName>info.sname</DestName><SourceType>entityField</SourceType><SourceName>t_students.sname</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>281320a3255141d59930aa35ebff8c5f</MasterID><DestName>info.sno</DestName><SourceType>entityField</SourceType><SourceName>t_students.sno</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>281320a3255141d59930aa35ebff8c5f</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>281320a3255141d59930aa35ebff8c5f</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

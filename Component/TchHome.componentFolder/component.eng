@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EntityGraphConfig version="2.0">
+  <Graphs>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>entity_student</Code>
+      <Top>104</Top>
+      <Left>368</Left>
+      <Width>132</Width>
+      <Height>232</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>entity_teacher</Code>
+      <Top>96</Top>
+      <Left>584</Left>
+      <Width>132</Width>
+      <Height>257</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+    <GraphNodeFormat>
+      <Type>Entity</Type>
+      <Code>entity_user</Code>
+      <Top>205</Top>
+      <Left>148</Left>
+      <Width>132</Width>
+      <Height>177</Height>
+      <Background />
+      <BorderColor />
+      <FontSize>0</FontSize>
+      <FontColor />
+      <IsCollapsed>false</IsCollapsed>
+    </GraphNodeFormat>
+  </Graphs>
+</EntityGraphConfig>

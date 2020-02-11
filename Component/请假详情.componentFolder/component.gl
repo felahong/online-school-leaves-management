@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_cancel.method" Code="JGB_cancel" Name="取消事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_ensureSubmit.method" Code="JGB_ensureSubmit" Name="确认提交事件" />
+</Methods>

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/14 15:35:51-->
+<Methods>
+  <Method Code="JGB_ensureUpdate" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNull(CC.JGP_newPw1.Value,False)&amp;&amp;IsNull(CC.JGP_newPw2.Value,False)&amp;&amp;IsNull(CC.JGP_oldPw.Value,False)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="True" isDebug="False" code="IfCode4">
+        <define>
+          <expression>IsNull(CC.JGP_oldPw.Value,False)</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <if isEnabled="True" isDebug="False" code="IfCode3">
+            <define>
+              <expression>!Compare(@oldPw,CC.JGP_oldPw.Value,False)</expression>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SM_wrongOldPw" />
+            </sequence>
+          </if>
+          <else isEnabled="True" isDebug="False">
+            <define>
+              <remark></remark>
+            </define>
+            <sequence>
+              <if isEnabled="True" isDebug="False" code="IfCode2">
+                <define>
+                  <expression>Compare(CC.JGP_newPw1.Value,CC.JGP_newPw2.Value,False)</expression>
+                  <remark></remark>
+                </define>
+                <sequence>
+                  <evaluateRule code="BR_MDBR_updatePw" />
+                  <evaluateRule code="BR_SM_succ" />
+                  <evaluateRule code="BR_SelectionConfirm1" />
+                </sequence>
+              </if>
+              <else isEnabled="True" isDebug="False">
+                <define>
+                  <remark></remark>
+                </define>
+                <sequence>
+                  <evaluateRule code="BR_SM_diffNewPw" />
+                </sequence>
+              </else>
+            </sequence>
+          </else>
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SM_oldCantEmpty" />
+        </sequence>
+      </else>
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SM_requiredInput" />
+    </sequence>
+  </else>
+  <evaluateRule code="BR_ShowMessage3" />
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_ShowMessage2" />
+  <evaluateRule code="BR_ShowMessage4" />
+  <evaluateRule code="BR_ShowMessage5" />
+  <evaluateRule code="BR_ShowMessage6" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示设置的提示信息_2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[IsNullOrEmpty(CC.JGP_newPw1.Value,True)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"第一个新密码不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"第一个新密码不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[IsNull(CC.JGP_newPw1.Value,False)&&IsNull(CC.JGP_newPw2.Value,False)&&IsNull(CC.JGP_oldPw.Value,False)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"3个都不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"3个都不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[IsNullOrEmpty(CC.JGP_oldPw.Value,True)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"旧密码不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"旧密码不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示设置的提示信息_3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[IsNullOrEmpty(CC.JGP_newPw2.Value,True)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"第二个新密码不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"第二个新密码不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage5" instanceName="显示设置的提示信息_4" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[IsNull(CC.JGP_newPw1.Value,False)&&IsNull(CC.JGP_newPw2.Value,False)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"两个都不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"两个都不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage6" instanceName="显示设置的提示信息_5" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"CC.JGP_newPw1.Value","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>CC.JGP_newPw1.Value</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_diffNewPw" instanceName="显示设置的提示信息_两次密码输入不一致" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"两次密码输入不一致\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"两次密码输入不一致"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_requiredInput" instanceName="显示设置的提示信息_要求输入密码" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"请输入密码\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"请输入密码"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ModifyDataBaseRecord" ruleName="修改数据库中的记录" instanceCode="BR_MDBR_updatePw" instanceName="修改数据库中的记录_更新密码" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourcesMapping":[{"condition":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"dataMap":[{"colName":"t_students.spw","colValue":"CC.JGP_newPw1.Value","valueType":"expression"}],"dataSource":"t_students","opperType":"update"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><orderNo>1</orderNo><destTableName>t_students</destTableName><opperType>update</opperType><condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></condition><dtField><![CDATA[<NewDataSet><dtField><destField>t_students.spw</destField><sourceType>expression</sourceType><sourceField>CC.JGP_newPw1.Value</sourceField></dtField></NewDataSet>]]]]><![CDATA[></dtField></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_succ" instanceName="显示设置的提示信息_修改成功" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"修改成功\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"修改成功"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SelectionConfirm" ruleName="退出窗体" instanceCode="BR_SelectionConfirm1" instanceName="退出窗体" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-25 23:24:24">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"SelectionConfirm":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><SelectionConfirm>1</SelectionConfirm></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_wrongOldPw" instanceName="显示设置的提示信息_原密码错误" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"原密码错误\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"原密码错误"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_oldCantEmpty" instanceName="显示设置的提示信息_原密码不能为空" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"原密码不能为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"原密码不能为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_diffPw2_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="False" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNull(CC.JGP_newPw1.Value,True)&amp;&amp;IsNull(CC.JGP_newPw2.Value,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SetControlPropertys1" />
+    </sequence>
+  </if>
+  <else isEnabled="False" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SetControlPropertys1_1" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_diffPw2","propertyCode":"Visible","values":"TRUE","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>eecefcf0d1a949c083e532fde41ac4c1</ConditionID><ControlCode>JGL_diffPw2</ControlCode><PropertyName>Visible(显示)</PropertyName><PropertyCode>Visible</PropertyCode><PropertyValue>TRUE</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>eecefcf0d1a949c083e532fde41ac4c1</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1_1" instanceName="控件属性设置_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_diffPw2","propertyCode":"Visible","values":"TRUE","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>eecefcf0d1a949c083e532fde41ac4c1</ConditionID><ControlCode>JGL_diffPw2</ControlCode><PropertyName>Visible(显示)</PropertyName><PropertyCode>Visible</PropertyCode><PropertyValue>TRUE</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>eecefcf0d1a949c083e532fde41ac4c1</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_cancel_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SC_exitForm" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SelectionConfirm" ruleName="退出窗体" instanceCode="BR_SC_exitForm" instanceName="退出窗体_关闭修改密码页面" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 17:09:47">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"SelectionConfirm":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><SelectionConfirm>1</SelectionConfirm></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

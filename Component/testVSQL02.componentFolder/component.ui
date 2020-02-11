@@ -1,0 +1,29 @@
+﻿<form type="1002" code="testVSQL02Form" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_load]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[testVSQL02]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGDataGrid Code="JGDataGrid1" LabelText="列表" PercentHeight="33.3%" PercentWidth="25%" Top="123" Left="291" TabIndex="0" TableName="info" LastModifiedTime="2019-07-17 18:08:48" LastModifiedUser="15013952708">
+      <JGTextBoxColumn Code="JGTextBoxColumn1" ColumnName="sname" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="姓名" LastModifiedTime="2019-07-17 18:08:46" LastModifiedUser="15013952708" TableName="info" />
+      <JGTextBoxColumn Code="JGTextBoxColumn2" ColumnName="sno" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="学号" LastModifiedTime="2019-07-17 18:08:48" LastModifiedUser="15013952708" TableName="info" />
+    </JGDataGrid>
+  </controls>
+  <outputs />
+  <inputs />
+  <remark><![CDATA[]]></remark>
+</form>

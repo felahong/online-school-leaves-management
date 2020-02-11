@@ -1,0 +1,87 @@
+﻿<form type="1002" code="LeaveDetailsForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[320]]></property>
+    <property name="Height"><![CDATA[360]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_loadForm]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[请假详情]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGLabel Code="JGL_reason" LabelText="" Width="196" PercentHeight="6.7%" PercentWidth="61.3%" Top="227" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:58" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_lreason" LabelText="详细原因：" PercentHeight="6.7%" PercentWidth="21.2%" Top="227" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_level" LabelText="" PercentHeight="6.7%" PercentWidth="21.2%" Top="167" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:51" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_length" LabelText="" Width="164" PercentHeight="6.7%" PercentWidth="51.2%" Top="137" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_endTime" LabelText="" PercentHeight="6.7%" PercentWidth="21.2%" Top="107" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:45" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_startTime" LabelText="" PercentHeight="6.7%" PercentWidth="21.2%" Top="77" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:43" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_sort" LabelText="" PercentHeight="6.7%" PercentWidth="21.2%" Top="197" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:54" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_name" LabelText="" PercentHeight="6.7%" PercentWidth="21.2%" Top="47" Left="121" TabIndex="8" LastModifiedTime="2019-07-17 16:10:39" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_llevel" LabelText="审核等级：" PercentHeight="6.7%" PercentWidth="21.2%" Top="167" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_lsort" LabelText="事由：" Width="58" PercentHeight="6.7%" PercentWidth="18.1%" Top="197" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_llength" LabelText="时长：" Width="58" PercentHeight="6.7%" PercentWidth="18.1%" Top="137" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_lend" LabelText="结束时间：" PercentHeight="6.7%" PercentWidth="21.2%" Top="107" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_lstart" LabelText="开始时间：" PercentHeight="6.7%" PercentWidth="21.2%" Top="77" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_lname" LabelText="申请人：" PercentHeight="6.7%" PercentWidth="21.2%" Top="47" Left="47" TabIndex="2" LastModifiedTime="2019-07-13 09:29:48" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_cancel" LabelText="取消" PercentHeight="7.2%" PercentWidth="16.2%" Top="296" Left="192" TabIndex="0" OnClick="JGB_cancel" LastModifiedTime="2019-07-13 09:30:07" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_ensureSubmit" LabelText="确认提交" Width="77" PercentHeight="7.2%" PercentWidth="24.1%" Top="296" Left="70" TabIndex="0" OnClick="JGB_ensureSubmit" LastModifiedTime="2019-07-13 15:58:06" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs>
+    <variable code="lid" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applicantId" name="申请者id" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applicantName" name="申请者名称" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="statusId" name="状态id" fieldType="integer" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="role" name="角色" fieldType="integer" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applyTime" name="申请时间" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="startIime" name="开始时间" fieldType="date" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="endTime" name="结束时间" fieldType="date" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applyLength" name="申请时长" fieldType="integer" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="levelId" name="请假等级id" fieldType="integer" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="level" name="请假等级" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="sort" name="分类" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="reason" name="主键id" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="cllgId" name="学院" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="classId" name="班级" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <remark><![CDATA[]]></remark>
+</form>

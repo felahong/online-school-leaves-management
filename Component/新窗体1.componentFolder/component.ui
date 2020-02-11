@@ -1,0 +1,41 @@
+<form type="1002" code="form1" isEntendable="false" owner="15013952708">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[form6_FormLoadAction]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[255, 255, 255]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[新窗体1]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <outputs />
+  <inputs>
+    <variable code="BizId" name="业务ID" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="FlowDriveMode" name="FlowDriveMode" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <controls>
+    <JGButton Code="JGButton2" LabelText="取消" PercentHeight="5.8%" PercentWidth="5.4%" Top="12" Left="70" TabIndex="1" Visible="False" BackColor="255, 0, 0" />
+    <JGButton Code="JGButton1" LabelText="提交" PercentHeight="5.8%" PercentWidth="5.4%" Top="12" Left="12" TabIndex="0" Visible="False" />
+    <JGTextBox Code="JGTextBox1" LabelText="申请人" PercentHeight="5.8%" PercentWidth="24.5%" Top="43" Left="5" TabIndex="0" TableName="sample_vacation" ColumnName="Applicant" IsMust="True" />
+    <JGDateTimePicker Code="JGDateTimePicker1" LabelText="开始时间" PercentHeight="5.8%" PercentWidth="24.5%" Top="75" Left="5" TabIndex="0" TableName="sample_vacation" ColumnName="StartDate" IsMust="True" />
+    <JGDateTimePicker Code="JGDateTimePicker2" LabelText="结束时间" PercentHeight="5.8%" PercentWidth="24.5%" Top="75" Left="244" TabIndex="0" TableName="sample_vacation" ColumnName="EndDate" IsMust="True" />
+    <JGTextBox Code="JGTextBox2" LabelText="部门" PercentHeight="5.8%" PercentWidth="24.5%" Top="43" Left="244" TabIndex="0" TableName="sample_vacation" ColumnName="ApplicatDept" IsMust="True" />
+    <JGIntegerBox Code="JGIntegerBox1" LabelText="申请天数" PercentHeight="5.8%" PercentWidth="24.5%" Top="75" Left="485" TableName="sample_vacation" ColumnName="ApplyDate" IsMust="True" Value="0" />
+    <JGTextBox Code="JGTextBox3" LabelText="请假原因" Width="717" Height="140" PercentHeight="31.1%" PercentWidth="74.7%" Top="107" Left="3" TabIndex="0" TableName="sample_vacation" ColumnName="Reason" IsMust="True" />
+    <JGLongDateTimePicker Code="JGLongDateTimePicker1" LabelText="申请时间" PercentHeight="5.8%" PercentWidth="24.5%" Top="43" Left="485" TabIndex="0" TableName="sample_vacation" ColumnName="CreatDate" IsMust="True" />
+  </controls>
+  <remark><![CDATA[]]></remark>
+</form>

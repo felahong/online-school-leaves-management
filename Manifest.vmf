@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManifestInfor>
+  <ComponentInfor>
+    <ComponentCode>oslms</ComponentCode>
+    <ComponentName>在线校园请假系统</ComponentName>
+    <IsExist>false</IsExist>
+    <ComponentVersion>1.0.0</ComponentVersion>
+    <IsComponentDir>false</IsComponentDir>
+  </ComponentInfor>
+  <MetaInfors>
+    <metaInfo type="model">
+      <modelMetas />
+    </metaInfo>
+  </MetaInfors>
+  <InterfaceInfor>
+    <apis />
+    <spis />
+  </InterfaceInfor>
+</ManifestInfor>

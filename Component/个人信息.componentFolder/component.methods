@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/14 11:16:41-->
+<Methods>
+  <Method Code="f_loadForm" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DBDTIE_addStuEntity" />
+  <evaluateRule code="BR_SCP_showStuInfo" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_addStuEntity" instanceName="从数据库获取数据到实体_学生实体信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"stuEntity","itemqueryparam":null,"items":[{"destName":"stuEntity.classId","sourceName":"t_students.classId","type":"entityField"},{"destName":"stuEntity.semail","sourceName":"t_students.semail","type":"entityField"},{"destName":"stuEntity.sname","sourceName":"t_students.sname","type":"entityField"},{"destName":"stuEntity.sno","sourceName":"t_students.sno","type":"entityField"},{"destName":"stuEntity.sphone","sourceName":"t_students.sphone","type":"entityField"},{"destName":"stuEntity.spw","sourceName":"t_students.spw","type":"entityField"},{"destName":"stuEntity.ssex","sourceName":"t_students.ssex","type":"entityField"}],"orderBy":null,"sourceName":"t_students","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>stuEntity</EntityName><SourceType>Table</SourceType><SourceName>t_students</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>32f4b307027944948a91537e433aadfd</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.classId</DestName><SourceType>entityField</SourceType><SourceName>t_students.classId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.semail</DestName><SourceType>entityField</SourceType><SourceName>t_students.semail</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.sname</DestName><SourceType>entityField</SourceType><SourceName>t_students.sname</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.sno</DestName><SourceType>entityField</SourceType><SourceName>t_students.sno</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.sphone</DestName><SourceType>entityField</SourceType><SourceName>t_students.sphone</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.spw</DestName><SourceType>entityField</SourceType><SourceName>t_students.spw</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>32f4b307027944948a91537e433aadfd</MasterID><DestName>stuEntity.ssex</DestName><SourceType>entityField</SourceType><SourceName>t_students.ssex</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>32f4b307027944948a91537e433aadfd</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>32f4b307027944948a91537e433aadfd</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_showStuInfo" instanceName="控件属性设置_显示学生个人信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGCB_sex","propertyCode":"Value","values":"[stuEntity].[ssex]","valuetype":"1"},{"controlCode":"JGTB_class","propertyCode":"Value","values":"[stuEntity].[classId]","valuetype":"1"},{"controlCode":"JGTB_email","propertyCode":"Value","values":"[stuEntity].[semail]","valuetype":"1"},{"controlCode":"JGTB_name","propertyCode":"Value","values":"[stuEntity].[sname]","valuetype":"1"},{"controlCode":"JGTB_phone","propertyCode":"Value","values":"[stuEntity].[sphone]","valuetype":"1"},{"controlCode":"JGTB_sno","propertyCode":"Value","values":"[stuEntity].[sno]","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGCB_sex</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[ssex]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGTB_class</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[classId]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGTB_email</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[semail]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGTB_name</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[sname]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGTB_phone</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[sphone]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>07952bf7c83f4ed2a9710f2785f6a0f6</ConditionID><ControlCode>JGTB_sno</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>[stuEntity].[sno]</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>07952bf7c83f4ed2a9710f2785f6a0f6</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_updateInfo" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SCP_setUnreadonly" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setUnreadonly" instanceName="控件属性设置_设置非只读" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 15:35:19">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_email","propertyCode":"ReadOnly","values":"False","valuetype":"1"},{"controlCode":"JGTB_phone","propertyCode":"ReadOnly","values":"False","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>487f70bf7a904e69b66f2ec546087c3b</ConditionID><ControlCode>JGTB_email</ControlCode><PropertyName>ReadOnly(只读)</PropertyName><PropertyCode>ReadOnly</PropertyCode><PropertyValue>False</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>487f70bf7a904e69b66f2ec546087c3b</ConditionID><ControlCode>JGTB_phone</ControlCode><PropertyName>ReadOnly(只读)</PropertyName><PropertyCode>ReadOnly</PropertyCode><PropertyValue>False</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>487f70bf7a904e69b66f2ec546087c3b</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_save" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_MDBR_updateSave" />
+  <evaluateRule code="BR_SM_saveSucc" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ModifyDataBaseRecord" ruleName="修改数据库中的记录" instanceCode="BR_MDBR_updateSave" instanceName="修改数据库中的记录_保存修改" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 15:33:26">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourcesMapping":[{"condition":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"dataMap":[{"colName":"t_students.semail","colValue":"CC.JGTB_email.Value","valueType":"expression"},{"colName":"t_students.sphone","colValue":"CC.JGTB_phone.Value","valueType":"expression"}],"dataSource":"t_students","opperType":"update"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><orderNo>1</orderNo><destTableName>t_students</destTableName><opperType>update</opperType><condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></condition><dtField><![CDATA[<NewDataSet><dtField><destField>t_students.semail</destField><sourceType>expression</sourceType><sourceField>CC.JGTB_email.Value</sourceField></dtField><dtField><destField>t_students.sphone</destField><sourceType>expression</sourceType><sourceField>CC.JGTB_phone.Value</sourceField></dtField></NewDataSet>]]]]><![CDATA[></dtField></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_saveSucc" instanceName="显示设置的提示信息_保存成功" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 15:33:54">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"保存成功\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"保存成功"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_updatePw" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_OCRD_popUpdatePwForm" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_popUpdatePwForm" instanceName="打开窗体并返回数据_弹出修改密码页" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 16:00:36">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"updatePasswordForm","windowName":"修改密码","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"dialogWindow","browerWindowTitle":"\"修改密码\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"oldPw","paramType":"expression","paramValue":"[stuEntity].[spw]","paramEntityType":"","entityFieldMapping":null},{"paramName":"userId","paramType":"expression","paramValue":"@userId","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>updatePasswordForm</WindowCode><WindowName>修改密码</WindowName><TargetContainerType>dialogWindow</TargetContainerType><BrowerWindowTitle>"修改密码"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>oldPw</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[stuEntity].[spw]</SourceValue></dtParam><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@userId</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

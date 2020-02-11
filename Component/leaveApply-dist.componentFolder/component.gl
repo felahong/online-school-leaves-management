@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_formLoad.method" Code="f_formLoad" Name="窗体加载" />
+  <Method MethodDir="ControlMethod" FileName="f_calcDays.method" Code="f_calcDays" Name="计算申请天数" />
+  <Method MethodDir="ControlMethod" FileName="f_verifyEndTime.method" Code="f_verifyEndTime" Name="验证请假结束时间" />
+  <Method MethodDir="ControlMethod" FileName="f_verifyStartTime.method" Code="f_verifyStartTime" Name="验证申请开始时间" />
+  <Method MethodDir="ControlMethod" FileName="JGB_submit.method" Code="JGB_submit" Name="单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGLabel1_OnClick.method" Code="JGLabel1_OnClick" Name="JGLabel1_单击事件" />
+</Methods>

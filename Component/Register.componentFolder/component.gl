@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="ControlMethod" FileName="JGB_stuRegist.method" Code="JGB_stuRegist" Name="学生注册按钮" />
+  <Method MethodDir="ControlMethod" FileName="JGB_tchRegist.method" Code="JGB_tchRegist" Name="教师注册按钮" />
+  <Method MethodDir="ControlMethod" FileName="JGButton1_OnClick.method" Code="JGButton1_OnClick" Name="JGButton1_单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_stuNumCheck.method" Code="JGL_stuNumCheck" Name="JGL_stuNumCheck_单击事件" />
+  <Method MethodDir="UserMethod" FileName="func_verifyStuNum.method" Code="func_verifyStuNum" Name="验证学号" />
+</Methods>

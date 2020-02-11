@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<NavigationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nodes>
+    <NavigationNode>
+      <Code>selectCollege</Code>
+      <NodeType>Query</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>selectCollege</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>s_findStuByDiffCollege</Code>
+      <NodeType>Query</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>s_findStuByDiffCollege</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>s_getCollegeByMajor</Code>
+      <NodeType>Query</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>s_getCollegeByMajor</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>collectLeaveNumber</Code>
+      <NodeType>Query</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>collectLeaveNumber</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+  </Nodes>
+</NavigationInfo>

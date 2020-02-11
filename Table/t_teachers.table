@@ -1,0 +1,79 @@
+﻿<Table id="fcf5203218a74622be7aa0a552901e0d" code="t_teachers" name="教师表">
+  <Remark><![CDATA[教师身份：辅导员、院领导]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 20:32:07]]></CreationTime>
+  <Modifier><![CDATA[lingang19]]></Modifier>
+  <ModificationTime><![CDATA[2019-08-06 09:10:53]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isNType="false" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="ff3a9b2a659b4365bf31760853d89698" code="tno" name="职工号" domain="" dataType="char" length="8" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="36a1a43db85c4ff5b49c5d8ecf84a7c6" code="tname" name="姓名" domain="" dataType="char" length="8" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="0bc740b64e854a8da4106d3bf07e45f3" code="trole" name="教师角色" domain="" dataType="integer" length="50" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="6921c56166794d56a03e7c28deb015c1" code="tpw" name="教师密码" domain="" dataType="char" length="32" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="78e9b17967854efb9d93a8e93751a9b3" code="tsex" name="教师性别" domain="" dataType="char" length="2" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="e38e9cff7072409fa2bcff0a75cb0456" code="tcollegeId" name="所属学院" domain="" dataType="char" length="8" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="c14d5de73ff14a14964a76f9b43cbea8" code="tphone" name="手机号码" domain="" dataType="char" length="16" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="fee87243b054499bbe769b5f8cd75448" code="temail" name="电子邮箱" domain="" dataType="char" length="24" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="5a0570ae699a41368e458c7842f756b1" code="tdigitalAutograph" name="电子签名" domain="" dataType="char" length="255" precision="" isNType="false" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[eab3a52327cb47dbb109bdcd74eb39af]]></ColumnData>
+      <ColumnData code="tno"><![CDATA[16045]]></ColumnData>
+      <ColumnData code="tname"><![CDATA[林刚]]></ColumnData>
+      <ColumnData code="trole"><![CDATA[1]]></ColumnData>
+      <ColumnData code="tpw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="tsex"><![CDATA[男]]></ColumnData>
+      <ColumnData code="tcollegeId"><![CDATA[c04]]></ColumnData>
+      <ColumnData code="tphone"><![CDATA[]]></ColumnData>
+      <ColumnData code="temail"><![CDATA[]]></ColumnData>
+      <ColumnData code="tdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[b75712eb6687466c8ea4657cd7510ab7]]></ColumnData>
+      <ColumnData code="tno"><![CDATA[16000]]></ColumnData>
+      <ColumnData code="tname"><![CDATA[张三丰]]></ColumnData>
+      <ColumnData code="trole"><![CDATA[1]]></ColumnData>
+      <ColumnData code="tpw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="tsex"><![CDATA[男]]></ColumnData>
+      <ColumnData code="tcollegeId"><![CDATA[c04]]></ColumnData>
+      <ColumnData code="tphone"><![CDATA[]]></ColumnData>
+      <ColumnData code="temail"><![CDATA[]]></ColumnData>
+      <ColumnData code="tdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

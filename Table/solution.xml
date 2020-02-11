@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<NavigationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nodes>
+    <NavigationNode>
+      <Code>t_colleges</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_colleges</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_majors</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_majors</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_classes</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_classes</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_status</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_status</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_students</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_students</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_teachers</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_teachers</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_leaves</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_leaves</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_roles</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_roles</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_colleges_majors</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_colleges_majors</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>tb_major_class</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>tb_major_class</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>tb_class_student</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>tb_class_student</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>tb_teacher_major</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>tb_teacher_major</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>tb_teacher_class</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>tb_teacher_class</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>tb_testList</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>tb_testList</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_admins</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_admins</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_applyLevels</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_applyLevels</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+    <NavigationNode>
+      <Code>t_level</Code>
+      <NodeType>Table</NodeType>
+      <FileSystemObjectType>File</FileSystemObjectType>
+      <FileSystemObjectName>t_level</FileSystemObjectName>
+      <SubNodes />
+    </NavigationNode>
+  </Nodes>
+</NavigationInfo>

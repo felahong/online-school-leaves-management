@@ -1,0 +1,76 @@
+﻿<Table id="c8424bbd712244c1bc586c166c3c4126" code="t_leaves" name="请假单表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 20:34:58]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-25 14:42:00]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="e39c562008fa4480acfaca90e512cfc9" code="lid" name="请假单id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="05d5fb7e9cc542778eb442ec95a8db5c" code="applicantId" name="申请者id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="027dbf47a43f494f8328d55a58f955a9" code="classId" name="班级Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d1b9db215a9b47828ebddd8e781503b5" code="collegeId" name="所属学院" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="fa1103708ce84374a80939fbe1e1552c" code="statusId" name="状态id" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d94f72415c5247a0bd878605e261b41e" code="role" name="角色" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="c4143428a3e6424f966579f53851b600" code="applyTime" name="申请时间" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d67f9b9c317d40b5b1d734692925ea93" code="startTime" name="开始时间" domain="" dataType="date" length="" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d8e237225da3414eb1bc6cedbec55b28" code="endTime" name="结束时间" domain="" dataType="date" length="" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="38840e4677dd48b9b69a6365de5ef455" code="applylength" name="时长" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="75df5e5434904fc69d4432e1df488045" code="levelId" name="申请等级" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="ccc363120170481e9081353e3dceaee9" code="sort" name="事由" domain="" dataType="char" length="30" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[病假、事假、其它：]]></Remark>
+    </Column>
+    <Column id="04b6ce4346b24dbbb907bda9cf0436b9" code="reason" name="申请原因" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="117841445f2147dfbe49cad395fa9f8c" code="times" name="已请假次数" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="170a3b6794b14d068433f8cae07b0cca" code="remark" name="备注" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true" />
+</Table>

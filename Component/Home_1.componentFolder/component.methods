@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2018/7/4 10:15:45-->
+<Methods>
+  <Method Code="Home_FLA_load" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage4" />
+  <evaluateRule code="BR_ShowMessage3" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>@role=="1"</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage2" />
+      <evaluateRule code="BR_DBDTIE_stuToEntity" />
+      <evaluateRule code="BR_ShowMessage1" />
+      <evaluateRule code="BR_SCP_showStuName" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>@role=="0"</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_DBDTIE_tchToEntity" />
+    </sequence>
+  </if>
+  <evaluateRule code="BR_SCP" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示userid" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@userId","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@userId</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示role" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@role","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@role</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP" instanceName="控件属性设置_用户名" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_userName","propertyCode":"LabelText","values":"[entity_user].[uesrName]","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>85146ad48b3c4b7aba5a03191193bff2</ConditionID><ControlCode>JGL_userName</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>[entity_user].[uesrName]</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>85146ad48b3c4b7aba5a03191193bff2</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"hhhh\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"hhhh"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_stuToEntity" instanceName="从学生表获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"entity_user","itemqueryparam":null,"items":[{"destName":"entity_user.uesrName","sourceName":"t_students.sname","type":"entityField"},{"destName":"entity_user.userNum","sourceName":"t_students.sno","type":"entityField"}],"orderBy":null,"sourceName":"t_students","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>entity_user</EntityName><SourceType>Table</SourceType><SourceName>t_students</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>d222667a5542482e80ac9783cb2327cf</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>d222667a5542482e80ac9783cb2327cf</MasterID><DestName>entity_user.uesrName</DestName><SourceType>entityField</SourceType><SourceName>t_students.sname</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>d222667a5542482e80ac9783cb2327cf</MasterID><DestName>entity_user.userNum</DestName><SourceType>entityField</SourceType><SourceName>t_students.sno</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>d222667a5542482e80ac9783cb2327cf</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>d222667a5542482e80ac9783cb2327cf</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[entity_user].[uesrName]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[entity_user].[uesrName]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_showStuName" instanceName="显示学生用户名" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_userName","propertyCode":"LabelText","values":"[entity_user].[uesrName]","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>896a30b2954c4ec1b9722cc7a3e4bb24</ConditionID><ControlCode>JGL_userName</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>[entity_user].[uesrName]</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>896a30b2954c4ec1b9722cc7a3e4bb24</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_tchToEntity" instanceName="从教师表获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_teachers.tno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"entity_user","itemqueryparam":null,"items":[{"destName":"entity_user.uesrName","sourceName":"t_teachers.tname","type":"entityField"},{"destName":"entity_user.userNum","sourceName":"t_teachers.tno","type":"entityField"}],"orderBy":null,"sourceName":"t_teachers","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>entity_user</EntityName><SourceType>Table</SourceType><SourceName>t_teachers</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_teachers.tno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>7c033b3803b24c1ba6c98b72085e7d2d</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>7c033b3803b24c1ba6c98b72085e7d2d</MasterID><DestName>entity_user.uesrName</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tname</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>7c033b3803b24c1ba6c98b72085e7d2d</MasterID><DestName>entity_user.userNum</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tno</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>7c033b3803b24c1ba6c98b72085e7d2d</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>7c033b3803b24c1ba6c98b72085e7d2d</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_OL_SBSchedule" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SCP_fontMove" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_fontMove" instanceName="控件属性设置_字体移动" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-10 23:46:37">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGButton2","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGButton1","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"14\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGButton2</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGButton1</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"14","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>967fcd6d23324b4d93f1909ed41dad45</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_OL_SBApply" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SetControlPropertys1" />
+  <evaluateRule code="BR_OCRD_toApplyForm" />
+  <evaluateRule code="BR_ShowMessage1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-10 23:46:18">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGButton1","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGButton2","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"14\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>426862db837941c3a10c01e08aa71991</ConditionID><ControlCode>JGButton1</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>426862db837941c3a10c01e08aa71991</ConditionID><ControlCode>JGButton2</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"14","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>426862db837941c3a10c01e08aa71991</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_toApplyForm" instanceName="跳转到请假申请窗体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"applyLeaveForm","windowName":"ApplyLeave","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"Online Leave Application\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"applicantRole","paramType":"expression","paramValue":"@role","paramEntityType":"","entityFieldMapping":null},{"paramName":"applicantName","paramType":"expression","paramValue":"[entity_user].[uesrName]","paramEntityType":"","entityFieldMapping":null},{"paramName":"applicantNum","paramType":"expression","paramValue":"[entity_user].[userNum]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>applyLeaveForm</WindowCode><WindowName>ApplyLeave</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"Online Leave Application"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>applicantRole</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@role</SourceValue></dtParam><dtParam><WindowVariant>applicantName</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[uesrName]</SourceValue></dtParam><dtParam><WindowVariant>applicantNum</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[userNum]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"BR_OUT.BR_OCRD_toApplyForm.windowInstanceCode","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>BR_OUT.BR_OCRD_toApplyForm.windowInstanceCode</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_showApplyingInfo" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[显示正在请假条数]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="JGL_sideBar_click" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[单击时，侧栏文字位置想右移动]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+</Methods>

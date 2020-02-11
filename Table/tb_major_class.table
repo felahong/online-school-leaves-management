@@ -1,0 +1,40 @@
+﻿<Table id="bd6d7b0275c6416e8e3051136f8f478a" code="tb_major_class" name="专业班级对应表">
+  <Remark><![CDATA[专业和班级的对应表]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 18:37:26]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-05-22 18:39:17]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="bce80fdf3cb842c1870929d73cc98fe7" code="majorId" name="专业Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d42db41bf1eb4157a710b84b86e71396" code="classId" name="班级Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[1f3c4f26480e40ceb680558f913d33d0]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[685f2c2cc4e848dc9c197fa04bd35905]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041707]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[e74cea1a92c64f8ba16728ac1e8a3623]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0305]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[031708]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

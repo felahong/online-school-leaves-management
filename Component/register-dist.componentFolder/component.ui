@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<form type="1002" code="form4" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[964]]></property>
+    <property name="Height"><![CDATA[480]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[register-dist]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGLabel Code="JGL_title" LabelText="欢迎注册吉珠在线请假系统" Height="53" Width="415" PercentHeight="11%" PercentWidth="43%" Top="50" Left="313" TabIndex="18" FontStyle="华文彩云, 17.9999981pt, style=Bold, Italic" ForeColor="32, 124, 220" LastModifiedTime="2019-07-09 12:57:24" LastModifiedUser="15013952708" />
+    <JGTabControl Code="JGTC_register" Height="334" Width="645" PercentHeight="69.6%" PercentWidth="66.9%" Top="106" Left="147" TabIndex="1" LastModifiedTime="2019-07-09 12:57:24" LastModifiedUser="15013952708">
+      <JGTabPage Code="JGTP_sregister" LabelText="学生注册" TabIndex="3" LastModifiedTime="2019-07-09 12:53:28" LastModifiedUser="15013952708">
+        <JGComboBox Code="JGCB_ssex" LabelText="性别" Height="27" PercentHeight="9.2%" PercentWidth="36.4%" Top="152" Left="210" TabIndex="21" DropDownSource="{&quot;DataSourceSetting&quot;:{&quot;DataConfig&quot;:{&quot;DefaultSaveColumn&quot;:null,&quot;DefaultShowColumn&quot;:null,&quot;SourceType&quot;:null,&quot;SourceID&quot;:null,&quot;SourceName&quot;:null,&quot;MapTable&quot;:null,&quot;SaveColumn&quot;:null,&quot;ShowColumn&quot;:null,&quot;SortField&quot;:null,&quot;SortType&quot;:null,&quot;MaxRecCount&quot;:0,&quot;QueryField&quot;:null,&quot;QueryMethod&quot;:null,&quot;IsPickListFields&quot;:false,&quot;ConstData&quot;:[{&quot;id&quot;:&quot;男&quot;,&quot;text&quot;:&quot;男&quot;,&quot;selected&quot;:&quot;False&quot;},{&quot;id&quot;:&quot;女&quot;,&quot;text&quot;:&quot;女&quot;,&quot;selected&quot;:&quot;False&quot;}],&quot;SqlQueryConstData&quot;:null,&quot;EntityConstData&quot;:null,&quot;Condition&quot;:null,&quot;QueryParam&quot;:null,&quot;PickListFields&quot;:null},&quot;DataSourceType&quot;:&quot;CustomConst&quot;}}" IsMust="True" LastModifiedTime="2019-07-09 12:53:40" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_semail" LabelText="电子邮箱" PercentHeight="8.8%" PercentWidth="36.4%" Top="217" Left="210" TabIndex="4" IsMustBehavior="Simple" LastModifiedTime="2019-07-09 12:53:31" LastModifiedUser="15013952708" />
+        <JGLabel Code="JGL_snoCheck" LabelText="" Width="156" PercentHeight="8.2%" PercentWidth="24.2%" Top="24" Left="451" TabIndex="19" OnClick="JGL_stuNumCheck_OnClick" LastModifiedTime="2019-07-09 11:41:14" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_sphone" LabelText="手机号码" PercentHeight="8.8%" PercentWidth="36.4%" Top="185" Left="210" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 12:53:28" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_sclass" LabelText="班级" PercentHeight="8.8%" PercentWidth="36.4%" Top="120" Left="210" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 12:51:29" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_spw" LabelText="密码" PercentHeight="8.8%" PercentWidth="36.4%" Top="88" Left="210" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 11:35:47" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_sname" LabelText="姓名" PercentHeight="8.8%" PercentWidth="36.4%" Top="56" Left="210" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 11:35:34" LastModifiedUser="15013952708" />
+        <JGButton Code="JGB_stuRegist" LabelText="注册" PercentHeight="8.8%" PercentWidth="8.1%" Top="250" Left="296" TabIndex="6" OnClick="JGB_stuRegist_OnClick" LastModifiedTime="2019-07-09 12:51:09" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_sno" LabelText="学号" PercentHeight="8.8%" PercentWidth="36.4%" Top="24" Left="210" TabIndex="4" OnLeave="JGL_stuNumCheck" IsMust="True" LastModifiedTime="2019-07-09 11:35:27" LastModifiedUser="15013952708" />
+      </JGTabPage>
+      <JGTabPage Code="JGTP_tregister" LabelText="教师注册" TabIndex="2" LastModifiedTime="2019-07-09 12:55:11" LastModifiedUser="15013952708">
+        <JGComboBox Code="JGCB_tsex" LabelText="性别" Height="27" PercentHeight="9.2%" PercentWidth="36.4%" Top="152" Left="212" TabIndex="21" DropDownSource="{&quot;DataSourceSetting&quot;:{&quot;DataConfig&quot;:{&quot;DefaultSaveColumn&quot;:null,&quot;DefaultShowColumn&quot;:null,&quot;SourceType&quot;:null,&quot;SourceID&quot;:null,&quot;SourceName&quot;:null,&quot;MapTable&quot;:null,&quot;SaveColumn&quot;:null,&quot;ShowColumn&quot;:null,&quot;SortField&quot;:null,&quot;SortType&quot;:null,&quot;MaxRecCount&quot;:0,&quot;QueryField&quot;:null,&quot;QueryMethod&quot;:null,&quot;IsPickListFields&quot;:false,&quot;ConstData&quot;:[{&quot;id&quot;:&quot;男&quot;,&quot;text&quot;:&quot;男&quot;,&quot;selected&quot;:&quot;False&quot;},{&quot;id&quot;:&quot;女&quot;,&quot;text&quot;:&quot;女&quot;,&quot;selected&quot;:&quot;False&quot;}],&quot;SqlQueryConstData&quot;:null,&quot;EntityConstData&quot;:null,&quot;Condition&quot;:null,&quot;QueryParam&quot;:null,&quot;PickListFields&quot;:null},&quot;DataSourceType&quot;:&quot;CustomConst&quot;}}" IsMust="True" LastModifiedTime="2019-07-09 12:55:33" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_tcllg" LabelText="所属学院" PercentHeight="8.8%" PercentWidth="36.4%" Top="120" Left="212" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 12:55:17" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_temail" LabelText="电子邮箱" PercentHeight="8.8%" PercentWidth="36.4%" Top="217" Left="212" TabIndex="4" IsMustBehavior="Simple" LastModifiedTime="2019-07-09 12:55:37" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_tphone" LabelText="手机号码" PercentHeight="8.8%" PercentWidth="36.4%" Top="185" Left="212" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 12:55:36" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_tpw" LabelText="密码" PercentHeight="8.8%" PercentWidth="36.4%" Top="88" Left="212" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 11:37:23" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_tname" LabelText="姓名" PercentHeight="8.8%" PercentWidth="36.4%" Top="56" Left="212" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 11:37:18" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_tno" LabelText="工号" PercentHeight="8.8%" PercentWidth="36.4%" Top="24" Left="212" TabIndex="4" IsMust="True" LastModifiedTime="2019-07-09 11:37:13" LastModifiedUser="15013952708" />
+        <JGButton Code="JGB_tchRegist" LabelText="注册" PercentHeight="8.8%" PercentWidth="8.1%" Top="250" Left="296" TabIndex="5" OnClick="JGButton1_OnClick_1" LastModifiedTime="2019-07-09 12:56:37" LastModifiedUser="15013952708" />
+      </JGTabPage>
+    </JGTabControl>
+    <JGPanel Code="JGP_top" Height="44" Width="960" PercentHeight="9.2%" PercentWidth="99.6%" TabIndex="0" BackColor="32, 124, 220" LastModifiedTime="2019-07-09 11:41:41" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs />
+  <remark><![CDATA[]]></remark>
+</form>

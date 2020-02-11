@@ -1,0 +1,45 @@
+﻿<Table id="01b55ab3e5f84c56979376dcafc63b9f" code="t_colleges" name="学院表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 19:37:00]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-17 17:17:56]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="4f39199d41b648fbabab39811171a593" code="collegId" name="id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="397b4ccbf3d744bc83dde7e18c1dfa92" code="collegeName" name="学院名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[2537db5382224c6ab5ac35ec24134a37]]></ColumnData>
+      <ColumnData code="collegId"><![CDATA[c01]]></ColumnData>
+      <ColumnData code="collegeName"><![CDATA[美术与设计学院]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[4f7db1eb2c4e4726954d1bd5ad3f072a]]></ColumnData>
+      <ColumnData code="collegId"><![CDATA[c02]]></ColumnData>
+      <ColumnData code="collegeName"><![CDATA[工商管理学院]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[b9938f2832694b9f8531c3d4094f1934]]></ColumnData>
+      <ColumnData code="collegId"><![CDATA[c03]]></ColumnData>
+      <ColumnData code="collegeName"><![CDATA[电子信息工程学院]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[52ec4b4fb8934e348085e821ed88468a]]></ColumnData>
+      <ColumnData code="collegId"><![CDATA[c04]]></ColumnData>
+      <ColumnData code="collegeName"><![CDATA[计算机学院]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

@@ -1,0 +1,41 @@
+﻿<Table id="ac57320406b74b84a0e9af3319216da2" code="tb_testList" name="">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 19:57:01]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-05-24 15:15:08]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="057a94914600454b948f1c6f5fd2d6fc" code="userName" name="" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="c2832bab8ce8413f971aaa9292d80288" code="userPhone" name="" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="57b27f3c53a54ef0b1af6cdfa697eecd" code="userBirth" name="" domain="" dataType="longDate" length="" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[2b6f639940be4f5b8345c33c20d0e211]]></ColumnData>
+      <ColumnData code="userName"><![CDATA[李兴]]></ColumnData>
+      <ColumnData code="userPhone"><![CDATA[13839353422]]></ColumnData>
+      <ColumnData code="userBirth"><![CDATA[2019-05-24 15:15:06]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[2b210f147d31453dba5a27d7041fe8eb]]></ColumnData>
+      <ColumnData code="userName"><![CDATA[Ricky]]></ColumnData>
+      <ColumnData code="userPhone"><![CDATA[15013952708]]></ColumnData>
+      <ColumnData code="userBirth"><![CDATA[2019-05-24 15:15:00]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

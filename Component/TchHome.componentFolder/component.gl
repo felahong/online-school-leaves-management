@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="Home_FLA_load.method" Code="Home_FLA_load" Name="首页窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBApply.method" Code="JGB_SBApply" Name="在线申请单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBHistory.method" Code="JGB_SBHistory" Name="历史请假单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBSchedule.method" Code="JGB_SBSchedule" Name="待办事单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBStatistic.method" Code="JGB_SBStatistic" Name="数据统计单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_exit.method" Code="JGL_exit" Name="退出单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_userName_OnClick.method" Code="JGL_userName_OnClick" Name="用户名单击事件" />
+  <Method MethodDir="UserMethod" FileName="f_SetActiveMenuItem.method" Code="f_SetActiveMenuItem" Name="设置当前菜单项样式" />
+</Methods>

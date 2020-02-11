@@ -1,0 +1,24 @@
+﻿<Query id="1518d6c19dec4a5b91c9e3c77f3c63df" code="s_getCollegeByMajor" name="通过专业找到学院" type="VSql">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[user_20190504002]]></Creator>
+  <CreationTime><![CDATA[2019-07-24 15:25:16]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-24 15:38:10]]></ModificationTime>
+  <VSql><![CDATA[select collegeId from t_majors where majorId =: mid
+]]></VSql>
+  <Columns>
+    <Column id="Column_0" code="collegeId" name="学院id" dataType="char" length="" precision="">
+      <Remark></Remark>
+    </Column>
+  </Columns>
+  <Params>
+    <Param code="mid" name="专业编码" dataType="char">
+      <InitValue><![CDATA[m0401]]></InitValue>
+      <Remark><![CDATA[]]></Remark>
+    </Param>
+  </Params>
+  <DataItems>
+    <DataItem type="Table" key="t_majors" tokenIndexes="6" />
+    <DataItem type="QueryParam" key="mid" tokenIndexes="15" />
+  </DataItems>
+</Query>

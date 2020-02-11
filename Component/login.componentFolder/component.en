@@ -1,0 +1,39 @@
+﻿<EntityConfig version="2.0">
+  <Entitys>
+    <Entity Code="userEntity" Name="用户实体" IsExtendable="false" EntityType="" TableOrQueryCode="" TemplateId="" TemplateCode="">
+      <Columns>
+        <Column>
+          <Code>account</Code>
+          <Name>账号</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression>CC.JGTB_userNum.Value</Expression>
+        </Column>
+        <Column>
+          <Code>accountPw</Code>
+          <Name>密码</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression>CC.JGPW_userPw.Value</Expression>
+        </Column>
+        <Column>
+          <Code>accountRole</Code>
+          <Name>角色</Name>
+          <DataType>integer</DataType>
+          <Length>50</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression></Expression>
+        </Column>
+      </Columns>
+      <Events>
+        <EntityEvent Code="OnLoaded" Value="" />
+      </Events>
+    </Entity>
+  </Entitys>
+  <Relations />
+</EntityConfig>

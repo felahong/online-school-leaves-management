@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2018/7/4 10:15:45-->
+<Methods>
+  <Method Code="Home_FLA_load" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage4" />
+  <evaluateRule code="BR_ShowMessage3" />
+  <evaluateRule code="BR_ShowMessage6" />
+  <if isEnabled="False" isDebug="False" code="IfCode3">
+    <define>
+      <expression>@source==1</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ERS_scheduleClick" />
+      <evaluateRule code="BR_ShowMessage1" />
+    </sequence>
+  </if>
+  <evaluateRule code="BR_DBDTIE_tchToEntity" />
+  <evaluateRule code="BR_SCP" />
+  <evaluateRule code="BR_ShowMessage2" />
+  <evaluateRule code="BR_GRC_getApplyTimes" />
+  <evaluateRule code="BR_SCP_setApplyTimes" />
+  <evaluateRule code="BR_ShowMessage5" />
+  <evaluateRule code="BR_GRC_activeApplyRecords" />
+  <evaluateRule code="BR_SetControlPropertys1" />
+  <evaluateRule code="BR_ExecuteRuleSet1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示userid" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@userId","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@userId</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示role" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@role","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@role</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage6" instanceName="显示设置的提示信息_3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"ConcatStr(\"source = \", Convert(@source,2))","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>ConcatStr("source = ", Convert(@source,2))</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_tchToEntity" instanceName="从教师表获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_teachers.tno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"entity_user","itemqueryparam":null,"items":[{"destName":"entity_user.uesrName","sourceName":"t_teachers.tname","type":"entityField"},{"destName":"entity_user.userNum","sourceName":"t_teachers.tno","type":"entityField"}],"orderBy":null,"sourceName":"t_teachers","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>entity_user</EntityName><SourceType>Table</SourceType><SourceName>t_teachers</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_teachers.tno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>7c033b3803b24c1ba6c98b72085e7d2d</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>7c033b3803b24c1ba6c98b72085e7d2d</MasterID><DestName>entity_user.uesrName</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tname</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>7c033b3803b24c1ba6c98b72085e7d2d</MasterID><DestName>entity_user.userNum</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tno</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>7c033b3803b24c1ba6c98b72085e7d2d</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>7c033b3803b24c1ba6c98b72085e7d2d</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP" instanceName="控件属性设置_用户名和工号" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_userName","propertyCode":"LabelText","values":"[entity_user].[uesrName]","valuetype":"1"},{"controlCode":"JGL_tno","propertyCode":"LabelText","values":"@userId","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>85146ad48b3c4b7aba5a03191193bff2</ConditionID><ControlCode>JGL_userName</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>[entity_user].[uesrName]</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>85146ad48b3c4b7aba5a03191193bff2</ConditionID><ControlCode>JGL_tno</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@userId</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>85146ad48b3c4b7aba5a03191193bff2</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[entity_user].[uesrName]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[entity_user].[uesrName]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_getApplyTimes" instanceName="获取数据库表中记录数_已经申请条数" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_leaves.applicantId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"tableName":"t_leaves","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_leaves</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_leaves.applicantId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setApplyTimes" instanceName="控件属性设置_设置请假次数" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_applyTimes","propertyCode":"LabelText","values":"Convert(BR_OUT.BR_GRC_getApplyTimes.recordCount,2)","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>b8ad5f3feab54eabb59aa99deb8a2ac8</ConditionID><ControlCode>JGL_applyTimes</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>Convert(BR_OUT.BR_GRC_getApplyTimes.recordCount,2)</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>b8ad5f3feab54eabb59aa99deb8a2ac8</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage5" instanceName="显示设置的提示信息_2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"BR_OUT.BR_GRC_getApplyTimes.recordCount","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>BR_OUT.BR_GRC_getApplyTimes.recordCount</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_activeApplyRecords" instanceName="获取数据库表中记录数_正在申请条数" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_leaves.applicantId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"},{"columnType":"1","field":"t_leaves.statusId","fieldType":"integer","leftBracket":"(","logicOperation":"and","operation":"<","rightBracket":")","value":"4","valueType":"9"}],"tableName":"t_leaves","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_leaves</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_leaves.applicantId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere><dtWhere><columnType>1</columnType><field>t_leaves.statusId</field><fieldType>integer</fieldType><leftBracket>(</leftBracket><logicOperation>and</logicOperation><operation>&lt;</operation><rightBracket>)</rightBracket><value>4</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_activeApply","propertyCode":"LabelText","values":"Convert(BR_OUT.BR_GRC_activeApplyRecords.recordCount,2)","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>8686b9e5a1d3452fa5b6f5e656192717</ConditionID><ControlCode>JGL_activeApply</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>Convert(BR_OUT.BR_GRC_activeApplyRecords.recordCount,2)</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>8686b9e5a1d3452fa5b6f5e656192717</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_JGB_SBSchedule(待办事单击事件)_1" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-25 23:34:25">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"JGB_SBSchedule","isParallelism":"False"},"invokeParams":null,"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>JGB_SBSchedule</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ERS_scheduleClick" instanceName="执行方法_JGB_SBSchedule(待办事单击事件)" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"JGB_SBSchedule","isParallelism":"False"},"invokeParams":null,"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>JGB_SBSchedule</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"首页判断是否进入待办事项页的if语句\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"首页判断是否进入待办事项页的if语句"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_SBSchedule" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ExecuteRuleSet1" />
+  <evaluateRule code="BR_ShowMessage2" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>@role&gt;=1&amp;&amp;@role&lt;=3</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SCP_clickSchedule" />
+      <evaluateRule code="BR_ShowMessage1" />
+      <evaluateRule code="BR_OCRD_openSchedule" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_f_SetActiveMenuItem(设置当前菜单项样式)" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"f_SetActiveMenuItem","isParallelism":"False"},"invokeParams":[{"paramCode":"activeMenuItemIndex","paramType":"expression","paramValue":"1","paramSource":"","dataFilterType":"","paramFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>f_SetActiveMenuItem</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtInvokeParams><paramCode>activeMenuItemIndex</paramCode><paramType>expression</paramType><paramValue>1</paramValue><paramSource /><paramSourceDisplayText>表达式</paramSourceDisplayText></dtInvokeParams></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-18 08:14:35">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"ConcatStr(\"执行了首页的待办事单击方法, role = \", Convert(@role, 2))","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>ConcatStr("执行了首页的待办事单击方法, role = ", Convert(@role, 2))</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickSchedule" instanceName="控件属性设置_设置侧栏样式_单击待办事" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>967fcd6d23324b4d93f1909ed41dad45</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>967fcd6d23324b4d93f1909ed41dad45</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@role","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@role</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_openSchedule" instanceName="打开窗体并返回数据_打开待办事项页" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"StuScheduleForm","windowName":"待办事项_行政人员","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"待办事项\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"@userId","paramEntityType":"","entityFieldMapping":null},{"paramName":"userName","paramType":"expression","paramValue":"[entity_user].[uesrName]","paramEntityType":"","entityFieldMapping":null},{"paramName":"source","paramType":"expression","paramValue":"@source","paramEntityType":"","entityFieldMapping":null},{"paramName":"trole","paramType":"expression","paramValue":"@role","paramEntityType":"","entityFieldMapping":null},{"paramName":"schedule_opt","paramType":"expression","paramValue":"@schedule_opt","paramEntityType":"","entityFieldMapping":null},{"paramName":"schedule_remark","paramType":"expression","paramValue":"@schedule_remark","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>StuScheduleForm</WindowCode><WindowName>待办事项_行政人员</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"待办事项"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@userId</SourceValue></dtParam><dtParam><WindowVariant>userName</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[uesrName]</SourceValue></dtParam><dtParam><WindowVariant>source</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@source</SourceValue></dtParam><dtParam><WindowVariant>trole</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@role</SourceValue></dtParam><dtParam><WindowVariant>schedule_opt</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@schedule_opt</SourceValue></dtParam><dtParam><WindowVariant>schedule_remark</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@schedule_remark</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_SBApply" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ExecuteRuleSet1" />
+  <evaluateRule code="BR_SCP_clickApply" />
+  <evaluateRule code="BR_OCRD_toApplyForm" />
+  <evaluateRule code="BR_ShowMessage1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_f_SetActiveMenuItem(设置当前菜单项样式)" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"f_SetActiveMenuItem","isParallelism":"False"},"invokeParams":[{"paramCode":"activeMenuItemIndex","paramType":"expression","paramValue":"2","paramSource":"","dataFilterType":"","paramFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>f_SetActiveMenuItem</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtInvokeParams><paramCode>activeMenuItemIndex</paramCode><paramType>expression</paramType><paramValue>2</paramValue><paramSource /><paramSourceDisplayText>表达式</paramSourceDisplayText></dtInvokeParams></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickApply" instanceName="控件属性设置_设置侧栏样式_单击请假" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"BackColor","values":"67, 157, 67","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>67, 157, 67</PropertyValue></dtMaster><dtCondition><ID>92afec7d4c4c4dedbd5ed38a140e585d</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_toApplyForm" instanceName="跳转到请假申请窗体" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 11:15:10">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"applyLeaveForm","windowName":"ApplyLeave","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"在线请假\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"applicantRole","paramType":"expression","paramValue":"@role","paramEntityType":"","entityFieldMapping":null},{"paramName":"applicantName","paramType":"expression","paramValue":"[entity_user].[uesrName]","paramEntityType":"","entityFieldMapping":null},{"paramName":"applicantNum","paramType":"expression","paramValue":"[entity_user].[userNum]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>applyLeaveForm</WindowCode><WindowName>ApplyLeave</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"在线请假"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>applicantRole</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@role</SourceValue></dtParam><dtParam><WindowVariant>applicantName</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[uesrName]</SourceValue></dtParam><dtParam><WindowVariant>applicantNum</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[userNum]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"BR_OUT.BR_OCRD_toApplyForm.windowInstanceCode","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>BR_OUT.BR_OCRD_toApplyForm.windowInstanceCode</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_SBHistory" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ExecuteRuleSet1" />
+  <evaluateRule code="BR_SCP_clickHistory" />
+  <evaluateRule code="BR_OpenComponentReturnData1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_f_SetActiveMenuItem(设置当前菜单项样式)" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"f_SetActiveMenuItem","isParallelism":"False"},"invokeParams":[{"paramCode":"activeMenuItemIndex","paramType":"expression","paramValue":"3","paramSource":"","dataFilterType":"","paramFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>f_SetActiveMenuItem</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtInvokeParams><paramCode>activeMenuItemIndex</paramCode><paramType>expression</paramType><paramValue>3</paramValue><paramSource /><paramSourceDisplayText>表达式</paramSourceDisplayText></dtInvokeParams></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickHistory" instanceName="控件属性设置_设置侧栏样式_单击历史请假" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>b789aad215d342f5b817e69a52f854ef</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b789aad215d342f5b817e69a52f854ef</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b789aad215d342f5b817e69a52f854ef</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b789aad215d342f5b817e69a52f854ef</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>b789aad215d342f5b817e69a52f854ef</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OpenComponentReturnData1" instanceName="打开窗体并返回数据_打开数据统计页" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-24 17:28:40">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"TchHistoryForm","windowName":"历史记录","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"数据统计\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"trole","paramType":"expression","paramValue":"@role","paramEntityType":"","entityFieldMapping":null},{"paramName":"tno","paramType":"expression","paramValue":"@userId","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>TchHistoryForm</WindowCode><WindowName>历史记录</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"数据统计"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>trole</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@role</SourceValue></dtParam><dtParam><WindowVariant>tno</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@userId</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_SBStatistic" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ExecuteRuleSet1" />
+  <evaluateRule code="BR_SCP_clickStatistic" />
+  <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+  <evaluateRule code="BR_OpenComponentReturnData1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_f_SetActiveMenuItem(设置当前菜单项样式)" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"","ruleSetCode":"f_SetActiveMenuItem","isParallelism":"False"},"invokeParams":[{"paramCode":"activeMenuItemIndex","paramType":"expression","paramValue":"4","paramSource":"","dataFilterType":"","paramFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode /><ruleSetCode>f_SetActiveMenuItem</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtInvokeParams><paramCode>activeMenuItemIndex</paramCode><paramType>expression</paramType><paramValue>4</paramValue><paramSource /><paramSourceDisplayText>表达式</paramSourceDisplayText></dtInvokeParams></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickStatistic" instanceName="控件属性设置_设置侧栏样式_单击数据统计" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"16\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":true,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>b8e73ad9a03448c18b9fdbb71a4d3167</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b8e73ad9a03448c18b9fdbb71a4d3167</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b8e73ad9a03448c18b9fdbb71a4d3167</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"16","Strikeout":false,"Bold":true,"Italic":false,"Underline":true,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>b8e73ad9a03448c18b9fdbb71a4d3167</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>b8e73ad9a03448c18b9fdbb71a4d3167</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体_获取教师所属学院信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_teachers.tno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"entity_user","itemqueryparam":null,"items":[{"destName":"entity_user.collegeId","sourceName":"t_teachers.tcollegeId","type":"entityField"}],"orderBy":null,"sourceName":"t_teachers","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>entity_user</EntityName><SourceType>Table</SourceType><SourceName>t_teachers</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_teachers.tno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>1153fb9d3da2445abce96fd1b298b601</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>1153fb9d3da2445abce96fd1b298b601</MasterID><DestName>entity_user.collegeId</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tcollegeId</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>1153fb9d3da2445abce96fd1b298b601</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>1153fb9d3da2445abce96fd1b298b601</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OpenComponentReturnData1" instanceName="打开窗体并返回数据_打开数据统计页" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-25 23:33:32">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"StatisticForm","windowName":"数据统计","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"查询汇总\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"collegeId","paramType":"expression","paramValue":"[entity_user].[collegeId]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>StatisticForm</WindowCode><WindowName>数据统计</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"查询汇总"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>collegeId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[entity_user].[collegeId]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_SetActiveMenuItem" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SetControlPropertys1" />
+  <evaluateRule code="BR_SCP_clickApply" />
+  <evaluateRule code="BR_SCP_clickApply_1" />
+  <evaluateRule code="BR_SCP_clickApply_2" />
+  <evaluateRule code="BR_SCP_clickApply_3" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>6a20f32b077b459480398fa2fb35648b</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtCondition><ID>6a20f32b077b459480398fa2fb35648b</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickApply" instanceName="控件属性设置_设置侧栏样式_单击请假" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"BackColor","values":"63, 201, 132","valuetype":""}],"name":"BR_IN_PARENT.activeMenuItemIndex==1"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>63, 201, 132</PropertyValue></dtMaster><dtCondition><ID>92afec7d4c4c4dedbd5ed38a140e585d</ID><Name>BR_IN_PARENT.activeMenuItemIndex==1</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickApply_1" instanceName="控件属性设置_设置侧栏样式_单击请假_1" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"BackColor","values":"63, 201, 132","valuetype":""}],"name":"BR_IN_PARENT.activeMenuItemIndex==2"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>63, 201, 132</PropertyValue></dtMaster><dtCondition><ID>92afec7d4c4c4dedbd5ed38a140e585d</ID><Name>BR_IN_PARENT.activeMenuItemIndex==2</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickApply_2" instanceName="控件属性设置_设置侧栏样式_单击请假_2" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"BackColor","values":"63, 201, 132","valuetype":""}],"name":"BR_IN_PARENT.activeMenuItemIndex==3"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>63, 201, 132</PropertyValue></dtMaster><dtCondition><ID>92afec7d4c4c4dedbd5ed38a140e585d</ID><Name>BR_IN_PARENT.activeMenuItemIndex==3</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_clickApply_3" instanceName="控件属性设置_设置侧栏样式_单击请假_3" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGB_history","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_history","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_schedule","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_applyLeave","propertyCode":"BackColor","values":"32, 125, 220","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"FontStyle","values":"{\"Family\":\"微软雅黑\",\"Size\":\"20\",\"Strikeout\":false,\"Bold\":true,\"Italic\":false,\"Underline\":false,\"Unit\":\"Pixel\"}","valuetype":""},{"controlCode":"JGB_statistic","propertyCode":"BackColor","values":"63, 201, 132","valuetype":""}],"name":"BR_IN_PARENT.activeMenuItemIndex==4"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_history</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_schedule</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_applyLeave</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>32, 125, 220</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>FontStyle(字体)</PropertyName><PropertyCode>FontStyle</PropertyCode><PropertyValue>{"Family":"微软雅黑","Size":"20","Strikeout":false,"Bold":true,"Italic":false,"Underline":false,"Unit":"Pixel"}</PropertyValue></dtMaster><dtMaster><ConditionID>92afec7d4c4c4dedbd5ed38a140e585d</ConditionID><ControlCode>JGB_statistic</ControlCode><PropertyName>BackColor(背景色)</PropertyName><PropertyCode>BackColor</PropertyCode><PropertyValue>63, 201, 132</PropertyValue></dtMaster><dtCondition><ID>92afec7d4c4c4dedbd5ed38a140e585d</ID><Name>BR_IN_PARENT.activeMenuItemIndex==4</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+    <Inputs>
+      <Variable code="activeMenuItemIndex" name="当前菜单项编号" fieldType="integer" initValue="" isMust="true" desc="" />
+    </Inputs>
+  </Method>
+  <Method Code="JGL_exit" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_SC_exitForm" />
+  <evaluateRule code="BR_OCRD_GotoLogin" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"发达\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"发达"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SelectionConfirm" ruleName="退出窗体" instanceCode="BR_SC_exitForm" instanceName="退出窗体" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"SelectionConfirm":"0"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><SelectionConfirm>0</SelectionConfirm></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_GotoLogin" instanceName="打开窗体并返回数据_转到登录页" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-15 22:13:57">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"loginForm","windowName":"login","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"@userId","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>loginForm</WindowCode><WindowName>login</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@userId</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_userName_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_OCRD_openPersonalInfo" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_openPersonalInfo" instanceName="打开窗体并返回数据_打开个人信息页" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-14 15:20:15">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"personalInfoForm","windowName":"个人信息","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"windowContainer","browerWindowTitle":"\"个人信息\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"JGCC_workspace","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"@userId","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>personalInfoForm</WindowCode><WindowName>个人信息</WindowName><TargetContainerType>windowContainer</TargetContainerType><BrowerWindowTitle>"个人信息"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><WindowContainer>JGCC_workspace</WindowContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@userId</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

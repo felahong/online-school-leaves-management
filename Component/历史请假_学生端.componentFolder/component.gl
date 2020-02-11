@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="窗体加载事件" />
+  <Method MethodDir="UserMethod" FileName="f_convertLevel.method" Code="f_convertLevel" Name="请假等级转换" />
+  <Method MethodDir="UserMethod" FileName="f_getStatus.method" Code="f_getStatus" Name="获取状态名" />
+</Methods>

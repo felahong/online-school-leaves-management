@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2018/6/6 19:16:39-->
+<Methods>
+  <Method Code="form6_FormLoadAction" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>@BizId&lt;&gt;""</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ExecuteRuleSet1" />
+      <evaluateRule code="BR_AddTableRecord1" />
+    </sequence>
+  </else>
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>@FlowDriveMode&lt;&gt;"FlowDriveMod"</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_MakeControlRVE1" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_API_QueryLoginInfo(API_查询登录信息)" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"server-ruleSet","invokeType":"api","ruleLocation":"out","componentCode":"LoginComp","windowCode":"","ruleSetCode":"API_QueryLoginInfo","isParallelism":"False"},"invokeParams":null,"returnMapping":[{"destType":"ruleSetVariant","dest":"userId","srcType":"returnValue","src":"userId","updateDestEntityMethod":"","isCleanDestEntityData":false,"destFieldMapping":null,"filterCondition":null,"orderBy":null},{"destType":"ruleSetVariant","dest":"userName","srcType":"returnValue","src":"userName","updateDestEntityMethod":"","isCleanDestEntityData":false,"destFieldMapping":null,"filterCondition":null,"orderBy":null},{"destType":"ruleSetVariant","dest":"orgId","srcType":"returnValue","src":"orgId","updateDestEntityMethod":"","isCleanDestEntityData":false,"destFieldMapping":null,"filterCondition":null,"orderBy":null},{"destType":"ruleSetVariant","dest":"orgName","srcType":"returnValue","src":"orgName","updateDestEntityMethod":"","isCleanDestEntityData":false,"destFieldMapping":null,"filterCondition":null,"orderBy":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>server-ruleSet</sourceType><invokeType>api</invokeType><ruleLocation>out</ruleLocation><componentCode>LoginComp</componentCode><windowCode /><ruleSetCode>API_QueryLoginInfo</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtReturnMapping><destType>ruleSetVariant</destType><dest>userId</dest><srcType>returnValue</srcType><src>userId</src></dtReturnMapping><dtReturnMapping><destType>ruleSetVariant</destType><dest>userName</dest><srcType>returnValue</srcType><src>userName</src></dtReturnMapping><dtReturnMapping><destType>ruleSetVariant</destType><dest>orgId</dest><srcType>returnValue</srcType><src>orgId</src></dtReturnMapping><dtReturnMapping><destType>ruleSetVariant</destType><dest>orgName</dest><srcType>returnValue</srcType><src>orgName</src></dtReturnMapping></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_AddTableRecord1" instanceName="新增实体记录" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"sample_vacation.Applicant","fieldtype":"expression","srcField":"BR_VAR_PARENT.userName"},{"destField":"sample_vacation.id","fieldtype":"expression","srcField":"BR_VAR_PARENT.userId"},{"destField":"sample_vacation.ApplicatDept","fieldtype":"expression","srcField":"BR_VAR_PARENT.orgName"}],"TableType":"window","TableName":"sample_vacation","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>sample_vacation</EntityName></dtMaster><dtEntityColumns><DestName>sample_vacation.Applicant</DestName><SourceType>expression</SourceType><SourceName>BR_VAR_PARENT.userName</SourceName></dtEntityColumns><dtEntityColumns><DestName>sample_vacation.id</DestName><SourceType>expression</SourceType><SourceName>BR_VAR_PARENT.userId</SourceName></dtEntityColumns><dtEntityColumns><DestName>sample_vacation.ApplicatDept</DestName><SourceType>expression</SourceType><SourceName>BR_VAR_PARENT.orgName</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="MakeControlRVE" ruleName="控制控件的只读、使能、显示" instanceCode="BR_MakeControlRVE1" instanceName="控制控件的只读、使能、显示" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"mapping":null,"type":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OperType>1</OperType></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"sample_vacation.id","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@BizId","valueType":"9"}],"entityType":"window","entityName":"sample_vacation","itemqueryparam":null,"items":[{"destName":"sample_vacation.Applicant","sourceName":"sample_vacation.Applicant","type":"entityField"},{"destName":"sample_vacation.ApplicatDept","sourceName":"sample_vacation.ApplicatDept","type":"entityField"},{"destName":"sample_vacation.ApplyDate","sourceName":"sample_vacation.ApplyDate","type":"entityField"},{"destName":"sample_vacation.CreatDate","sourceName":"sample_vacation.CreatDate","type":"entityField"},{"destName":"sample_vacation.EndDate","sourceName":"sample_vacation.EndDate","type":"entityField"},{"destName":"sample_vacation.Flowstate","sourceName":"sample_vacation.Flowstate","type":"entityField"},{"destName":"sample_vacation.id","sourceName":"sample_vacation.id","type":"entityField"},{"destName":"sample_vacation.Reason","sourceName":"sample_vacation.Reason","type":"entityField"},{"destName":"sample_vacation.StartDate","sourceName":"sample_vacation.StartDate","type":"entityField"}],"orderBy":null,"sourceName":"sample_vacation","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>sample_vacation</EntityName><SourceType>Table</SourceType><SourceName>sample_vacation</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>sample_vacation.id</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@BizId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>532455c2bcde4776a5dacf3c321a5f31</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.Applicant</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.Applicant</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.ApplicatDept</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.ApplicatDept</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.ApplyDate</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.ApplyDate</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.CreatDate</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.CreatDate</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.EndDate</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.EndDate</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.Flowstate</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.Flowstate</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.id</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.id</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.Reason</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.Reason</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>532455c2bcde4776a5dacf3c321a5f31</MasterID><DestName>sample_vacation.StartDate</DestName><SourceType>entityField</SourceType><SourceName>sample_vacation.StartDate</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>532455c2bcde4776a5dacf3c321a5f31</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>532455c2bcde4776a5dacf3c321a5f31</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+    <Variables>
+      <Variable code="loginId" name="" fieldType="char" initValue="" isMust="false" desc="" />
+      <Variable code="loginName" name="" fieldType="char" initValue="" isMust="false" desc="" />
+      <Variable code="userId" name="" fieldType="char" initValue="" isMust="false" desc="" />
+      <Variable code="userName" name="" fieldType="char" initValue="" isMust="false" desc="" />
+      <Variable code="orgId" name="" fieldType="char" initValue="" isMust="false" desc="" />
+      <Variable code="orgName" name="" fieldType="char" initValue="" isMust="false" desc="" />
+    </Variables>
+  </Method>
+  <Method Code="EP_GetWorkFlowBizData" Type="Client" InterfaceType="Local" RestrictType="Private" dependency="vbase_workflow||3.14.0|ExtensionPoint|EP_GetWorkFlowBizData|client-ruleSet">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_UpdateRecord1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UpdateRecord1" instanceName="保存实体到数据库" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"sample_vacation.Applicant","colValue":"sample_vacation.Applicant","valueType":"entityField"},{"colName":"sample_vacation.ApplicatDept","colValue":"sample_vacation.ApplicatDept","valueType":"entityField"},{"colName":"sample_vacation.ApplyDate","colValue":"sample_vacation.ApplyDate","valueType":"entityField"},{"colName":"sample_vacation.CreatDate","colValue":"sample_vacation.CreatDate","valueType":"entityField"},{"colName":"sample_vacation.EndDate","colValue":"sample_vacation.EndDate","valueType":"entityField"},{"colName":"sample_vacation.Flowstate","colValue":"sample_vacation.Flowstate","valueType":"entityField"},{"colName":"sample_vacation.id","colValue":"sample_vacation.id","valueType":"entityField"},{"colName":"sample_vacation.Reason","colValue":"sample_vacation.Reason","valueType":"entityField"},{"colName":"sample_vacation.StartDate","colValue":"sample_vacation.StartDate","valueType":"entityField"}],"dataSource":"sample_vacation","dataSourceType":"window","destTab":"sample_vacation","isSaveAll":false}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>b6a1277505e144b4917223b437c12064</ID><SourceName>sample_vacation</SourceName><SourceType>window</SourceType><SourceNameType>sample_vacation(界面实体)</SourceNameType><IsSaveAll>False</IsSaveAll><TableName>sample_vacation</TableName></dtMaster><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.Applicant</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.Applicant</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.ApplicatDept</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.ApplicatDept</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.ApplyDate</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.ApplyDate</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.CreatDate</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.CreatDate</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.EndDate</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.EndDate</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.Flowstate</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.Flowstate</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.id</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.id</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.Reason</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.Reason</Value></dtDetails><dtDetails><PID>b6a1277505e144b4917223b437c12064</PID><SourceField>sample_vacation.StartDate</SourceField><DataFrom>entityField</DataFrom><Value>sample_vacation.StartDate</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+    <Inputs>
+      <Variable code="executeType" name="执行标识" fieldType="char" initValue="" isMust="false" desc="processStart(流程启动)/taskComplete(任务提交)/taskReject(任务回退)/taslSkip(任务跳转)" />
+    </Inputs>
+    <Outputs>
+      <Variable code="BizProcessTopic" name="流程实例名称" fieldType="char" initValue="" isMust="false" desc="该设置只会在流程启动时生效" />
+      <Variable code="BizTaskTopic" name="待办任务名称" fieldType="char" initValue="" isMust="false" desc="该设置只会在流程启动时生效" />
+      <Variable code="BizDataXML" name="业务快照数据XML" fieldType="text" initValue="" isMust="false" desc="" />
+      <Variable code="BizId" name="业务记录ID" fieldType="char" initValue="" isMust="false" desc="只有流程启动的时候才生效,其他忽略" />
+      <Variable code="IsBreak" name="是否中断操作（返回True时停止流程操作）" fieldType="boolean" initValue="" isMust="false" desc="" />
+    </Outputs>
+  </Method>
+</Methods>

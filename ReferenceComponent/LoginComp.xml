@@ -1,0 +1,1888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component code="LoginComp" name="登录构件" desc="登录构件" matchVersion="0">
+  <windows />
+  <resourcePackages />
+  <metaInfos>
+    <metaInfo type="model">
+      <modelMetas />
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_Biz_RegisterHomeWindowResource" desc="" name="注册主页窗体资源">
+          <inputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="注册的主页窗体信息（VBASE只允许设置一个）" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="255" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="255" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="255" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="是否设置成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_Biz_RegisterLoginWindowResource" desc="本方法用于注册登录窗体（登录主页）信息" name="注册登录窗体">
+          <inputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="注册的登录窗体信息（VBASE只允许设置一个）" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="0" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="0" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="0" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="是否设置成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_GetCustomLoginUrl" desc="获取自定义登录地址" name="获取自定义登录地址">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="customLoginUrl" name="自定义登录地址" type="text" desc="将返回后台配置com.toone.v3.platform-01core中customLoginUrl参数的值" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_AccPwdIdentityAuth" desc="API_账密码身份验证" name="API_账号密码身份验证">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="用于登录的账号名称" initValue="" isMust="true" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="用于登录的账号密码" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="用于登录的业务附加属性信息" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="身份认证是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="身份认证异常信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="身份认证异常编码" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_RegisterHomeWindowResource" desc="" name="API_注册主页窗体资源">
+          <inputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="注册的主页窗体信息（VBASE只允许设置一个）,注册前需要先反注册原有指定的主页窗体" initValue="" isMust="true" enumValue="" />
+              <variable code="isRegister" name="是否注册" type="boolean" desc="是否设置为主页窗体" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="255" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="255" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="255" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="是否设置成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_GetHomeWindowResource" desc="" name="获取主页窗体">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="255" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="255" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="255" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_AccPwdIdentityLoginWithBizMessage" desc="通过本方法可以进行登录账号密码的验证，验证成功后自动执行登入系统并返回登录人的业务信息，验证不成功则返回相应异常信息。" name="API_账号密码校验与登录并返回登录人业务信息">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="用于登录的账号名称" initValue="" isMust="true" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="用于登录的账号密码" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="用于登录的业务附加属性信息" initValue="" enumValue="" />
+              <variable code="isLoadBizMessage" name="是否返回登录人的业务信息" type="boolean" desc="true:返回登录人的业务信息(组织机构等信息);不传或false,不加载业务信息" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="密码验证与登录是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="密码验证与登录异常的详细内容" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="密码验证与登录异常编码" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="登录成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="登录成功后返回的账号中文名" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="密码认证的的返回附加信息;如果加载登录人的业务信息,则包含登录人的业务信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_SetLoginNewIdentity" desc="切换当前登录用户身份使用 注：必须登录" name="设置登录用户的新身份">
+          <inputs>
+            <variables>
+              <variable code="loginNewIdentity" name="身份属性实体" type="entity" desc="默认模式、机构模式需要传递：loginOrgId，loginPostId；角色模式需要传递：loginRoleId；" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginNewIdentity">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_LoginSelectIdentity" desc="该方法在登录调用登入方法后使用，一个多岗或多机构或多角色时调用该方法，切换身份请使用API_SetLoginOrgInfo" name="登录时选择身份">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_SetLoginOrgInfo" desc="切换身份时调用，登录时选择身份请使用API_LoginSelectIdentity" name="切换身份(登录后调用)">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_ReSetAccountPwd" desc="账号重置为默认密码" name="重置密码">
+          <inputs>
+            <variables>
+              <variable code="accountIds" name="多个使用逗号隔开" type="char" desc="不填，全部重置，填写只重置填写的id" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_AccPwdIdentityAndLogin" desc="通过本方法可以进行登录账号密码的验证，验证成功后自动执行登入系统，验证不成功则返回相应异常信息。" name="API_账号密码校验与登录">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="用于登录的账号名称" initValue="" isMust="true" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="用于登录的账号密码" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="用于登录的业务附加属性信息" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="密码验证与登录是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="密码验证与登录异常的详细内容" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="密码验证与登录异常编码" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="登录成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="登录成功后返回的账号中文名" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="密码认证的的返回附加信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_GetLoginWindowResource" desc="通过本方法可以获取登录窗体的信息" name="API_获取登录窗体资源">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="系统登录窗体信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="0" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="0" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="0" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_GetNeedLoginWindowResource" desc="本方法用于查询某一个构件内需要（或不需要）登录后能访问的窗体" name="API_获取是否需登录控制的窗体资源">
+          <inputs>
+            <variables>
+              <variable code="componentCode" name="构件编号" type="char" desc="查询范围所处的构件" initValue="" enumValue="" />
+              <variable code="isNeedLogin" name="是否需要登录验证" type="boolean" desc="传true返回需要登录验证的窗体，传false返回无需登录验证的窗体" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="返回的窗体信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="0" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="0" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="0" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_IdentityAndLogin" desc="本方法用于身份认证与登录" name="API_身份认证与登录">
+          <inputs>
+            <variables>
+              <variable code="authProps" name="认证属性" type="entity" desc="身份认证的输入属性信息" initValue="" enumValue="" />
+              <variable code="authStrategy" name="认证策略" type="char" desc="身份认证策略，默认为账号密码认证" initValue="VerifyAndLogin" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="authProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="身份认证与登录是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="身份认证与登录异常信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="身份认证与登录的异常编码" initValue="" />
+              <variable code="accountId" name="认证账号ID" type="char" desc="身份认证成功后返回的认证账号唯一标示" initValue="" />
+              <variable code="accountName" name="认证账号名" type="char" desc="身份认证成功后返回的认证账号名称" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_IdentityAuth" desc="本方法用于执行身份认证" name="API_身份认证">
+          <inputs>
+            <variables>
+              <variable code="authProps" name="认证属性" type="entity" desc="身份认证的输入信息" initValue="" enumValue="" />
+              <variable code="authStrategy" name="认证策略" type="char" desc="身份认证策略" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="authProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="身份认证是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="身份认证异常信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="身份认证异常编码" initValue="" />
+              <variable code="accountId" name="账号唯一ID" type="char" desc="身份认证成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="身份认证成功后返回的账号名称" initValue="" />
+              <variable code="additionalProps" name="附加属性实体" type="entity" desc="身份认证成功后返回的附加信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_InertOrUpdateAdditionalProps" desc="" name="更新或插入附加属性值">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="新增或更新附加属性" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="text" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="更新或插入附加属性值是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="更新或插入附加属性值的异常详细信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="更新或插入附加属性值的异常编码" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_Login" desc="本方法用于执行登入系统动作" name="API_登入">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="登入系统的账号唯一标示" initValue="" isMust="true" enumValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="登入系统的账号名称" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="登入系统的附加属性" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="登入系统是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="登入系统的异常详细信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="登入系统的异常编码" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="登入成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="登入成功后返回的账号名称" initValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="登入成功后返回的附加信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_Logout" desc="本方法执行登出系统的动作" name="API_登出">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="登出系统的账号唯一标示" initValue="" enumValue="" />
+              <variable code="accountName" name="账号" type="char" desc="登出系统的账号名字(可选)" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="登出是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="登出异常详细信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="登出异常编码" initValue="" />
+              <variable code="loginId" name="登出ID" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登出名称" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_QueryAllLoginInfo" desc="" name="获取系统所有登录信息">
+          <inputs>
+            <variables>
+              <variable code="isOnlyLoadCount" name="是否仅加载登录用户总数" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginModelEntity" name="基本登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginModelExtAttrEntity" name="扩展登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginCount" name="登录用户总数" type="integer" desc="" initValue="0" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginModelEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginDate" name="登入时间" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="loginName" name="登录者名称" type="char" length="255" precision="0" desc="" />
+                <element code="isSuperAdmin" name="是否为超级管理员" type="boolean" length="0" precision="0" desc="" />
+                <element code="ipAddress" name="登录ip" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+                <element code="isLogin" name="是否登陆" type="boolean" length="0" precision="0" desc="" />
+                <element code="logoutDate" name="登出时间" type="char" length="255" precision="0" desc="" />
+              </dataType>
+              <dataType code="loginModelExtAttrEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrKey" name="扩展属性名" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrValue" name="扩展属性值" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_QueryLoginBaseInfo" desc="" name="获取登陆基本信息（原始信息，不包含业务信息）">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginId" name="登录者id" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录者名称" type="char" desc="" initValue="" />
+              <variable code="isSuperAdmin" name="是否为超级管理员" type="boolean" desc="" initValue="" />
+              <variable code="ipAddress" name="登录ip" type="char" desc="" initValue="" />
+              <variable code="isLogin" name="是否登陆" type="boolean" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_QueryLoginInfo" desc="本方法用于查询当前客户端（通常为浏览器）的登录用户信息" name="API_查询登录信息">
+          <inputs>
+            <variables>
+              <variable code="queryParams" name="查询参数实体" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="queryParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="resultParams" name="返回值实体" type="entity" desc="当前登录账号的附加信息" initValue="" />
+              <variable code="loginId" name="登录ID" type="char" desc="当前登录账号id(默认同accountId)" initValue="" />
+              <variable code="loginName" name="登录名称" type="char" desc="当前登录账号名称(默认同accountName)" initValue="" />
+              <variable code="isSa" name="是否管理员" type="boolean" desc="当前登录账号是否为超级管理员" initValue="" />
+              <variable code="orgId" name="机构ID" type="char" desc="当前登录账号所属机构id(可能为空)" initValue="" />
+              <variable code="orgName" name="机构名称" type="char" desc="当前登录账号所属机构名称(可能为空)" initValue="" />
+              <variable code="postId" name="岗位ID" type="char" desc="当前登录账号所属岗位id(可能为空)" initValue="" />
+              <variable code="postName" name="岗位名称" type="char" desc="当前登录账号所属岗位名称(可能为空)" initValue="" />
+              <variable code="userId" name="用户ID" type="char" desc="当前登录账号所属人员id(可能为空)" initValue="" />
+              <variable code="userName" name="用户名称" type="char" desc="当前登录账号所属人员名称(可能为空)" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="当前登录账号所属账号ID" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="当前登录账号所属账号名称" initValue="" />
+              <variable code="isLogined" name="是否已经登录" type="boolean" desc="是否已登录(用于判断是否已登录)" initValue="" />
+              <variable code="postType" name="岗位类型" type="char" desc="当前登录账号所属岗位类型(normal:显式岗位,hidden:隐藏岗位(用户与机构直接关联的情况会出现隐藏岗位，可不取值))" initValue="" />
+              <variable code="belongOrgId" name="管理机构id" type="char" desc="" initValue="" />
+              <variable code="isToopOrgManager" name="是否顶级机构管理员" type="boolean" desc="当前登录账号是否为顶级机构管理员" initValue="" />
+              <variable code="userNo" name="用户工号" type="char" desc="当前登录账号所属人员工号(可能为空)" initValue="" />
+              <variable code="postCode" name="岗位编码" type="char" desc="当前登录账号所属岗位编码(可能为空)" initValue="" />
+              <variable code="orgNo" name="机构编码" type="char" desc="当前登录账号所属机构编码(可能为空)" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="resultParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_RegisterLoginWindowResource" desc="本方法用于注册登录窗体（登录主页）信息" name="API_注册登录窗体">
+          <inputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="注册的登录窗体信息（VBASE只允许设置一个）,注册前需要先反注册原有指定的登录窗体" initValue="" isMust="true" enumValue="" />
+              <variable code="isRegisterLogin" name="是否注册" type="boolean" desc="是否设置为登录窗体（登录主页）" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="0" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="0" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="0" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="是否设置成功" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_RegisterNeedLoginWindowResource" desc="本方法用于注册需要授登录控制的窗体信息" name="API_注册需登录控制的窗体资源">
+          <inputs>
+            <variables>
+              <variable code="windowResource" name="窗体资源实体" type="entity" desc="需要/不需要做登录控制的窗体信息" initValue="" isMust="true" enumValue="" />
+              <variable code="isNeedLogin" name="是否需要登录验证" type="boolean" desc="需要/不需要登录控制" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="windowResource">
+                <element code="code" name="窗体编号" type="char" length="0" precision="0" desc="" />
+                <element code="name" name="窗体名称" type="char" length="0" precision="0" desc="" />
+                <element code="componentCode" name="构件编号" type="char" length="0" precision="0" desc="" />
+                <element code="componentName" name="构件名称" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="设置是否成功" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_AfterLoginJump" desc="本方法已弃用，待删除" name="API_登录后跳转页面">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="accountName" name="账号" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables />
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_AfterLoginoutJumpStartPage" desc="本方法已弃用，待删除" name="API_登出后跳转启动页面">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables />
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="API_VerifyAndModifyPassword" desc="验证登录用户当前密码和系统设置密码一致时是否强制修改密码以及当前密码超出最大使用天数时修改密码,并弹出修改密码窗口" name="验证并修改登录密码">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="isSa" name="是否sa超级管理员账号" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_AccPwdIdentityLoginAndBizMessage" desc="" name="账号密码校验与登录并返回登录人业务信息">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="用于登录的账号名称" initValue="" isMust="true" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="用于登录的账号密码" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="用于登录的业务附加属性信息" initValue="" enumValue="" />
+              <variable code="isLoadBizMessage" name="是否返回登录人的业务信息" type="boolean" desc="true:返回登录人的业务信息(组织机构等信息);不传或false,不加载业务信息" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="密码验证与登录是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="密码验证与登录异常的详细内容" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="密码验证与登录异常编码" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="登录成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="登录成功后返回的账号中文名" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="密码认证的的返回附加信息;如果加载登录人的业务信息,则包含登录人的业务信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_AccPwdIdentityLoginAndBizMessage" desc="" name="账号密码校验与登录并返回登录人业务信息">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="用于登录的账号名称" initValue="" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="用于登录的账号密码" initValue="" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="用于登录的业务附加属性信息" initValue="" enumValue="" />
+              <variable code="isLoadBizMessage" name="是否返回登录人的业务信息" type="boolean" desc="true:返回登录人的业务信息(组织机构等信息);不传或false,不加载业务信息" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="密码验证与登录是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="密码验证与登录异常的详细内容" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="密码验证与登录异常编码" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="登录成功后返回的账号唯一标示" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="登录成功后返回的账号中文名" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="密码认证的的返回附加信息;如果加载登录人的业务信息,则包含登录人的业务信息" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_SetLoginNewIdentity" desc="" name="设置登录用户的新身份">
+          <inputs>
+            <variables>
+              <variable code="loginNewIdentity" name="身份属性实体" type="entity" desc="默认模式、机构模式需要传递：loginOrgId，loginPostId；角色模式需要传递：loginRoleId；" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginNewIdentity">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_SetLoginNewIdentity" desc="" name="设置登录用户的新身份">
+          <inputs>
+            <variables>
+              <variable code="loginNewIdentity" name="身份属性实体" type="entity" desc="默认模式、机构模式需要传递：orgId，postId；角色模式需要传递：roleId；" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginNewIdentity">
+                <element code="propertyKey" name="属性名" type="char" length="255" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_LoginSelectIdentity" desc="" name="登录时选择身份">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_LoginSelectIdentity" desc="" name="登录时选择身份">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_ReSetAccountPwd" desc="" name="重置密码">
+          <inputs>
+            <variables>
+              <variable code="accountIds" name="多个使用逗号隔开" type="char" desc="不填，全部重置，填写只重置填写的id" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_ReSetAccountPwd" desc="" name="重置密码">
+          <inputs>
+            <variables>
+              <variable code="accountIds" name="多个使用逗号隔开" type="char" desc="不填，全部重置，填写只重置填写的id" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_AccPwdIdentityAndLogin" desc="" name="SPI_账号密码校验与登录">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_AccPwdIdentityAndLogin" desc="本扩展点接口可以覆盖系统默认的账号密码验证与登录的实现方法(VBASE提供了默认方案)" name="EP_账号密码校验与登录">
+          <inputs>
+            <variables>
+              <variable code="loginAccount" name="账号" type="char" desc="" initValue="" enumValue="" />
+              <variable code="loginPassword" name="密码" type="char" desc="" initValue="" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_IdentityAuth" desc="SPI_身份认证" name="SPI_身份认证">
+          <inputs>
+            <variables>
+              <variable code="authProps" name="认证属性" type="entity" desc="" initValue="" enumValue="" />
+              <variable code="authStrategy" name="认证策略" type="char" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="authProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" />
+              <variable code="additionalProps" name="附加属性实体" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_IdentityAuth" desc="本扩展点用于接入身份认证实现方法（VBASE提供了默认方法）" name="EP_身份认证扩展点">
+          <inputs>
+            <variables>
+              <variable code="authProps" name="认证属性" type="entity" desc="" initValue="" enumValue="" />
+              <variable code="authStrategy" name="认证策略" type="char" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="authProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" />
+              <variable code="additionalProps" name="附加属性实体" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_InertOrUpdateAdditionalProps" desc="" name="更新或插入附加属性值">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="新增或更新附加属性" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="text" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="更新或插入附加属性值是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="更新或插入附加属性值的异常详细信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="更新或插入附加属性值的异常编码" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_InertOrUpdateAdditionalProps" desc="" name="更新或插入附加属性值">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="新增或更新附加属性" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="text" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="更新或插入附加属性值是否成功" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="更新或插入附加属性值的异常详细信息" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="更新或插入附加属性值的异常编码" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_Login" desc="SPI_登入" name="SPI_登入">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="" initValue="" />
+              <variable code="additionalProps" name="认证属性" type="entity" desc="" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_Login" desc="本扩展点用于接入登入的实现方法（VBASE提供了默认方案）" name="EP_登入扩展点">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" enumValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_Logout" desc="SPI_登出" name="SPI_登出">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="loginId" name="登录ID" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录名称" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_Logout" desc="本扩展点用于接入登出的实现方案（VBASE提供了默认方案）" name="EP_登出扩展点">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" enumValue="" />
+              <variable code="accountName" name="账号名" type="char" desc="" initValue="" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+              <variable code="loginId" name="登录ID" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录名称" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_QueryAllLoginInfo" desc="" name="获取系统所有登录信息">
+          <inputs>
+            <variables>
+              <variable code="isOnlyLoadCount" name="是否仅加载登录用户总数" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginModelEntity" name="基本登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginModelExtAttrEntity" name="扩展登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginCount" name="登录用户总数" type="integer" desc="" initValue="0" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginModelEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginDate" name="登入时间" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="loginName" name="登录者名称" type="char" length="255" precision="0" desc="" />
+                <element code="isSuperAdmin" name="是否为超级管理员" type="boolean" length="0" precision="0" desc="" />
+                <element code="ipAddress" name="登录ip" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+                <element code="isLogin" name="是否登陆" type="boolean" length="0" precision="0" desc="" />
+                <element code="logoutDate" name="登出时间" type="char" length="255" precision="0" desc="" />
+              </dataType>
+              <dataType code="loginModelExtAttrEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrKey" name="扩展属性名" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrValue" name="扩展属性值" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_QueryAllLoginInfo" desc="" name="获取系统所有登录信息">
+          <inputs>
+            <variables>
+              <variable code="isOnlyLoadCount" name="是否仅加载登录用户总数" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginModelEntity" name="基本登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginModelExtAttrEntity" name="扩展登录信息" type="entity" desc="" initValue="" />
+              <variable code="loginCount" name="登录用户总数" type="integer" desc="" initValue="0" />
+            </variables>
+            <dataTypes>
+              <dataType code="loginModelEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginDate" name="登入时间" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="loginName" name="登录者名称" type="char" length="255" precision="0" desc="" />
+                <element code="isSuperAdmin" name="是否为超级管理员" type="boolean" length="0" precision="0" desc="" />
+                <element code="ipAddress" name="登录ip" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+                <element code="isLogin" name="是否登陆" type="boolean" length="0" precision="0" desc="" />
+                <element code="logoutDate" name="登出时间" type="char" length="255" precision="0" desc="" />
+              </dataType>
+              <dataType code="loginModelExtAttrEntity">
+                <element code="id" name="实体唯一id" type="char" length="255" precision="0" desc="" />
+                <element code="loginId" name="登录者id" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrKey" name="扩展属性名" type="char" length="255" precision="0" desc="" />
+                <element code="extAttrValue" name="扩展属性值" type="char" length="255" precision="0" desc="" />
+                <element code="ticket" name="登录令牌" type="char" length="255" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_QueryLoginBaseInfo" desc="" name="获取登陆基本信息（原始信息，不包含业务信息）">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginId" name="登录者id" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录者名称" type="char" desc="" initValue="" />
+              <variable code="isSuperAdmin" name="是否为超级管理员" type="boolean" desc="" initValue="" />
+              <variable code="ipAddress" name="登录ip" type="char" desc="" initValue="" />
+              <variable code="isLogin" name="是否登陆" type="boolean" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_QueryLoginBaseInfo" desc="" name="获取登陆基本信息（原始信息，不包含业务信息）">
+          <inputs>
+            <variables />
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="loginId" name="登录者id" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录者名称" type="char" desc="" initValue="" />
+              <variable code="isSuperAdmin" name="是否为超级管理员" type="boolean" desc="" initValue="" />
+              <variable code="ipAddress" name="登录ip" type="char" desc="" initValue="" />
+              <variable code="isLogin" name="是否登陆" type="boolean" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_QueryLoginInfo" desc="" name="SPI_查询登录信息">
+          <inputs>
+            <variables>
+              <variable code="queryParams" name="查询参数实体" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="queryParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="resultParams" name="返回值实体" type="entity" desc="" initValue="" />
+              <variable code="loginId" name="登录ID" type="char" desc="" initValue="" />
+              <variable code="loginName" name="登录名称" type="char" desc="" initValue="" />
+              <variable code="isSa" name="是否管理员" type="boolean" desc="" initValue="" />
+              <variable code="orgId" name="机构ID" type="char" desc="" initValue="" />
+              <variable code="orgName" name="机构名称" type="char" desc="" initValue="" />
+              <variable code="postId" name="岗位ID" type="char" desc="" initValue="" />
+              <variable code="postName" name="岗位名称" type="char" desc="" initValue="" />
+              <variable code="userId" name="用户ID" type="char" desc="" initValue="" />
+              <variable code="userName" name="用户名称" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="" initValue="" />
+              <variable code="isLogined" name="是否已经登录" type="boolean" desc="" initValue="" />
+              <variable code="postType" name="岗位类型" type="char" desc="" initValue="" />
+              <variable code="belongOrgId" name="管理机构id" type="char" desc="" initValue="" />
+              <variable code="isToopOrgManager" name="是否顶级机构管理员" type="boolean" desc="当前登录账号是否为顶级机构管理员" initValue="" />
+              <variable code="userNo" name="用户工号" type="char" desc="当前登录账号所属人员工号(可能为空)" initValue="" />
+              <variable code="postCode" name="岗位编码" type="char" desc="当前登录账号所属岗位编码(可能为空)" initValue="" />
+              <variable code="orgNo" name="机构编码" type="char" desc="当前登录账号所属机构编码(可能为空)" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="resultParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="server-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_QueryLoginInfo" desc="本扩展点用于接入查询登录信息的实现方案（VBASE提供了默认方案）" name="EP_查询登录信息扩展点">
+          <inputs>
+            <variables>
+              <variable code="queryParams" name="查询参数实体" type="entity" desc="查询参数（vbase默认方案参数可不传值）" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="queryParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="resultParams" name="返回值实体" type="entity" desc="返回登用户录附加信息" initValue="" />
+              <variable code="loginId" name="登录ID" type="char" desc="登入系统的唯一标示(默认为accountId)" initValue="" />
+              <variable code="loginName" name="登录名称" type="char" desc="登入系统的登录名字（默认为accountName）" initValue="" />
+              <variable code="isSa" name="是否管理员" type="boolean" desc="当前登录账号是否为超级管理员" initValue="" />
+              <variable code="orgId" name="机构ID" type="char" desc="当前登录账号所属的机构id(若账号所属用户未挂到对应机构，则为空)" initValue="" />
+              <variable code="orgName" name="机构名称" type="char" desc="当前登录账号所属的机构名称(若账号所属用户未挂到对应机构，则为空)" initValue="" />
+              <variable code="postId" name="岗位ID" type="char" desc="当前登录账号所属的岗位id(若账号所属用户未挂到对应机构下的岗位，则为空)" initValue="" />
+              <variable code="postName" name="岗位名称" type="char" desc="当前登录账号所属的岗位名称(若账号所属用户未挂到对应机构下的岗位，则为空)" initValue="" />
+              <variable code="userId" name="用户ID" type="char" desc="" initValue="" />
+              <variable code="userName" name="用户名称" type="char" desc="" initValue="" />
+              <variable code="accountId" name="账号ID" type="char" desc="" initValue="" />
+              <variable code="accountName" name="账号名称" type="char" desc="" initValue="" />
+              <variable code="isLogined" name="是否已经登录" type="boolean" desc="" initValue="" />
+              <variable code="postType" name="岗位类型" type="char" desc="" initValue="" />
+              <variable code="belongOrgId" name="管理机构id" type="char" desc="" initValue="" />
+              <variable code="isToopOrgManager" name="是否顶级机构管理员" type="boolean" desc="当前登录账号是否为顶级机构管理员" initValue="" />
+              <variable code="userNo" name="用户工号" type="char" desc="当前登录账号所属人员工号(可能为空)" initValue="" />
+              <variable code="postCode" name="岗位编码" type="char" desc="当前登录账号所属岗位编码(可能为空)" initValue="" />
+              <variable code="orgNo" name="机构编码" type="char" desc="当前登录账号所属机构编码(可能为空)" initValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="resultParams">
+                <element code="key" name="属性Key" type="char" length="0" precision="0" desc="" />
+                <element code="value" name="属性Value" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_AfterLoginJumpPageJudge" desc="SPI_登录后跳转页面判断" name="SPI_登录后跳转页面判断">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="accountName" name="账号" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="componentCode" name="构件编号" type="char" desc="" initValue="" />
+              <variable code="windowCode" name="窗体编号" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_AfterLoginJumpPageJudge" desc="" name="EP_登录后跳转页面判断">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号唯一ID" type="char" desc="" initValue="" enumValue="" />
+              <variable code="accountName" name="账号" type="char" desc="" initValue="" enumValue="" />
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="componentCode" name="构件编号" type="char" desc="" initValue="" />
+              <variable code="windowCode" name="窗体编号" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_AfterLoginoutJumpStartPage" desc="" name="SPI_登出后跳转启动页面">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="componentCode" name="构件编号" type="char" desc="" initValue="" />
+              <variable code="windowCode" name="窗体编号" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_AfterLoginoutJumpStartPage" desc="" name="EP_登出后跳转启动页面">
+          <inputs>
+            <variables>
+              <variable code="additionalProps" name="附加属性" type="entity" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes>
+              <dataType code="additionalProps">
+                <element code="propertyKey" name="属性名" type="char" length="0" precision="0" desc="" />
+                <element code="propertyValue" name="属性值" type="char" length="0" precision="0" desc="" />
+              </dataType>
+            </dataTypes>
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="componentCode" name="构件编号" type="char" desc="" initValue="" />
+              <variable code="windowCode" name="窗体编号" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_SetLoginOrgInfo" desc="" name="设置登陆用户的组织信息(登陆后调用)">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" isMust="true" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_SetLoginOrgInfo" desc="" name="设置登陆用户的组织信息(登陆后调用)">
+          <inputs>
+            <variables>
+              <variable code="loginId" name="登陆Id" type="char" desc="" initValue="" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isScuess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorMessage" name="错误信息" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="SPI_VerifyAndModifyPassword" desc="" name="验证并修改密码">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号" type="char" desc="" initValue="" isMust="true" enumValue="" />
+              <variable code="isSa" name="是否sa超级管理员账号" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+    <metaInfo type="client-ruleSet">
+      <ruleSetMetas>
+        <ruleSetMeta windowCode="" metaCode="EP_VerifyAndModifyPassword" desc="" name="验证并修改密码">
+          <inputs>
+            <variables>
+              <variable code="accountId" name="账号" type="char" desc="" initValue="" enumValue="" />
+              <variable code="isSa" name="是否sa超级管理员账号" type="boolean" desc="" initValue="False" enumValue="" />
+            </variables>
+            <dataTypes />
+          </inputs>
+          <outputs>
+            <variables>
+              <variable code="isSuccess" name="是否成功" type="boolean" desc="" initValue="" />
+              <variable code="errorDetail" name="异常细节" type="char" desc="" initValue="" />
+              <variable code="errorCode" name="异常编码" type="char" desc="" initValue="" />
+            </variables>
+            <dataTypes />
+          </outputs>
+        </ruleSetMeta>
+      </ruleSetMetas>
+    </metaInfo>
+  </metaInfos>
+  <manifest>
+    <bundle-info>
+      <symbolic-name><![CDATA[LoginComp]]></symbolic-name>
+      <bundle-name><![CDATA[登录构件]]></bundle-name>
+      <bundle-version><![CDATA[3.12.0]]></bundle-version>
+      <bundle-type><![CDATA[DesignSchemaSDK]]></bundle-type>
+      <provider><![CDATA[huangjr]]></provider>
+      <description><![CDATA[登录构件]]></description>
+      <lastModified>1540440688000</lastModified>
+      <outTableInitDatas>false</outTableInitDatas>
+    </bundle-info>
+    <interface>
+      <apis>
+        <api>
+          <metaReference windowCode="" metaCode="API_Biz_RegisterHomeWindowResource" metaType="server-ruleSet" metaName="注册主页窗体资源" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_Biz_RegisterLoginWindowResource" metaType="server-ruleSet" metaName="注册登录窗体" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_GetCustomLoginUrl" metaType="server-ruleSet" metaName="获取自定义登录地址" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_AccPwdIdentityAuth" metaType="server-ruleSet" metaName="API_账号密码身份验证" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_RegisterHomeWindowResource" metaType="server-ruleSet" metaName="API_注册主页窗体资源" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_GetHomeWindowResource" metaType="server-ruleSet" metaName="获取主页窗体" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_AccPwdIdentityLoginWithBizMessage" metaType="server-ruleSet" metaName="API_账号密码校验与登录并返回登录人业务信息" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_SetLoginNewIdentity" metaType="server-ruleSet" metaName="设置登录用户的新身份" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_LoginSelectIdentity" metaType="client-ruleSet" metaName="登录时选择身份" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_SetLoginOrgInfo" metaType="client-ruleSet" metaName="切换身份(登录后调用)" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_ReSetAccountPwd" metaType="server-ruleSet" metaName="重置密码" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_AccPwdIdentityAndLogin" metaType="server-ruleSet" metaName="API_账号密码校验与登录" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_GetLoginWindowResource" metaType="server-ruleSet" metaName="API_获取登录窗体资源" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_GetNeedLoginWindowResource" metaType="server-ruleSet" metaName="API_获取是否需登录控制的窗体资源" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_IdentityAndLogin" metaType="server-ruleSet" metaName="API_身份认证与登录" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_IdentityAuth" metaType="server-ruleSet" metaName="API_身份认证" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_InertOrUpdateAdditionalProps" metaType="server-ruleSet" metaName="更新或插入附加属性值" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_Login" metaType="server-ruleSet" metaName="API_登入" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_Logout" metaType="server-ruleSet" metaName="API_登出" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_QueryAllLoginInfo" metaType="server-ruleSet" metaName="获取系统所有登录信息" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_QueryLoginBaseInfo" metaType="server-ruleSet" metaName="获取登陆基本信息（原始信息，不包含业务信息）" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_QueryLoginInfo" metaType="server-ruleSet" metaName="API_查询登录信息" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_RegisterLoginWindowResource" metaType="server-ruleSet" metaName="API_注册登录窗体" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_RegisterNeedLoginWindowResource" metaType="server-ruleSet" metaName="API_注册需登录控制的窗体资源" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_AfterLoginJump" metaType="client-ruleSet" metaName="API_登录后跳转页面" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_AfterLoginoutJumpStartPage" metaType="client-ruleSet" metaName="API_登出后跳转启动页面" />
+        </api>
+        <api>
+          <metaReference windowCode="" metaCode="API_VerifyAndModifyPassword" metaType="client-ruleSet" metaName="验证并修改登录密码" />
+        </api>
+      </apis>
+      <spis>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_AccPwdIdentityLoginAndBizMessage" metaType="server-ruleSet" metaName="账号密码校验与登录并返回登录人业务信息" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_AccPwdIdentityLoginAndBizMessage" metaType="server-ruleSet" metaName="账号密码校验与登录并返回登录人业务信息" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_SetLoginNewIdentity" metaType="server-ruleSet" metaName="设置登录用户的新身份" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_SetLoginNewIdentity" metaType="server-ruleSet" metaName="设置登录用户的新身份" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_LoginSelectIdentity" metaType="client-ruleSet" metaName="登录时选择身份" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_LoginSelectIdentity" metaType="client-ruleSet" metaName="登录时选择身份" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_ReSetAccountPwd" metaType="server-ruleSet" metaName="重置密码" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_ReSetAccountPwd" metaType="server-ruleSet" metaName="重置密码" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_AccPwdIdentityAndLogin" metaType="server-ruleSet" metaName="SPI_账号密码校验与登录" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_AccPwdIdentityAndLogin" metaType="server-ruleSet" metaName="EP_账号密码校验与登录" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_IdentityAuth" metaType="server-ruleSet" metaName="SPI_身份认证" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_IdentityAuth" metaType="server-ruleSet" metaName="EP_身份认证扩展点" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_InertOrUpdateAdditionalProps" metaType="server-ruleSet" metaName="更新或插入附加属性值" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_InertOrUpdateAdditionalProps" metaType="server-ruleSet" metaName="更新或插入附加属性值" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_Login" metaType="server-ruleSet" metaName="SPI_登入" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_Login" metaType="server-ruleSet" metaName="EP_登入扩展点" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_Logout" metaType="server-ruleSet" metaName="SPI_登出" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_Logout" metaType="server-ruleSet" metaName="EP_登出扩展点" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_QueryAllLoginInfo" metaType="server-ruleSet" metaName="获取系统所有登录信息" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_QueryAllLoginInfo" metaType="server-ruleSet" metaName="获取系统所有登录信息" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_QueryLoginBaseInfo" metaType="server-ruleSet" metaName="获取登陆基本信息（原始信息，不包含业务信息）" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_QueryLoginBaseInfo" metaType="server-ruleSet" metaName="获取登陆基本信息（原始信息，不包含业务信息）" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_QueryLoginInfo" metaType="server-ruleSet" metaName="SPI_查询登录信息" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_QueryLoginInfo" metaType="server-ruleSet" metaName="EP_查询登录信息扩展点" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_AfterLoginJumpPageJudge" metaType="client-ruleSet" metaName="SPI_登录后跳转页面判断" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_AfterLoginJumpPageJudge" metaType="client-ruleSet" metaName="EP_登录后跳转页面判断" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_AfterLoginoutJumpStartPage" metaType="client-ruleSet" metaName="SPI_登出后跳转启动页面" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_AfterLoginoutJumpStartPage" metaType="client-ruleSet" metaName="EP_登出后跳转启动页面" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_SetLoginOrgInfo" metaType="client-ruleSet" metaName="设置登陆用户的组织信息(登陆后调用)" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_SetLoginOrgInfo" metaType="client-ruleSet" metaName="设置登陆用户的组织信息(登陆后调用)" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+        <spi>
+          <metaReference windowCode="" metaCode="SPI_VerifyAndModifyPassword" metaType="client-ruleSet" metaName="验证并修改密码" />
+          <extensionPoints>
+            <extensionPoint>
+              <metaReference windowCode="" metaCode="EP_VerifyAndModifyPassword" metaType="client-ruleSet" metaName="验证并修改密码" />
+            </extensionPoint>
+          </extensionPoints>
+        </spi>
+      </spis>
+    </interface>
+    <dependencies />
+    <imports>
+      <import componentCode="com.toone.v3.platform-Webrule_ExecuteRuleSet" componentName="执行方法" />
+      <import componentCode="com.toone.v3.platform-Webrule_SetEntityVarControlValue" componentName="给界面实体/控件/变量赋值" />
+      <import componentCode="com.toone.v3.platform-Webrule_AbortRule" componentName="中断规则" />
+      <import componentCode="com.toone.v3.platform-Webrule_AddTableRecord" componentName="新增界面实体记录" />
+      <import componentCode="com.toone.v3.platform-Webrule_OpenComponentReturnData" componentName="打开窗体并返回数据" />
+      <import componentCode="com.toone.v3.platform-Webrule_ShowMessage" componentName="显示设置的提示信息" />
+      <import componentCode="com.toone.v3.platform-Webrule_CopyRecordBetweenEntity" componentName="实体间复制记录(后台规则)" />
+      <import componentCode="com.toone.v3.platform-Webrule_OpenLink" componentName="打开链接地址" />
+      <import componentCode="com.toone.v3.platform-Webfunc_IsEmpty" componentName="检查是否为空值" />
+      <import componentCode="com.toone.v3.platform-Webfunc_ConcatStr" componentName="字符串合并" />
+    </imports>
+    <consistencies>
+      <consistency matchCode="ServerRules.ExecuteRuleSet" matchVersion="2" />
+      <consistency matchCode="ServerRules.AddTableRecord" matchVersion="1" />
+      <consistency matchCode="ServerRules.CopyRecordBetweenEntity" matchVersion="1" />
+      <consistency matchCode="ServerRules.SetEntityVarControlValue" matchVersion="2" />
+      <consistency matchCode="ServerRules.AbortRule" matchVersion="1" />
+      <consistency matchCode="ClientRules.ExecuteRuleSet" matchVersion="2" />
+      <consistency matchCode="ClientRules.SetEntityVarControlValue" matchVersion="1" />
+      <consistency matchCode="ClientRules.OpenComponentReturnData" matchVersion="4" />
+      <consistency matchCode="ClientRules.ShowMessage" matchVersion="1" />
+      <consistency matchCode="ClientRules.AbortRule" matchVersion="1" />
+      <consistency matchCode="ClientRules.OpenLink" matchVersion="2" />
+      <consistency matchCode="ServerFunctions.GetEntityRowCountFunc" matchVersion="1" />
+      <consistency matchCode="ServerFunctions.IsEmpty" matchVersion="1" />
+      <consistency matchCode="ClientFunctions.IsEmpty" matchVersion="1" />
+      <consistency matchCode="ClientFunctions.ConcatStr" matchVersion="1" />
+    </consistencies>
+  </manifest>
+  <extendableWindows />
+  <partLibType>
+    <partLibTypeCode><![CDATA[release]]></partLibTypeCode>
+    <partLibTypeName><![CDATA[稳定版 (release)]]></partLibTypeName>
+  </partLibType>
+</component>

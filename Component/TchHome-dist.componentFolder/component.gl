@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="Home_FLA_load.method" Code="Home_FLA_load" Name="首页窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBApply.method" Code="JGB_SBApply" Name="在线申请单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBSchedule.method" Code="JGB_SBSchedule" Name="待办事单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_showApplyingInfo.method" Code="JGL_showApplyingInfo" Name="正在请假条数" />
+  <Method MethodDir="ControlMethod" FileName="JGL_sideBar_click.method" Code="JGL_sideBar_click" Name="左侧栏单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBHistory.method" Code="JGB_SBHistory" Name="历史请假单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_SBStatistic.method" Code="JGB_SBStatistic" Name="数据统计单击事件" />
+</Methods>

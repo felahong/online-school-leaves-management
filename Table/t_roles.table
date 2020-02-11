@@ -1,0 +1,50 @@
+﻿<Table id="82c93b7629a0496fa9275583c18f6d9f" code="t_roles" name="角色对应表">
+  <Remark><![CDATA[学院教师的角色对应：科任老师，辅导员，院级领导，校级领导]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 18:25:01]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-17 22:04:42]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="c68185ce8a8f417c9ec6f7d4189a175c" code="roleId" name="角色id" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="26c3b8be1e604674ac05d026ae9e318e" code="roleName" name="角色名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[ed9eb68c60244f519509f1421e0bf42e]]></ColumnData>
+      <ColumnData code="roleId"><![CDATA[0]]></ColumnData>
+      <ColumnData code="roleName"><![CDATA[学生]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[8253b4a71d6244a4a3fa8465e97a0f7a]]></ColumnData>
+      <ColumnData code="roleId"><![CDATA[4]]></ColumnData>
+      <ColumnData code="roleName"><![CDATA[科任老师]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[aab48e01899c4fee844d0cb56889a9c7]]></ColumnData>
+      <ColumnData code="roleId"><![CDATA[1]]></ColumnData>
+      <ColumnData code="roleName"><![CDATA[辅导员]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[87efc5ea44544b7a95e8874dc8ad5dca]]></ColumnData>
+      <ColumnData code="roleId"><![CDATA[2]]></ColumnData>
+      <ColumnData code="roleName"><![CDATA[院级领导]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[e234b57a53744086882739cb71155d6e]]></ColumnData>
+      <ColumnData code="roleId"><![CDATA[3]]></ColumnData>
+      <ColumnData code="roleName"><![CDATA[校级领导]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

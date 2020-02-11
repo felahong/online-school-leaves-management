@@ -1,0 +1,35 @@
+<Table id="29fdc1f326944c1e98ada1823c367999" code="t_colleges_majors" name="学院专业表">
+  <Remark><![CDATA[学院和专业的对应]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 18:35:14]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-16 11:08:04]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="244ee80a585e4b2cbf8914a9274bb88f" code="cllgId" name="学院Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="2d160a20511049d191b7105c7e67fd1a" code="majorId" name="专业Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[0c6f43ba51b44303824a01fc6d755da4]]></ColumnData>
+      <ColumnData code="cllgId"><![CDATA[cl04]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[8bc3f88d522e4892a733e17224ad7817]]></ColumnData>
+      <ColumnData code="cllgId"><![CDATA[cl03]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0305]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

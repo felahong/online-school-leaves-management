@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_save.method" Code="JGB_save" Name="保存单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_updateInfo.method" Code="JGB_updateInfo" Name="修改个人信息单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_updatePw.method" Code="JGB_updatePw" Name="修改密码单击事件" />
+</Methods>

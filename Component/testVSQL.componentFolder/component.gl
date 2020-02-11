@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_load.method" Code="f_load" Name="窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGButton1_OnClick.method" Code="JGButton1_OnClick" Name="JGButton1_单击事件" />
+  <Method MethodDir="UserMethod" FileName="f_loadSQL.method" Code="f_loadSQL" Name="" />
+</Methods>

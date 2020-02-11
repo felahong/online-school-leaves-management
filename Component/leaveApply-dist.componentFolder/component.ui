@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<form type="1002" code="leaveApplyForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_formLoad]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[leaveApply-dist]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGLabel Code="JGL_timeTip" LabelText="" Width="70" PercentHeight="5.3%" PercentWidth="7.3%" Top="117" Left="651" TabIndex="6" LastModifiedTime="2019-07-07 20:05:03" LastModifiedUser="15013952708" />
+    <JGGroupBox Code="JGGB_applyReason" LabelText="请假事由" Height="133" Width="610" PercentHeight="29.6%" PercentWidth="63.5%" Top="162" Left="69" TabIndex="7" LastModifiedTime="2019-07-07 10:54:37" LastModifiedUser="15013952708">
+      <JGPanel Code="JGPanel1" Height="112" Width="608" PercentHeight="100%" PercentWidth="100%" Top="20" TabIndex="8" Dock="Fill" BorderWidth="0" LayoutType="BorderLayout" IsForGroupBox="True" LastModifiedTime="2019-07-09 15:21:36" LastModifiedUser="15013952708">
+        <JGRadioGroup Code="JGRG_sortChoose" LabelText="" Width="231" PercentHeight="23.2%" PercentWidth="38%" Top="7" Left="3" TabIndex="11" LabelWidth="30" BorderStyles="None" DropDownSource="{&quot;DataSourceSetting&quot;:{&quot;DataConfig&quot;:{&quot;DefaultSaveColumn&quot;:null,&quot;DefaultShowColumn&quot;:null,&quot;SourceType&quot;:null,&quot;SourceID&quot;:null,&quot;SourceName&quot;:null,&quot;MapTable&quot;:null,&quot;SaveColumn&quot;:null,&quot;ShowColumn&quot;:null,&quot;SortField&quot;:null,&quot;SortType&quot;:null,&quot;MaxRecCount&quot;:0,&quot;QueryField&quot;:null,&quot;QueryMethod&quot;:null,&quot;IsPickListFields&quot;:false,&quot;ConstData&quot;:[{&quot;id&quot;:&quot;病假&quot;,&quot;text&quot;:&quot;病假&quot;,&quot;selected&quot;:&quot;False&quot;},{&quot;id&quot;:&quot;事假&quot;,&quot;text&quot;:&quot;事假&quot;,&quot;selected&quot;:&quot;False&quot;},{&quot;id&quot;:&quot;其它&quot;,&quot;text&quot;:&quot;其它&quot;,&quot;selected&quot;:&quot;False&quot;}],&quot;SqlQueryConstData&quot;:null,&quot;EntityConstData&quot;:null,&quot;Condition&quot;:null,&quot;QueryParam&quot;:null,&quot;PickListFields&quot;:null},&quot;DataSourceType&quot;:&quot;CustomConst&quot;}}" LastModifiedTime="2019-07-07 10:55:40" LastModifiedUser="15013952708" />
+        <JGTextBox Code="JGTB_detailedReason" LabelText="详细原因" Width="602" Height="61" PercentHeight="54.5%" PercentWidth="99%" Top="39" Left="3" TabIndex="9" LabelTextAlign="Center" IsMust="True" LastModifiedTime="2019-07-07 10:56:28" LastModifiedUser="15013952708" />
+      </JGPanel>
+    </JGGroupBox>
+    <JGLabel Code="JGL_applyDays" LabelText="0" Width="20" PercentHeight="5.3%" PercentWidth="2.1%" Top="117" Left="625" TabIndex="6" LastModifiedTime="2019-07-07 20:04:21" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGLabel1" LabelText="申请天数：" PercentHeight="5.3%" PercentWidth="7.1%" Top="117" Left="551" TabIndex="6" LastModifiedTime="2019-07-07 12:59:48" LastModifiedUser="15013952708" />
+    <JGDateTimePicker Code="JGDTP_endTime" LabelText="结束时间" PercentHeight="5.8%" PercentWidth="24.5%" Top="117" Left="310" TabIndex="6" LabelTextAlign="Center" OnValueChanged="f_verifyEndTime" OnValueLoaded="f_verifyEndTime" IsMust="True" LastModifiedTime="2019-07-07 15:04:23" LastModifiedUser="15013952708" />
+    <JGDateTimePicker Code="JGDTP_startTime" LabelText="开始时间" PercentHeight="5.8%" PercentWidth="24.5%" Top="117" Left="69" TabIndex="6" LabelTextAlign="Center" OnValueChanged="f_verifyStartTime" OnValueLoaded="f_verifyStartTime" IsMust="True" LastModifiedTime="2019-07-07 12:12:36" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_cancel" LabelText="取消" PercentHeight="5.8%" PercentWidth="5.4%" Top="43" Left="127" TabIndex="1" BackColor="255, 0, 0" OnClick="JGB_OC_cancel" LastModifiedTime="2019-07-07 10:41:52" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_submit" LabelText="提交" PercentHeight="5.8%" PercentWidth="5.4%" Top="43" Left="69" TabIndex="0" OnClick="JGB_submit_OnClick" LastModifiedTime="2019-07-07 10:41:52" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_applicant" LabelText="申请人" PercentHeight="5.8%" PercentWidth="24.5%" Top="85" Left="69" TabIndex="0" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-07 11:01:05" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs>
+    <variable code="applicantRole" name="申请人角色" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applicantName" name="申请人姓名" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="applicantNum" name="申请人号码" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <remark><![CDATA[]]></remark>
+</form>

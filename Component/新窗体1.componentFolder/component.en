@@ -1,0 +1,91 @@
+﻿<EntityConfig version="2.0">
+  <Entitys>
+    <Entity TemplateId="" TemplateCode="" Code="sample_vacation" Name="请假申请" EntityType="" TableOrQueryCode="sample_vacation">
+      <Columns>
+        <Column>
+          <Code>Applicant</Code>
+          <Name>申请人</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>StartDate</Code>
+          <Name>开始时间</Name>
+          <DataType>date</DataType>
+          <Length></Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>EndDate</Code>
+          <Name>结束时间</Name>
+          <DataType>date</DataType>
+          <Length></Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>ApplicatDept</Code>
+          <Name>申请人所属部门</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>ApplyDate</Code>
+          <Name>申请天数</Name>
+          <DataType>integer</DataType>
+          <Length>50</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>Flowstate</Code>
+          <Name>申请状态</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>Reason</Code>
+          <Name>请假原因</Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>CreatDate</Code>
+          <Name>申请时间</Name>
+          <DataType>longDate</DataType>
+          <Length></Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+        <Column>
+          <Code>id</Code>
+          <Name></Name>
+          <DataType>char</DataType>
+          <Length>64</Length>
+          <Precision></Precision>
+          <DefaultValue></DefaultValue>
+          <Expression />
+        </Column>
+      </Columns>
+      <Events />
+    </Entity>
+  </Entitys>
+  <Relations />
+</EntityConfig>

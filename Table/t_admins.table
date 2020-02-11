@@ -1,0 +1,35 @@
+<Table id="3092065d29ac499091fd07d3a40dfe20" code="t_admins" name="管理员表">
+  <Remark><![CDATA[负责该系统的管理人员]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-22 22:38:51]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-05-22 22:40:20]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="58589c1dffd74b45b467130d7f807169" code="adminId" name="管理员Id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="47274494a5384f43826c47090f0e7ff4" code="adminPw" name="管理员密码" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="1aed7fb7ec9f4d28a3a42c24d5820b81" code="adminName" name="管理员名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[5dbc6374fd204e98baa294b98c7e4d14]]></ColumnData>
+      <ColumnData code="adminId"><![CDATA[a01]]></ColumnData>
+      <ColumnData code="adminPw"><![CDATA[a01]]></ColumnData>
+      <ColumnData code="adminName"><![CDATA[Ricky]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

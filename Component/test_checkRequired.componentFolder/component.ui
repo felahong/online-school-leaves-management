@@ -1,0 +1,27 @@
+﻿<form type="1002" code="test_checkRequiredForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[test_checkRequired]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGButton Code="JGButton1" LabelText="submit" Width="68" PercentHeight="5.8%" PercentWidth="7.1%" Top="158" Left="410" TabIndex="1" OnClick="JGButton1_OnClick" LastModifiedTime="2019-07-09 17:25:40" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTextBox1" LabelText="文本" PercentHeight="5.8%" PercentWidth="24.5%" Top="93" Left="228" TabIndex="0" IsMust="True" LastModifiedTime="2019-07-09 17:23:45" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs />
+  <remark><![CDATA[]]></remark>
+</form>

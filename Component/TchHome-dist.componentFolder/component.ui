@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<form type="1002" code="TchHomeForm_dist" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[1400]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[BorderLayout]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[Home_FLA_load]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[TchHome-dist]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <outputs />
+  <inputs>
+    <variable code="userId" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+    <variable code="role" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <controls>
+    <JGPanel Code="JGP_workspace" Height="371" Width="1218" PercentHeight="82.4%" PercentWidth="87%" Top="79" Left="182" TabIndex="37" Dock="Fill" BorderStyle="None" LayoutType="BorderLayout" LastModifiedTime="2019-07-10 19:29:59" LastModifiedUser="15013952708">
+      <JGComponentContainer Code="JGCC_workspace" Alias="工作区" Height="371" Width="1218" PercentHeight="100%" PercentWidth="100%" TabIndex="41" Dock="Fill" TabPageDisplayMode="Hide" BorderStyles="NULL" LastModifiedTime="2019-05-23 16:19:13" LastModifiedUser="15013952708" />
+    </JGPanel>
+    <JGPanel Code="JGP_left" Height="371" Width="182" PercentHeight="82.4%" PercentWidth="13%" Top="79" TabIndex="36" Dock="Left" BackColor="32, 125, 220" BorderStyle="None" BorderWidth="2" LayoutType="BorderLayout" LastModifiedTime="2019-07-10 23:47:43" LastModifiedUser="15013952708">
+      <JGButton Code="JGB_statistic" LabelText="数据统计" Height="39" Width="182" PercentHeight="10.5%" PercentWidth="100%" Top="153" TabIndex="9" FontStyle="微软雅黑, 12pt, style=Bold" BackColor="32, 124, 220" OnClick="JGB_SBStatistic" LastModifiedTime="2019-07-11 00:03:04" LastModifiedUser="15013952708" />
+      <JGButton Code="JGB_history" LabelText="历史请假" Height="39" Width="182" PercentHeight="10.5%" PercentWidth="100%" Top="108" TabIndex="9" FontStyle="微软雅黑, 12pt, style=Bold" BackColor="32, 124, 220" OnClick="JGB_SBHistory" LastModifiedTime="2019-07-11 00:02:59" LastModifiedUser="15013952708" />
+      <JGButton Code="JGB_applyLeave" LabelText="在线请假" Height="39" Width="182" PercentHeight="10.5%" PercentWidth="100%" Top="63" TabIndex="9" FontStyle="微软雅黑, 12pt, style=Bold" BackColor="32, 124, 220" OnClick="JGB_SBApply" LastModifiedTime="2019-07-10 23:52:59" LastModifiedUser="15013952708" />
+      <JGButton Code="JGB_schedule" LabelText="待办事项" Height="39" Width="182" PercentHeight="10.5%" PercentWidth="100%" Top="18" TabIndex="9" FontStyle="微软雅黑, 12pt, style=Bold" BackColor="32, 124, 220" OnClick="JGB_SBSchedule" LastModifiedTime="2019-07-10 23:52:52" LastModifiedUser="15013952708" />
+    </JGPanel>
+    <JGPanel Code="JGP_top" Height="79" Width="1400" PercentHeight="17.6%" PercentWidth="100%" TabIndex="0" Dock="Top" BackColor="32, 125, 220" BorderStyle="None" LayoutType="BorderLayout" LastModifiedTime="2019-07-10 19:29:51" LastModifiedUser="15013952708">
+      <JGPanel Code="JGP_leftTop" Height="79" Width="357" PercentHeight="100%" PercentWidth="25.5%" TabIndex="2" Dock="Left" BackColor="0, 255, 255, 255" BorderStyle="None" LayoutType="BorderLayout" LastModifiedTime="2019-05-23 16:42:04" LastModifiedUser="15013952708">
+        <JGLabel Code="JGLabel1" LabelText="在线校园请假系统" Height="70" Width="411" PercentHeight="88.6%" PercentWidth="115.1%" Top="6" Left="3" TabIndex="1" FontStyle="微软雅黑, 21.75pt, style=Bold" ForeColor="255, 255, 255" LastModifiedTime="2019-05-23 16:59:39" LastModifiedUser="15013952708" />
+      </JGPanel>
+      <JGLabel Code="JGL_applyingInfo" LabelText="" Height="48" Width="152" PercentHeight="60.8%" PercentWidth="10.9%" Top="15" Left="722" TabIndex="38" FontStyle="幼圆, 18pt, style=Bold" ForeColor="255, 255, 255" OnClick="JGL_showApplyingInfo" LastModifiedTime="2019-07-10 14:54:02" LastModifiedUser="15013952708" />
+      <JGLabel Code="JGL_exit" LabelText="退出" Height="48" Width="152" PercentHeight="60.8%" PercentWidth="10.9%" Top="15" Left="1248" TabIndex="38" FontStyle="幼圆, 14.25pt" ForeColor="255, 255, 255" LastModifiedTime="2019-05-23 16:58:47" LastModifiedUser="15013952708" />
+      <JGLabel Code="JGL_userName" LabelText="" Height="48" Width="152" PercentHeight="60.8%" PercentWidth="10.9%" Top="15" Left="1081" TabIndex="38" FontStyle="幼圆, 18pt, style=Bold" ForeColor="255, 255, 255" OnClick="JGL_userName_OnClick" LastModifiedTime="2019-07-06 23:58:09" LastModifiedUser="15013952708" />
+    </JGPanel>
+  </controls>
+  <remark><![CDATA[]]></remark>
+</form>

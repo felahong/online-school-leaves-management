@@ -1,0 +1,37 @@
+﻿<form type="1002" code="loginForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[BorderLayout]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_loadForm]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[login]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGPanel Code="JGPanel1" Height="44" Width="960" PercentHeight="9.8%" PercentWidth="100%" TabIndex="0" Dock="Top" BackColor="32, 124, 220" LayoutType="BorderLayout" LastModifiedTime="2019-07-13 20:24:07" LastModifiedUser="15013952708" />
+    <JGImage Code="JGImage1" Height="384" Width="410" PercentHeight="85.3%" PercentWidth="42.7%" Top="30" Left="145" ImageValue="Fileno_1.jpg" ImageObject="Fileno_1" LastModifiedTime="2019-07-14 11:35:34" LastModifiedUser="15013952708" />
+    <JGLabel Code="JGL_losePw" LabelText="忘记密码" PercentHeight="5.3%" PercentWidth="7.1%" Top="350" Left="771" TabIndex="7" Anchor="None" LastModifiedTime="2019-07-13 20:26:47" LastModifiedUser="15013952708" />
+    <JGCheckBox Code="JGCGB_savePw" LabelText="记住密码" Width="120" PercentHeight="5.8%" PercentWidth="12.5%" Top="243" Left="719" TabIndex="6" LabelTextAlign="Right" OnValueLoaded="savePw" Value="False" LastModifiedTime="2019-07-13 20:25:45" LastModifiedUser="15013952708" />
+    <JGPassword Code="JGPW_userPw" LabelText="密码" PercentHeight="5.8%" PercentWidth="24.5%" Top="188" Left="604" TabIndex="6" LabelTextAlign="Center" LastModifiedTime="2019-07-13 20:25:24" LastModifiedUser="15013952708" />
+    <JGButton Code="JGBtn_logon" LabelText="注册" PercentHeight="5.8%" PercentWidth="5.4%" Top="301" Left="743" TabIndex="3" BackColor="255, 127, 0" OnClick="JGB_regist" LastModifiedTime="2019-07-13 20:25:24" LastModifiedUser="15013952708" ThemeVar="null" />
+    <JGButton Code="JGB_login" LabelText="登录" PercentHeight="5.8%" PercentWidth="5.4%" Top="301" Left="629" TabIndex="3" BackColor="255, 127, 0" OnClick="JGB_login" LastModifiedTime="2019-07-13 20:25:24" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_userNum" LabelText="账户" PercentHeight="5.8%" PercentWidth="24.5%" Top="142" Left="604" TabIndex="1" LabelTextAlign="Center" LastModifiedTime="2019-07-13 20:25:40" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs>
+    <variable code="userId" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <remark><![CDATA[]]></remark>
+</form>

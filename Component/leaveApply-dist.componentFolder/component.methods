@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/7 10:16:47-->
+<Methods>
+  <Method Code="JGLabel1_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="f_formLoad" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[自动填写申请人]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ATR_addEntity" />
+  <evaluateRule code="BR_SCP_setApplicant" />
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_SCP_setTimeisNow" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addEntity" instanceName="新增实体记录" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"LeaveApplyEntity.id","fieldtype":"expression","srcField":"@applicantNum"},{"destField":"LeaveApplyEntity.Name","fieldtype":"expression","srcField":"@applicantName"}],"TableType":"window","TableName":"LeaveApplyEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>LeaveApplyEntity</EntityName></dtMaster><dtEntityColumns><DestName>LeaveApplyEntity.id</DestName><SourceType>expression</SourceType><SourceName>@applicantNum</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.Name</DestName><SourceType>expression</SourceType><SourceName>@applicantName</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setApplicant" instanceName="控件属性设置_申请人姓名" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_applicant","propertyCode":"Value","values":"@applicantName","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>ee9506441855457db6755bd3cff26ccc</ConditionID><ControlCode>JGTB_applicant</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>@applicantName</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>ee9506441855457db6755bd3cff26ccc</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[LeaveApplyEntity].[applicantName]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[LeaveApplyEntity].[applicantName]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setTimeisNow" instanceName="控件属性设置_设置开始时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_startTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>5080216cc2e1400180cae7170640f6b0</ConditionID><ControlCode>JGDTP_startTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>5080216cc2e1400180cae7170640f6b0</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_calcDays" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="False" isDebug="False" code="IfCode1">
+    <define>
+      <expression>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")&lt;0</expression>
+      <remark></remark>
+    </define>
+    <sequence />
+  </if>
+]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="f_verifyStartTime" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[如果申请开始日期已经过去，则跳出窗口提示]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage2" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>Datediff(ShortDateNow(),CC.JGDTP_startTime.Value,"d")&lt;0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage1" />
+      <evaluateRule code="BR_SCP_setStartTimeIsNow" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"Datediff(ShortDateNow(),CC.JGDTP_startTime.Value,\"d\")","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>Datediff(ShortDateNow(),CC.JGDTP_startTime.Value,"d")</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"申请日期已过\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"申请日期已过"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setStartTimeIsNow" instanceName="控件属性设置_设置开始时间为当前时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_startTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>f41c2fc2a6c6498eb2131e266fa6d230</ConditionID><ControlCode>JGDTP_startTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>f41c2fc2a6c6498eb2131e266fa6d230</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_verifyEndTime" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[如果结束时间早于开始时间]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")&lt;0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SM_endTimeError" />
+      <evaluateRule code="BR_SCP_setEndTimeIsNow" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_endTimeError" instanceName="显示设置的提示信息_结束时间设置错误" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"结束时间不能早于开始时间\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"结束时间不能早于开始时间"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setEndTimeIsNow" instanceName="控件属性设置_重置结束时间_设置为当前日期" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_endTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>ae8f1dfaa3b84c638b5f5c29daf065e1</ConditionID><ControlCode>JGDTP_endTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>ae8f1dfaa3b84c638b5f5c29daf065e1</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_submit" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[1、]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_AddTableRecord1" />
+  <evaluateRule code="BR_UR_addToDatabase" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_AddTableRecord1" instanceName="新增实体记录" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-09 15:29:11">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"LeaveApplyEntity.applyTime","fieldtype":"expression","srcField":"LocateDateTimeNow()"},{"destField":"LeaveApplyEntity.endTime","fieldtype":"expression","srcField":"CC.JGDTP_endTime.Value"},{"destField":"LeaveApplyEntity.id","fieldtype":"expression","srcField":"@applicantNum"},{"destField":"LeaveApplyEntity.Name","fieldtype":"expression","srcField":"@applicantName"},{"destField":"LeaveApplyEntity.reason","fieldtype":"expression","srcField":"CC.JGTB_detailedReason.Value"},{"destField":"LeaveApplyEntity.Role","fieldtype":"expression","srcField":"@applicantRole"},{"destField":"LeaveApplyEntity.sort","fieldtype":"expression","srcField":"CC.JGRG_sortChoose.Text"},{"destField":"LeaveApplyEntity.startTime","fieldtype":"expression","srcField":"CC.JGDTP_startTime.Value"},{"destField":"LeaveApplyEntity.duration","fieldtype":"expression","srcField":"CC.JGL_applyDays.LabelText"}],"TableType":"window","TableName":"LeaveApplyEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>LeaveApplyEntity</EntityName></dtMaster><dtEntityColumns><DestName>LeaveApplyEntity.applyTime</DestName><SourceType>expression</SourceType><SourceName>LocateDateTimeNow()</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.endTime</DestName><SourceType>expression</SourceType><SourceName>CC.JGDTP_endTime.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.id</DestName><SourceType>expression</SourceType><SourceName>@applicantNum</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.Name</DestName><SourceType>expression</SourceType><SourceName>@applicantName</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.reason</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_detailedReason.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.Role</DestName><SourceType>expression</SourceType><SourceName>@applicantRole</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.sort</DestName><SourceType>expression</SourceType><SourceName>CC.JGRG_sortChoose.Text</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.startTime</DestName><SourceType>expression</SourceType><SourceName>CC.JGDTP_startTime.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.duration</DestName><SourceType>expression</SourceType><SourceName>CC.JGL_applyDays.LabelText</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UR_addToDatabase" instanceName="保存实体到数据库_请假单表" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"t_leaves.applicantId","colValue":"LeaveApplyEntity.id","valueType":"entityField"},{"colName":"t_leaves.startTime","colValue":"LeaveApplyEntity.startTime","valueType":"entityField"}],"dataSource":"LeaveApplyEntity","dataSourceType":"window","destTab":"t_leaves","isSaveAll":true}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>784feb9ae014498c979e23f98b152d13</ID><SourceName>LeaveApplyEntity</SourceName><SourceType>window</SourceType><SourceNameType>LeaveApplyEntity(界面实体)</SourceNameType><IsSaveAll>True</IsSaveAll><TableName>t_leaves</TableName></dtMaster><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.applicantId</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.id</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.startTime</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.startTime</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

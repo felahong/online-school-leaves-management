@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="form6_FormLoadAction.method" Code="form6_FormLoadAction" Name="form6_窗体加载事件" />
+  <Method MethodDir="CreateMethodExpand" FileName="EP_GetWorkFlowBizData.method" Code="EP_GetWorkFlowBizData" Name="EP_流程管理_业务关联_获取业务单数据" />
+</Methods>

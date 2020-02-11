@@ -1,0 +1,47 @@
+﻿<Table id="e1f21ed6f2ed45c88a302ed789b80ba4" code="t_classes" name="班级表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 19:50:12]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-17 17:59:44]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="0cf7e072bf894258a610ecd4b89aef6b" code="classId" name="id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="0c4dc0580b7e48428194627c2217555e" code="className" name="班级名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="53f7667021d741bd82565e58037e566d" code="majorId" name="专业名称" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[30207ae547494a02a0c10d2ef4578c96]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="className"><![CDATA[计算机科学与技术9班]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[d0f74e51f8934d43905b8b4324bf4c57]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[031708]]></ColumnData>
+      <ColumnData code="className"><![CDATA[自动化8班]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0304]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[5912e2a22af445798a657f13e709d3d2]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041708]]></ColumnData>
+      <ColumnData code="className"><![CDATA[计算机科学与技术8班]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

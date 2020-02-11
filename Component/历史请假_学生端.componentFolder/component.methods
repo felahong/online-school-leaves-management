@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/13 10:57:29-->
+<Methods>
+  <Method Code="f_loadForm" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[从数据库加载数据到实体，再加载到页面列表上]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DBDTIE_addDataToEntity" />
+  <foreach isEnabled="True" isDebug="False" code="ForeachCode1">
+    <define>
+      <varCode>leaveIndividual</varCode>
+      <entityType>window</entityType>
+      <entityCode>leaveEntity</entityCode>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+      <evaluateRule code="BR_DataBaseDataToInterfaceEntity2" />
+      <evaluateRule code="BR_DataBaseDataToInterfaceEntity3" />
+      <evaluateRule code="BR_DataBaseDataToInterfaceEntity3_1" />
+      <evaluateRule code="BR_SetLoopVariant1_2" />
+      <evaluateRule code="BR_SetLoopVariant1" />
+      <evaluateRule code="BR_SetLoopVariant1_1" />
+      <evaluateRule code="BR_SetLoopVariant1_1_1" />
+    </sequence>
+  </foreach>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_addDataToEntity" instanceName="从数据库获取数据到实体_请假单表映射到实体" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-18 14:39:59">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_leaves.applicantId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@userId","valueType":"9"}],"entityType":"window","entityName":"leaveEntity","itemqueryparam":null,"items":[{"destName":"leaveEntity.applyLength","sourceName":"t_leaves.applylength","type":"entityField"},{"destName":"leaveEntity.applyTime","sourceName":"t_leaves.applyTime","type":"entityField"},{"destName":"leaveEntity.endTime","sourceName":"t_leaves.endTime","type":"entityField"},{"destName":"leaveEntity.levelId","sourceName":"t_leaves.levelId","type":"entityField"},{"destName":"leaveEntity.reason","sourceName":"t_leaves.reason","type":"entityField"},{"destName":"leaveEntity.role","sourceName":"t_leaves.role","type":"entityField"},{"destName":"leaveEntity.sort","sourceName":"t_leaves.sort","type":"entityField"},{"destName":"leaveEntity.startTime","sourceName":"t_leaves.startTime","type":"entityField"},{"destName":"leaveEntity.statusId","sourceName":"t_leaves.statusId","type":"entityField"},{"destName":"leaveEntity.applicantId","sourceName":"t_leaves.applicantId","type":"entityField"},{"destName":"leaveEntity.lid","sourceName":"t_leaves.lid","type":"entityField"}],"orderBy":null,"sourceName":"t_leaves","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>leaveEntity</EntityName><SourceType>Table</SourceType><SourceName>t_leaves</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_leaves.applicantId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@userId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>17c2b88af0d3429888858d464958956b</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applyLength</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applylength</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applyTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applyTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.endTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.endTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.levelId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.levelId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.reason</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.reason</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.role</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.role</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.sort</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.sort</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.startTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.startTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.statusId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.statusId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applicantId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applicantId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.lid</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.lid</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>17c2b88af0d3429888858d464958956b</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>17c2b88af0d3429888858d464958956b</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体_stuInfoEntity" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"LV.leaveIndividual.applicantId","valueType":"9"}],"entityType":"window","entityName":"stuInfoEntity","itemqueryparam":null,"items":[{"destName":"stuInfoEntity.classId","sourceName":"t_students.classId","type":"entityField"},{"destName":"stuInfoEntity.sno","sourceName":"t_students.sno","type":"entityField"},{"destName":"stuInfoEntity.sname","sourceName":"t_students.sname","type":"entityField"}],"orderBy":null,"sourceName":"t_students","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>stuInfoEntity</EntityName><SourceType>Table</SourceType><SourceName>t_students</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>LV.leaveIndividual.applicantId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>20a7e5d6906a4e09b68b9f197ab664f1</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>20a7e5d6906a4e09b68b9f197ab664f1</MasterID><DestName>stuInfoEntity.classId</DestName><SourceType>entityField</SourceType><SourceName>t_students.classId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>20a7e5d6906a4e09b68b9f197ab664f1</MasterID><DestName>stuInfoEntity.sno</DestName><SourceType>entityField</SourceType><SourceName>t_students.sno</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>20a7e5d6906a4e09b68b9f197ab664f1</MasterID><DestName>stuInfoEntity.sname</DestName><SourceType>entityField</SourceType><SourceName>t_students.sname</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>20a7e5d6906a4e09b68b9f197ab664f1</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>20a7e5d6906a4e09b68b9f197ab664f1</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity2" instanceName="从数据库获取数据到实体_classEntity" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_classes.classId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"[stuInfoEntity].[classId]","valueType":"9"}],"entityType":"window","entityName":"classEntity","itemqueryparam":null,"items":[{"destName":"classEntity.classId","sourceName":"t_classes.classId","type":"entityField"},{"destName":"classEntity.className","sourceName":"t_classes.className","type":"entityField"}],"orderBy":null,"sourceName":"t_classes","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>classEntity</EntityName><SourceType>Table</SourceType><SourceName>t_classes</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_classes.classId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>[stuInfoEntity].[classId]</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>1698456351b64950ad1f7d2c2fef44c7</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>1698456351b64950ad1f7d2c2fef44c7</MasterID><DestName>classEntity.classId</DestName><SourceType>entityField</SourceType><SourceName>t_classes.classId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>1698456351b64950ad1f7d2c2fef44c7</MasterID><DestName>classEntity.className</DestName><SourceType>entityField</SourceType><SourceName>t_classes.className</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>1698456351b64950ad1f7d2c2fef44c7</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>1698456351b64950ad1f7d2c2fef44c7</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity3" instanceName="从数据库获取数据到实体_statusEntity" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_status.statusId","fieldType":"integer","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"LV.leaveIndividual.statusId","valueType":"9"}],"entityType":"window","entityName":"statusEntity","itemqueryparam":null,"items":[{"destName":"statusEntity.statusName","sourceName":"t_status.statusName","type":"entityField"}],"orderBy":null,"sourceName":"t_status","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>statusEntity</EntityName><SourceType>Table</SourceType><SourceName>t_status</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_status.statusId</field><fieldType>integer</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>LV.leaveIndividual.statusId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>7cebbb118ffc4be880b479c3eacf745b</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>7cebbb118ffc4be880b479c3eacf745b</MasterID><DestName>statusEntity.statusName</DestName><SourceType>entityField</SourceType><SourceName>t_status.statusName</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>7cebbb118ffc4be880b479c3eacf745b</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>7cebbb118ffc4be880b479c3eacf745b</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity3_1" instanceName="从数据库获取数据到实体_leaveLevelEntity" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_level.levelId","fieldType":"integer","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"LV.leaveIndividual.levelId","valueType":"9"}],"entityType":"window","entityName":"leaveLevelEntity","itemqueryparam":null,"items":[{"destName":"leaveLevelEntity.level","sourceName":"t_level.level","type":"entityField"}],"orderBy":null,"sourceName":"t_level","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>leaveLevelEntity</EntityName><SourceType>Table</SourceType><SourceName>t_level</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_level.levelId</field><fieldType>integer</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>LV.leaveIndividual.levelId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>7cebbb118ffc4be880b479c3eacf745b</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>7cebbb118ffc4be880b479c3eacf745b</MasterID><DestName>leaveLevelEntity.level</DestName><SourceType>entityField</SourceType><SourceName>t_level.level</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>7cebbb118ffc4be880b479c3eacf745b</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>7cebbb118ffc4be880b479c3eacf745b</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetLoopVariant" ruleName="给循环变量赋值" instanceCode="BR_SetLoopVariant1_2" instanceName="给循环变量赋值_给姓名赋值" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"Fields":[{"Source":"[stuInfoEntity].[sname]","SourceType":"expression","LoopVarField":"applicantName"}],"LoopVar":"leaveIndividual","LoopEntity":"leaveEntity","LoopEntityType":"window"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtLoopVar><LoopVar>leaveIndividual</LoopVar><LoopEntity>leaveEntity</LoopEntity><LoopEntityType>window</LoopEntityType></dtLoopVar><dtField><LoopVarField>applicantName</LoopVarField><SourceType>expression</SourceType><Source>[stuInfoEntity].[sname]</Source></dtField></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetLoopVariant" ruleName="给循环变量赋值" instanceCode="BR_SetLoopVariant1" instanceName="给循环变量赋值_给班级名称赋值" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"Fields":[{"Source":"[classEntity].[className]","SourceType":"expression","LoopVarField":"className"}],"LoopVar":"leaveIndividual","LoopEntity":"leaveEntity","LoopEntityType":"window"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtLoopVar><LoopVar>leaveIndividual</LoopVar><LoopEntity>leaveEntity</LoopEntity><LoopEntityType>window</LoopEntityType></dtLoopVar><dtField><LoopVarField>className</LoopVarField><SourceType>expression</SourceType><Source>[classEntity].[className]</Source></dtField></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetLoopVariant" ruleName="给循环变量赋值" instanceCode="BR_SetLoopVariant1_1" instanceName="给循环变量赋值_给状态名称赋值" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"Fields":[{"Source":"[statusEntity].[statusName]","SourceType":"expression","LoopVarField":"statusName"}],"LoopVar":"leaveIndividual","LoopEntity":"leaveEntity","LoopEntityType":"window"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtLoopVar><LoopVar>leaveIndividual</LoopVar><LoopEntity>leaveEntity</LoopEntity><LoopEntityType>window</LoopEntityType></dtLoopVar><dtField><LoopVarField>statusName</LoopVarField><SourceType>expression</SourceType><Source>[statusEntity].[statusName]</Source></dtField></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetLoopVariant" ruleName="给循环变量赋值" instanceCode="BR_SetLoopVariant1_1_1" instanceName="给循环变量赋值_给等级名称赋值" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"Fields":[{"Source":"[leaveLevelEntity].[level]","SourceType":"expression","LoopVarField":"level"}],"LoopVar":"leaveIndividual","LoopEntity":"leaveEntity","LoopEntityType":"window"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtLoopVar><LoopVar>leaveIndividual</LoopVar><LoopEntity>leaveEntity</LoopEntity><LoopEntityType>window</LoopEntityType></dtLoopVar><dtField><LoopVarField>level</LoopVarField><SourceType>expression</SourceType><Source>[leaveLevelEntity].[level]</Source></dtField></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_convertLevel" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>BR_IN_PARENT.levelId==1</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level01" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>BR_IN_PARENT.levelId==2</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level02" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode3">
+    <define>
+      <expression>BR_IN_PARENT.levelId==3</expression>
+      <remark />
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level03" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level01" instanceName="给界面实体/控件/变量赋值_设置一级" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 12:12:16">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"5","Target":"Level","SourceType":"expression","SourceEntityType":"","Source":"\"一级\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>5</TargetType><Target>Level</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"一级"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level03" instanceName="给界面实体/控件/变量赋值_设置三级" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 12:13:19">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"5","Target":"Level","SourceType":"expression","SourceEntityType":"","Source":"\"三级\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>5</TargetType><Target>Level</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"三级"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level02" instanceName="给界面实体/控件/变量赋值_设置二级" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 12:12:54">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"5","Target":"Level","SourceType":"expression","SourceEntityType":"","Source":"\"二级\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>5</TargetType><Target>Level</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"二级"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+    <Inputs>
+      <Variable code="levelId" name="等级id" fieldType="integer" initValue="" isMust="true" desc="" />
+    </Inputs>
+    <Outputs>
+      <Variable code="Level" name="等级名称" fieldType="char" initValue="" isMust="false" desc="" />
+    </Outputs>
+  </Method>
+  <Method Code="f_getStatus" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>BR_IN_PARENT.statusId==1</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_setStatus01" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>BR_IN_PARENT.statusId==2</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_setStatus02" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode3">
+    <define>
+      <expression>BR_IN_PARENT.statusId==3</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_setStatus03" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setStatus02" instanceName="给界面实体/控件/变量赋值_院领导审核中" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.statusName","SourceType":"expression","SourceEntityType":"","Source":"\"院领导审核中\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.statusName</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"院领导审核中"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setStatus03" instanceName="给界面实体/控件/变量赋值_校领导审核中" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.statusName","SourceType":"expression","SourceEntityType":"","Source":"\"校领导审核中\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.statusName</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"校领导审核中"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setStatus01" instanceName="给界面实体/控件/变量赋值_辅导员审核中" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.statusName","SourceType":"expression","SourceEntityType":"","Source":"\"辅导员审核中\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.statusName</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"辅导员审核中"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+    <Inputs>
+      <Variable code="statusId" name="状态Id" fieldType="integer" initValue="" isMust="true" desc="" />
+    </Inputs>
+    <Outputs>
+      <Variable code="status" name="状态名" fieldType="char" initValue="" isMust="false" desc="" />
+    </Outputs>
+  </Method>
+</Methods>

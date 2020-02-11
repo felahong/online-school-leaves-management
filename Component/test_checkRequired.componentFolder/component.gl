@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="ControlMethod" FileName="JGButton1_OnClick.method" Code="JGButton1_OnClick" Name="JGButton1_单击事件" />
+</Methods>

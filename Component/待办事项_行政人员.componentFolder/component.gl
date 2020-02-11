@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="f_JGLTB_allRemark.method" Code="f_JGLTB_allRemark" Name="统一备注事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_permit_OnClick.method" Code="JGB_permit_OnClick" Name="确定单击事件" />
+  <Method MethodDir="UserMethod" FileName="f_allCheck.method" Code="f_allCheck" Name="全部审核" />
+  <Method MethodDir="UserMethod" FileName="f_allPermit.method" Code="f_allPermit" Name="全部批准" />
+  <Method MethodDir="UserMethod" FileName="f_allReject.method" Code="f_allReject" Name="全部拒批" />
+  <Method MethodDir="UserMethod" FileName="f_checkApplication.method" Code="f_checkApplication" Name="审核请假申请" />
+</Methods>

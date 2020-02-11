@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_loadForm.method" Code="f_loadForm" Name="窗体加载方法" />
+  <Method MethodDir="ControlMethod" FileName="JGB_login.method" Code="JGB_login" Name="单击登录" />
+  <Method MethodDir="ControlMethod" FileName="JGB_regist.method" Code="JGB_regist" Name="单击注册按钮事件" />
+  <Method MethodDir="UserMethod" FileName="savePw.method" Code="savePw" Name="记住密码" />
+  <Method MethodDir="UserMethod" FileName="test.method" Code="test" Name="新增实体" />
+</Methods>

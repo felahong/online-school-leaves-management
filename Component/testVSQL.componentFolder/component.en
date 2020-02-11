@@ -1,0 +1,21 @@
+﻿<EntityConfig version="2.0">
+  <Entitys>
+    <Entity Code="info" Name="信息" IsExtendable="false" EntityType="" TableOrQueryCode="" TemplateId="" TemplateCode="">
+      <Columns>
+        <Column>
+          <Code>classId</Code>
+          <Name></Name>
+          <DataType>char</DataType>
+          <Length>255</Length>
+          <Precision></Precision>
+          <DefaultValue>041719</DefaultValue>
+          <Expression></Expression>
+        </Column>
+      </Columns>
+      <Events>
+        <EntityEvent Code="OnLoaded" Value="" />
+      </Events>
+    </Entity>
+  </Entitys>
+  <Relations />
+</EntityConfig>

@@ -1,0 +1,45 @@
+﻿<Query id="e1616dc3b54c4e1aaf06697840f1742f" code="selectCollege" name="通过班级查询学院" type="VSql" APICode="">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[user_20190504002]]></Creator>
+  <CreationTime><![CDATA[2019-07-17 17:11:01]]></CreationTime>
+  <Modifier><![CDATA[lingang19]]></Modifier>
+  <ModificationTime><![CDATA[2019-08-06 00:11:47]]></ModificationTime>
+  <VSql><![CDATA[--select * from t_classes a where a.classId = :scid
+--select classId from t_classes WHERE majorId = 'm0401'
+--SELECT classId
+--FROM t_classes
+--WHERE majorId = :mid
+--select distinct c.classId from t_classes c, t_majors m, t_teachers t 
+--where t.tcollegeId='c04' and m.collegeId=t.tcollegeId and c.majorId=m.majorId;
+
+--SELECT DISTINCT c.classId
+--FROM t_classes c
+--INNER JOIN t_majors m ON c.majorId = m.majorId
+--INNER JOIN t_teachers t ON t.tcollegeId = 'c04'
+--	AND m.collegeId = t.tcollegeId;
+
+select sname from t_students s where s.majorId in ((select m.majorId from t_majors m where m.collegeId = :cid))
+--select majorId from t_majors where collegeId = 'c04'
+
+]]></VSql>
+  <Columns>
+    <Column id="Column_0" code="sname" name="" dataType="char" length="" precision="">
+      <Remark></Remark>
+    </Column>
+  </Columns>
+  <Params>
+    <Param code="scid" name="学生班级id" dataType="integer">
+      <InitValue><![CDATA[041709]]></InitValue>
+      <Remark><![CDATA[student class id]]></Remark>
+    </Param>
+    <Param code="cid" name="cid" dataType="char">
+      <InitValue><![CDATA[c04]]></InitValue>
+      <Remark><![CDATA[]]></Remark>
+    </Param>
+  </Params>
+  <DataItems>
+    <DataItem type="Table" key="t_students" tokenIndexes="20" />
+    <DataItem type="Table" key="t_majors" tokenIndexes="42" />
+    <DataItem type="QueryParam" key="cid" tokenIndexes="55" />
+  </DataItems>
+</Query>

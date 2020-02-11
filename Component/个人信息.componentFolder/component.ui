@@ -1,0 +1,39 @@
+﻿<form type="1002" code="personalInfoForm" isEntendable="false" owner="15013952708" IsLocked="True">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[470]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[BorderLayout]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_loadForm]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[个人信息]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGImage Code="JGI_background" Alias="背景图" Height="470" Width="960" PercentHeight="100%" PercentWidth="100%" ImageValue="Fileno_16.jpg" ImageObject="Fileno_16" Dock="Fill" ImagePosition="fill" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_save" LabelText="保存" PercentHeight="5.5%" PercentWidth="5.4%" Top="97" Left="298" TabIndex="8" OnClick="JGB_save" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_updatePw" LabelText="修改密码" Width="77" PercentHeight="5.5%" PercentWidth="8%" Top="97" Left="411" TabIndex="8" OnClick="JGB_updatePw" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGButton Code="JGB_updateInfo" LabelText="修改个人信息" Width="102" PercentHeight="5.5%" PercentWidth="10.6%" Top="97" Left="190" TabIndex="7" OnClick="JGB_updateInfo" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_email" LabelText="电子邮箱" PercentHeight="5.5%" PercentWidth="24.5%" Top="305" Left="190" TabIndex="1" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGComboBox Code="JGCB_sex" LabelText="性别" PercentHeight="5.5%" PercentWidth="24.5%" Top="241" Left="190" TabIndex="5" LabelTextAlign="Center" ReadOnly="True" DropDownSource="{&quot;DataSourceSetting&quot;:{&quot;DataConfig&quot;:{&quot;DefaultSaveColumn&quot;:null,&quot;DefaultShowColumn&quot;:null,&quot;SourceType&quot;:null,&quot;SourceID&quot;:null,&quot;SourceName&quot;:null,&quot;MapTable&quot;:null,&quot;SaveColumn&quot;:null,&quot;ShowColumn&quot;:null,&quot;SortField&quot;:null,&quot;SortType&quot;:null,&quot;MaxRecCount&quot;:0,&quot;QueryField&quot;:null,&quot;QueryMethod&quot;:null,&quot;IsPickListFields&quot;:false,&quot;ConstData&quot;:[{&quot;id&quot;:&quot;男&quot;,&quot;text&quot;:&quot;男&quot;,&quot;selected&quot;:&quot;False&quot;},{&quot;id&quot;:&quot;女&quot;,&quot;text&quot;:&quot;女&quot;,&quot;selected&quot;:&quot;False&quot;}],&quot;SqlQueryConstData&quot;:null,&quot;EntityConstData&quot;:null,&quot;Condition&quot;:null,&quot;QueryParam&quot;:null,&quot;PickListFields&quot;:null},&quot;DataSourceType&quot;:&quot;CustomConst&quot;}}" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_phone" LabelText="电话号码" PercentHeight="5.5%" PercentWidth="24.5%" Top="273" Left="190" TabIndex="1" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_class" LabelText="班级" PercentHeight="5.5%" PercentWidth="24.5%" Top="208" Left="190" TabIndex="1" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_name" LabelText="姓名" PercentHeight="5.5%" PercentWidth="24.5%" Top="176" Left="190" TabIndex="1" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+    <JGTextBox Code="JGTB_sno" LabelText="学号" PercentHeight="5.5%" PercentWidth="24.5%" Top="144" Left="190" TabIndex="1" LabelTextAlign="Center" ReadOnly="True" LastModifiedTime="2019-07-14 15:49:56" LastModifiedUser="15013952708" />
+  </controls>
+  <outputs />
+  <inputs>
+    <variable code="userId" name="" fieldType="char" defaultValue="" description="" isRestore="false" isPrivate="false">
+      <EnumValue><![CDATA[]]></EnumValue>
+    </variable>
+  </inputs>
+  <remark><![CDATA[]]></remark>
+</form>

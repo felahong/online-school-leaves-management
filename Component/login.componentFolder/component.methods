@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/5/13 22:35:15-->
+<Methods>
+  <Method Code="JGB_login" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ATR_addEntity" />
+  <evaluateRule code="BR_SetEntityVarControlValue_UserEntity" />
+  <evaluateRule code="BR_CheckRequired_Input" />
+  <if isEnabled="True" isDebug="False" code="IfCode8">
+    <define>
+      <expression>!BR_OUT.BR_CheckRequired_Input.isCheckRequiredOK</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ClearInterfaceEntityData_UserEntity" />
+      <evaluateRule code="BR_AbortRule_Input" />
+    </sequence>
+  </if>
+  <evaluateRule code="BR_ShowMessage5" />
+  <evaluateRule code="BR_ClearInterfaceEntityData_UserEntity_1" />
+  <evaluateRule code="BR_ATR_addEntity_1" />
+  <if isEnabled="True" isDebug="False" code="IfCode7">
+    <define>
+      <expression>IsEmpty(CC.JGTB_userNum.Value) || IsWhiteOrSpace(CC.JGTB_userNum.Value) || IsEmpty(CC.JGPW_userPw.Value) || IsWhiteOrSpace(CC.JGPW_userPw.Value) || (GetLength(CC.JGTB_userNum.Value) == 0) || (GetLength(CC.JGPW_userPw.Value) == 0)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SM_INPUT" />
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="True" isDebug="False" code="IfCode4">
+        <define>
+          <expression>GetLength([userEntity].[account])==8</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_GRC_getSnoRecord" />
+          <if isEnabled="True" isDebug="False" code="IfCode5">
+            <define>
+              <expression>BR_OUT.BR_GRC_getSnoRecord.recordCount==1</expression>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SetEntityVarControlValue1" />
+              <evaluateRule code="BR_OCRD_jumpStuHome" />
+            </sequence>
+          </if>
+          <else isEnabled="True" isDebug="False">
+            <define>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SM_stuLoginError" />
+            </sequence>
+          </else>
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_GRC_verifyTch" />
+          <if isEnabled="True" isDebug="False" code="IfCode6">
+            <define>
+              <expression>BR_OUT.BR_GRC_verifyTch.recordCount==1</expression>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+              <evaluateRule code="BR_SetEntityVarControlValue2" />
+              <evaluateRule code="BR_ShowMessage3" />
+              <evaluateRule code="BR_OCRD_jumpTchHome" />
+            </sequence>
+          </if>
+          <else isEnabled="True" isDebug="False">
+            <define>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SM_tchLoginError" />
+            </sequence>
+          </else>
+        </sequence>
+      </else>
+    </sequence>
+  </else>
+  <evaluateRule code="BR_ClearInterfaceEntityData_UserEntity_1_1" />
+  <if isEnabled="False" isDebug="False" code="IfCode3">
+    <define>
+      <expression>!((CC.JGRG_optStuOrTch.Value=="1")||(CC.JGRG_optStuOrTch.Value=="2"))</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage2" />
+    </sequence>
+  </if>
+  <if isEnabled="False" isDebug="False" code="IfCode1">
+    <define>
+      <expression>CC.JGRG_optStuOrTch.Value=="1"</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_GRC_getStuRecord" />
+      <evaluateRule code="BR_OCRD_ToStuHome" />
+      <evaluateRule code="BR_SM_stuLoginFailure" />
+    </sequence>
+  </if>
+  <if isEnabled="False" isDebug="False" code="IfCode2">
+    <define>
+      <expression>CC.JGRG_optStuOrTch.Value=="2"</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_GRC_getTchRecord" />
+      <evaluateRule code="BR_ShowMessage1" />
+      <evaluateRule code="BR_OCRD_ToTchHome" />
+      <evaluateRule code="BR_SM_TchLoginFailure" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addEntity" instanceName="新增实体记录" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"userEntity.account","fieldtype":"expression","srcField":"CC.JGTB_userNum.Value"},{"destField":"userEntity.accountPw","fieldtype":"expression","srcField":"CC.JGPW_userPw.Value"}],"TableType":"window","TableName":"userEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>userEntity</EntityName></dtMaster><dtEntityColumns><DestName>userEntity.account</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_userNum.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>userEntity.accountPw</DestName><SourceType>expression</SourceType><SourceName>CC.JGPW_userPw.Value</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SetEntityVarControlValue_UserEntity" instanceName="给用户界面实体赋值" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"userEntity.account","SourceType":"expression","SourceEntityType":"","Source":"CC.JGTB_userNum.Value","entityFieldMapping":null},{"TargetType":"3","Target":"userEntity.accountPw","SourceType":"expression","SourceEntityType":"","Source":"CC.JGPW_userPw.Value","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>userEntity.account</Target><SourceType>expression</SourceType><SourceEntityType /><Source>CC.JGTB_userNum.Value</Source></dtFieldMap><dtFieldMap><TargetType>3</TargetType><Target>userEntity.accountPw</Target><SourceType>expression</SourceType><SourceEntityType /><Source>CC.JGPW_userPw.Value</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="CheckRequired" ruleName="必填项检查" instanceCode="BR_CheckRequired_Input" instanceName="输入必填项检查" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"fieldList":[{"field":"userEntity.account","fieldName":"账号"},{"field":"userEntity.accountPw","fieldName":"密码"}],"type":"0"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtColumn><Code>userEntity.account</Code><Name>账号</Name></dtColumn><dtColumn><Code>userEntity.accountPw</Code><Name>密码</Name></dtColumn><dtType><Type>0</Type></dtType></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage5" instanceName="显示设置的提示信息_3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[userEntity].[account]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[userEntity].[account]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ClearInterfaceEntityData" ruleName="清除界面实体中的数据" instanceCode="BR_ClearInterfaceEntityData_UserEntity_1" instanceName="清除界面用户实体中的数据_1" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceNames":[{"name":"userEntity"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtColumn><Code>userEntity</Code></dtColumn></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addEntity_1" instanceName="新增实体记录_1" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"userEntity.account","fieldtype":"expression","srcField":"CC.JGTB_userNum.Value"},{"destField":"userEntity.accountPw","fieldtype":"expression","srcField":"MD5Encrypt(CC.JGPW_userPw.Value)"}],"TableType":"window","TableName":"userEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>userEntity</EntityName></dtMaster><dtEntityColumns><DestName>userEntity.account</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_userNum.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>userEntity.accountPw</DestName><SourceType>expression</SourceType><SourceName>MD5Encrypt(CC.JGPW_userPw.Value)</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ClearInterfaceEntityData" ruleName="清除界面实体中的数据" instanceCode="BR_ClearInterfaceEntityData_UserEntity_1_1" instanceName="清除界面用户实体中的数据_1_1" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceNames":[{"name":"userEntity"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtColumn><Code>userEntity</Code></dtColumn></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SetEntityVarControlValue1" instanceName="设置角色为学生" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"userEntity.accountRole","SourceType":"expression","SourceEntityType":"","Source":"0","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>userEntity.accountRole</Target><SourceType>expression</SourceType><SourceEntityType /><Source>0</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_jumpStuHome" instanceName="跳转到学生端首页" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"StuHomeForm","windowName":"StuHome","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"[userEntity].[account]","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"[userEntity].[accountRole]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>StuHomeForm</WindowCode><WindowName>StuHome</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[userEntity].[account]</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[userEntity].[accountRole]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_getTchRecord" instanceName="获教师表中记录数" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"tb_teacher.tchNum","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_userNum.Value","valueType":"9"},{"columnType":"1","field":"tb_teacher.tchPw","fieldType":"char","leftBracket":"(","logicOperation":"and","operation":"=","rightBracket":")","value":"CC.JGPW_userPw.Value","valueType":"9"}],"tableName":"tb_teacher","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>tb_teacher</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>tb_teacher.tchNum</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_userNum.Value</value><valueType>9</valueType></dtWhere><dtWhere><columnType>1</columnType><field>tb_teacher.tchPw</field><fieldType>char</fieldType><leftBracket>(</leftBracket><logicOperation>and</logicOperation><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGPW_userPw.Value</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[BR_OUT.BR_GRC_getTchRecord.recordCount==1]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"CC.JGTB_userNum.Value","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>CC.JGTB_userNum.Value</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_ToTchHome" instanceName="打开教师端首页" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[BR_OUT.BR_GRC_getTchRecord.recordCount==1]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"HomeForm","windowName":"Home","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"CC.JGTB_userNum.Value","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"CC.JGRG_optStuOrTch.Value","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>HomeForm</WindowCode><WindowName>Home</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>CC.JGTB_userNum.Value</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>CC.JGRG_optStuOrTch.Value</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_TchLoginFailure" instanceName="提示账户或者密码错误_教师" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[BR_OUT.BR_GRC_getTchRecord.recordCount==0]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"用户名或密码错误\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"用户名或密码错误"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_getSnoRecord" instanceName="获取数据库表中记录数_获取该学号记录数" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_userNum.Value","valueType":"9"},{"columnType":"1","field":"t_students.spw","fieldType":"char","leftBracket":"(","logicOperation":"and","operation":"=","rightBracket":")","value":"MD5Encrypt(CC.JGPW_userPw.Value)","valueType":"9"}],"tableName":"t_students","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_students</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_userNum.Value</value><valueType>9</valueType></dtWhere><dtWhere><columnType>1</columnType><field>t_students.spw</field><fieldType>char</fieldType><leftBracket>(</leftBracket><logicOperation>and</logicOperation><operation>=</operation><rightBracket>)</rightBracket><value>MD5Encrypt(CC.JGPW_userPw.Value)</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_INPUT" instanceName="账户密码不能为空" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"账号、密码均不能为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"账号、密码均不能为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_verifyTch" instanceName="向教师表验证账户信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[MD5Encrypt(CC.JGPW_userPw.Value)]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_teachers.tno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"[userEntity].[account]","valueType":"9"}],"tableName":"t_teachers","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_teachers</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_teachers.tno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>[userEntity].[account]</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_teachers.tno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_userNum.Value","valueType":"9"}],"entityType":"window","entityName":"userEntity","itemqueryparam":null,"items":[{"destName":"userEntity.account","sourceName":"t_teachers.tno","type":"entityField"},{"destName":"userEntity.accountPw","sourceName":"t_teachers.tpw","type":"entityField"},{"destName":"userEntity.accountRole","sourceName":"t_teachers.trole","type":"entityField"}],"orderBy":null,"sourceName":"t_teachers","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>userEntity</EntityName><SourceType>Table</SourceType><SourceName>t_teachers</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_teachers.tno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_userNum.Value</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>0988cf791c9040b9ac945fadfcb0edb0</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>0988cf791c9040b9ac945fadfcb0edb0</MasterID><DestName>userEntity.account</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tno</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>0988cf791c9040b9ac945fadfcb0edb0</MasterID><DestName>userEntity.accountPw</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.tpw</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>0988cf791c9040b9ac945fadfcb0edb0</MasterID><DestName>userEntity.accountRole</DestName><SourceType>entityField</SourceType><SourceName>t_teachers.trole</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>0988cf791c9040b9ac945fadfcb0edb0</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>0988cf791c9040b9ac945fadfcb0edb0</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SetEntityVarControlValue2" instanceName="设置角色为教师" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"userEntity.accountRole","SourceType":"expression","SourceEntityType":"","Source":"[userEntity].[accountRole]","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>userEntity.accountRole</Target><SourceType>expression</SourceType><SourceEntityType /><Source>[userEntity].[accountRole]</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[userEntity].[account]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[userEntity].[account]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_jumpTchHome" instanceName="跳转到教师端首页" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"TchHomeForm","windowName":"TchHome","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"\"教师首页\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"[userEntity].[account]","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"[userEntity].[accountRole]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>TchHomeForm</WindowCode><WindowName>TchHome</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle>"教师首页"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[userEntity].[account]</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[userEntity].[accountRole]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_stuLoginError" instanceName="提示登录错误_学生" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"账号或者密码错误\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"账号或者密码错误"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_getStuRecord" instanceName="获取学生表中记录数" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"tb_student.stuNum","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_userNum.Value","valueType":"9"}],"tableName":"tb_student","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>tb_student</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>tb_student.stuNum</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_userNum.Value</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_ToStuHome" instanceName="打开学生首页" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"HomeForm","windowName":"Home","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"userId","paramType":"expression","paramValue":"[userEntity].[account]","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"CC.JGRG_optStuOrTch.Value","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>HomeForm</WindowCode><WindowName>Home</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[userEntity].[account]</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>CC.JGRG_optStuOrTch.Value</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_stuLoginFailure" instanceName="提示账户或者密码错误_学生" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[BR_OUT.BR_GRC_getStuRecord.recordCount==0]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"用户名或者密码错误\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"用户名或者密码错误"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_tchLoginError" instanceName="提示登录错误_教师" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"账号或者密码错误\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"账号或者密码错误"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="提醒选择学生或者职工" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"请确认是职工还是学生\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"请确认是职工还是学生"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ClearInterfaceEntityData" ruleName="清除界面实体中的数据" instanceCode="BR_ClearInterfaceEntityData_UserEntity" instanceName="清除界面用户实体中的数据" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceNames":[{"name":"userEntity"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtColumn><Code>userEntity</Code></dtColumn></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AbortRule" ruleName="中断规则" instanceCode="BR_AbortRule_Input" instanceName="中断所有规则链" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[!BR_OUT.BR_CheckRequired_Input.isCheckRequiredOK]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"abortType":"GLOBAL","msgnote":""}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><AbortType>GLOBAL</AbortType><MsgNote /></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="savePw" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="test" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="JGB_regist" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_OCRD_openRegister" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"发\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"发"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_openRegister" instanceName="打开窗体并返回数据_跳转到注册页面" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-09 15:53:54">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"registerForm","windowName":"Register","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":null,"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>registerForm</WindowCode><WindowName>Register</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_loadForm" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage2" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNullOrEmpty(@userId,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SCP_setAccount" />
+      <evaluateRule code="BR_ShowMessage1" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 16:31:36">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"IsNullOrEmpty(@userId,True)","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>IsNullOrEmpty(@userId,True)</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setAccount" instanceName="控件属性设置_设置账号值" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 16:25:01">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_userNum","propertyCode":"Value","values":"@userId","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>1f357b95570448668e5ed0987cfbbc82</ConditionID><ControlCode>JGTB_userNum</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>@userId</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>1f357b95570448668e5ed0987cfbbc82</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-13 16:30:18">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

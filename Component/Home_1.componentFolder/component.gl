@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="Home_FLA_load.method" Code="Home_FLA_load" Name="首页窗体加载事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_OL_SBApply.method" Code="JGL_OL_SBApply" Name="在线申请单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_OL_SBSchedule.method" Code="JGL_OL_SBSchedule" Name="代办事单击事件" />
+  <Method MethodDir="ControlMethod" FileName="JGL_showApplyingInfo.method" Code="JGL_showApplyingInfo" Name="正在请假条数" />
+  <Method MethodDir="ControlMethod" FileName="JGL_sideBar_click.method" Code="JGL_sideBar_click" Name="左侧栏单击事件" />
+</Methods>

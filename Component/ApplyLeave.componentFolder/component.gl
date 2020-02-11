@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Methods>
+  <Method MethodDir="WindowMethod" FileName="f_formLoad.method" Code="f_formLoad" Name="窗体加载" />
+  <Method MethodDir="ControlMethod" FileName="f_generateLevel.method" Code="f_generateLevel" Name="自动生成审核等级" />
+  <Method MethodDir="ControlMethod" FileName="f_verifyEndTime.method" Code="f_verifyEndTime" Name="验证请假结束时间" />
+  <Method MethodDir="ControlMethod" FileName="f_verifyStartTime.method" Code="f_verifyStartTime" Name="验证申请开始时间" />
+  <Method MethodDir="ControlMethod" FileName="JGB_cancel.method" Code="JGB_cancel" Name="取消事件" />
+  <Method MethodDir="ControlMethod" FileName="JGB_submit.method" Code="JGB_submit" Name="提交事件" />
+  <Method MethodDir="UserMethod" FileName="f_generateLevel_backup.method" Code="f_generateLevel_backup" Name="自动生成审核等级" />
+</Methods>

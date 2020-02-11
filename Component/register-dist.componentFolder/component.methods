@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/5/20 10:12:31-->
+<Methods>
+  <Method Code="JGLabel1_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="JGButton1_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_OpenComponentReturnData1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OpenComponentReturnData1" instanceName="跳转到login" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"form1","windowName":"login","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindow","browerWindowTitle":"\"房间爱看理工大\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":null,"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>form1</WindowCode><WindowName>login</WindowName><TargetContainerType>currentWindow</TargetContainerType><BrowerWindowTitle>"房间爱看理工大"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_tchRegist" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ATR_addTchEntity" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addTchEntity" instanceName="新增实体记录_教师" isNeedLog="False" isEnabled="True" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-09 11:32:45">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":null,"TableType":"window","TableName":"registerEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>registerEntity</EntityName></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_stuRegist" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_GRC_verifySno" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>BR_OUT.BR_GRC_verifySno.recordCount==0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ATR_addStuEntity" />
+      <evaluateRule code="BR_UR_addStu" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GRC_verifySno" instanceName="获取数据库表中记录数_验证学号是否存在" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_sno.Value","valueType":"9"}],"tableName":"t_students","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_students</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_sno.Value</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addStuEntity" instanceName="新增实体记录_学生" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"registerEntity.uclass","fieldtype":"expression","srcField":"CC.JGTB_sclass.Value"},{"destField":"registerEntity.uemail","fieldtype":"expression","srcField":"CC.JGTB_semail.Value"},{"destField":"registerEntity.uid","fieldtype":"expression","srcField":"CC.JGTB_sno.Value"},{"destField":"registerEntity.uname","fieldtype":"expression","srcField":"CC.JGTB_sname.Value"},{"destField":"registerEntity.uphone","fieldtype":"expression","srcField":"CC.JGTB_sphone.Value"},{"destField":"registerEntity.upw","fieldtype":"expression","srcField":"CC.JGTB_spw.Value"},{"destField":"registerEntity.urole","fieldtype":"expression","srcField":"\"1\""},{"destField":"registerEntity.usex","fieldtype":"expression","srcField":"CC.JGCB_ssex.Text"}],"TableType":"window","TableName":"registerEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>registerEntity</EntityName></dtMaster><dtEntityColumns><DestName>registerEntity.uclass</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_sclass.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.uemail</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_semail.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.uid</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_sno.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.uname</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_sname.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.uphone</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_sphone.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.upw</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_spw.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.urole</DestName><SourceType>expression</SourceType><SourceName>"1"</SourceName></dtEntityColumns><dtEntityColumns><DestName>registerEntity.usex</DestName><SourceType>expression</SourceType><SourceName>CC.JGCB_ssex.Text</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UR_addStu" instanceName="保存实体到数据库_学生实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"t_students.classId","colValue":"registerEntity.uclass","valueType":"entityField"},{"colName":"t_students.semail","colValue":"registerEntity.uemail","valueType":"entityField"},{"colName":"t_students.sname","colValue":"registerEntity.uname","valueType":"entityField"},{"colName":"t_students.sno","colValue":"registerEntity.uid","valueType":"entityField"},{"colName":"t_students.sphone","colValue":"registerEntity.uphone","valueType":"entityField"},{"colName":"t_students.spw","colValue":"registerEntity.upw","valueType":"entityField"}],"dataSource":"registerEntity","dataSourceType":"window","destTab":"t_students","isSaveAll":false}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>7899bc392f7f4d8bbec372f52a044a4d</ID><SourceName>registerEntity</SourceName><SourceType>window</SourceType><SourceNameType>registerEntity(界面实体)</SourceNameType><IsSaveAll>False</IsSaveAll><TableName>t_students</TableName></dtMaster><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.classId</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.uclass</Value></dtDetails><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.semail</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.uemail</Value></dtDetails><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.sname</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.uname</Value></dtDetails><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.sno</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.uid</Value></dtDetails><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.sphone</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.uphone</Value></dtDetails><dtDetails><PID>7899bc392f7f4d8bbec372f52a044a4d</PID><SourceField>t_students.spw</SourceField><DataFrom>entityField</DataFrom><Value>registerEntity.upw</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGButton1_OnClick_1" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+  <Method Code="func_verifyStuNum" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DVE_stuNumCheck" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataValidationEditor" ruleName="数据合法性校验" instanceCode="BR_DVE_stuNumCheck" instanceName="学生学号校验" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"checkData":[{"checkType":"6","dataSource":"CC.JGTB_rgstStuName.Value","dataType":"expression","message":"学号必须是数字","parameter":""}],"messageType":"0"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MessageType>0</MessageType></dtMaster><dtDetails><SourceType>expression</SourceType><SourceName>CC.JGTB_rgstStuName.Value</SourceName><ValidateType>6</ValidateType><Parameter /><Message>学号必须是数字</Message></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_stuNumCheck" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_SCP_stuNumCheck" />
+  <evaluateRule code="BR_SCP_stuNumCheck_right" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>GetLength(CC.JGTB_rgstStuName.Value)==8</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_GetRecordCount1" />
+      <evaluateRule code="BR_SCP_stuNumCheck_existed" />
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_stuNumCheck" instanceName="学号校验_8位整数" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[!(GetLength(CC.JGTB_rgstStuName.Value)==8)]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_stuNumCheck","propertyCode":"LabelText","values":"\"学号必须是8位整数\"","valuetype":"1"},{"controlCode":"JGL_stuNumCheck","propertyCode":"ForeColor","values":"255, 0, 0","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>0246d8ed51064d0093520c9f84fa9207</ConditionID><ControlCode>JGL_stuNumCheck</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>"学号必须是8位整数"</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>0246d8ed51064d0093520c9f84fa9207</ConditionID><ControlCode>JGL_stuNumCheck</ControlCode><PropertyName>ForeColor(前景色)</PropertyName><PropertyCode>ForeColor</PropertyCode><PropertyValue>255, 0, 0</PropertyValue></dtMaster><dtCondition><ID>0246d8ed51064d0093520c9f84fa9207</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_stuNumCheck_right" instanceName="学号校验正确" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[GetLength(CC.JGTB_rgstStuName.Value)==8]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_stuNumCheck","propertyCode":"LabelText","values":"\"\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>0e70de8e7f454c4cbe047d928b41c59e</ConditionID><ControlCode>JGL_stuNumCheck</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>""</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>0e70de8e7f454c4cbe047d928b41c59e</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GetRecordCount1" instanceName="获取数据库表中记录数" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"tb_student.stuNum","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"CC.JGTB_rgstStuName.Value","valueType":"9"}],"tableName":"tb_student","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>tb_student</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>tb_student.stuNum</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>CC.JGTB_rgstStuName.Value</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_stuNumCheck_existed" instanceName="学号校验_已存在" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[BR_OUT.BR_GetRecordCount1.recordCount==1]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_stuNumCheck","propertyCode":"LabelText","values":"\"该用户已存在\"","valuetype":"1"},{"controlCode":"JGL_stuNumCheck","propertyCode":"ForeColor","values":"255, 0, 0","valuetype":""}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>a160fb2128664a1db85ddcaf3e9106ca</ConditionID><ControlCode>JGL_stuNumCheck</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>"该用户已存在"</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>a160fb2128664a1db85ddcaf3e9106ca</ConditionID><ControlCode>JGL_stuNumCheck</ControlCode><PropertyName>ForeColor(前景色)</PropertyName><PropertyCode>ForeColor</PropertyCode><PropertyValue>255, 0, 0</PropertyValue></dtMaster><dtCondition><ID>a160fb2128664a1db85ddcaf3e9106ca</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGL_stuNumCheck_OnClick" Type="Client" InterfaceType="Local" RestrictType="Private">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[]]></MethodChain>
+    <RuleInstances />
+  </Method>
+</Methods>

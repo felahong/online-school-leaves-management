@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/11 13:11:01-->
+<Methods>
+  <Method Code="f_loadForm" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_SCP_setValue" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-24 17:04:19">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@cllgId","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@cllgId</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setValue" instanceName="控件属性设置_设置各标签的值" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_name","propertyCode":"LabelText","values":"@applicantName","valuetype":"1"},{"controlCode":"JGL_reason","propertyCode":"LabelText","values":"@reason","valuetype":"1"},{"controlCode":"JGL_sort","propertyCode":"LabelText","values":"@sort","valuetype":"1"},{"controlCode":"JGL_endTime","propertyCode":"LabelText","values":"@endTime","valuetype":"1"},{"controlCode":"JGL_startTime","propertyCode":"LabelText","values":"@startIime","valuetype":"1"},{"controlCode":"JGL_length","propertyCode":"LabelText","values":"Convert(@applyLength,2)","valuetype":"1"},{"controlCode":"JGL_level","propertyCode":"LabelText","values":"@level","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_name</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@applicantName</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_reason</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@reason</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_sort</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@sort</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_endTime</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@endTime</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_startTime</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@startIime</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_length</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>Convert(@applyLength,2)</PropertyValue><valuetype>1</valuetype></dtMaster><dtMaster><ConditionID>4574887c369a468eac9d16afe3afe006</ConditionID><ControlCode>JGL_level</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>@level</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>4574887c369a468eac9d16afe3afe006</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_cancel" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_SelectionConfirm1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-25 14:52:28">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@classId","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@classId</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SelectionConfirm" ruleName="退出窗体" instanceCode="BR_SelectionConfirm1" instanceName="退出窗体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"SelectionConfirm":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><SelectionConfirm>1</SelectionConfirm></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_ensureSubmit" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_AddTableRecord1" />
+  <evaluateRule code="BR_ShowMessage4" />
+  <evaluateRule code="BR_GetRecordCount1" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>BR_OUT.BR_GetRecordCount1.recordCount&gt;0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage2" />
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage3" />
+      <evaluateRule code="BR_UpdateRecord1" />
+      <evaluateRule code="BR_OCRD_jumpSchedule" />
+    </sequence>
+  </else>
+  <evaluateRule code="BR_AddDataBaseRecord1" />
+  <evaluateRule code="BR_UR_addToLeavesTable" />
+  <evaluateRule code="BR_SelectionConfirm1" />
+  <evaluateRule code="BR_ShowMessage1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_AddTableRecord1" instanceName="新增实体记录" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"leaveEntity.applicantId","fieldtype":"expression","srcField":"@applicantId"},{"destField":"leaveEntity.applicantName","fieldtype":"expression","srcField":"@applicantName"},{"destField":"leaveEntity.applyLength","fieldtype":"expression","srcField":"@applyLength"},{"destField":"leaveEntity.applyTime","fieldtype":"expression","srcField":"@applyTime"},{"destField":"leaveEntity.endTime","fieldtype":"expression","srcField":"@endTime"},{"destField":"leaveEntity.levelId","fieldtype":"expression","srcField":"@levelId"},{"destField":"leaveEntity.reason","fieldtype":"expression","srcField":"@reason"},{"destField":"leaveEntity.role","fieldtype":"expression","srcField":"@role"},{"destField":"leaveEntity.sort","fieldtype":"expression","srcField":"@sort"},{"destField":"leaveEntity.startTime","fieldtype":"expression","srcField":"@startIime"},{"destField":"leaveEntity.statusId","fieldtype":"expression","srcField":"@statusId"},{"destField":"leaveEntity.lid","fieldtype":"expression","srcField":"@lid"},{"destField":"leaveEntity.collegeId","fieldtype":"expression","srcField":"@cllgId"},{"destField":"leaveEntity.classId","fieldtype":"expression","srcField":"@classId"}],"TableType":"window","TableName":"leaveEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>leaveEntity</EntityName></dtMaster><dtEntityColumns><DestName>leaveEntity.applicantId</DestName><SourceType>expression</SourceType><SourceName>@applicantId</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applicantName</DestName><SourceType>expression</SourceType><SourceName>@applicantName</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applyLength</DestName><SourceType>expression</SourceType><SourceName>@applyLength</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applyTime</DestName><SourceType>expression</SourceType><SourceName>@applyTime</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.endTime</DestName><SourceType>expression</SourceType><SourceName>@endTime</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.levelId</DestName><SourceType>expression</SourceType><SourceName>@levelId</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.reason</DestName><SourceType>expression</SourceType><SourceName>@reason</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.role</DestName><SourceType>expression</SourceType><SourceName>@role</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.sort</DestName><SourceType>expression</SourceType><SourceName>@sort</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.startTime</DestName><SourceType>expression</SourceType><SourceName>@startIime</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.statusId</DestName><SourceType>expression</SourceType><SourceName>@statusId</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.lid</DestName><SourceType>expression</SourceType><SourceName>@lid</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.collegeId</DestName><SourceType>expression</SourceType><SourceName>@cllgId</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.classId</DestName><SourceType>expression</SourceType><SourceName>@classId</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示设置的提示信息_2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[leaveEntity].[classId]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[leaveEntity].[classId]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="GetRecordCount" ruleName="获取数据库表中记录数" instanceCode="BR_GetRecordCount1" instanceName="获取数据库表中记录数_校验主键" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dsWhere":[{"columnType":"1","field":"t_leaves.applicantId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"[leaveEntity].[lid]","valueType":"9"}],"tableName":"t_leaves","queryparam":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><IsQuery>Table</IsQuery><TableName>t_leaves</TableName><Condition><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_leaves.applicantId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>[leaveEntity].[lid]</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></Condition><QueryParam><![CDATA[<dsQueryParam />]]]]><![CDATA[></QueryParam></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AddDataBaseRecord" ruleName="新增数据库记录" instanceCode="BR_AddDataBaseRecord1" instanceName="新增数据库记录" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourcesMapping":[{"dataMap":[{"colName":"t_leaves.applicantId","colValue":"@applicantId","valueType":"expression"},{"colName":"t_leaves.applylength","colValue":"@applyLength","valueType":"expression"},{"colName":"t_leaves.applyTime","colValue":"@applyTime","valueType":"expression"},{"colName":"t_leaves.endTime","colValue":"@endTime","valueType":"expression"},{"colName":"t_leaves.levelId","colValue":"@levelId","valueType":"expression"},{"colName":"t_leaves.reason","colValue":"@reason","valueType":"expression"},{"colName":"t_leaves.sort","colValue":"@sort","valueType":"expression"},{"colName":"t_leaves.startTime","colValue":"@startIime","valueType":"expression"},{"colName":"t_leaves.statusId","colValue":"@statusId","valueType":"expression"},{"colName":"t_leaves.lid","colValue":"@lid","valueType":"expression"}],"dataSource":"t_leaves"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><TableName>t_leaves</TableName><ID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</ID></dtMaster><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.applicantId</TargetField><ValueType>expression</ValueType><ValueField>@applicantId</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.applylength</TargetField><ValueType>expression</ValueType><ValueField>@applyLength</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.applyTime</TargetField><ValueType>expression</ValueType><ValueField>@applyTime</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.endTime</TargetField><ValueType>expression</ValueType><ValueField>@endTime</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.levelId</TargetField><ValueType>expression</ValueType><ValueField>@levelId</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.reason</TargetField><ValueType>expression</ValueType><ValueField>@reason</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.sort</TargetField><ValueType>expression</ValueType><ValueField>@sort</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.startTime</TargetField><ValueType>expression</ValueType><ValueField>@startIime</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.statusId</TargetField><ValueType>expression</ValueType><ValueField>@statusId</ValueField></dtTableColumns><dtTableColumns><MasterID>7fb34d1a-883b-457b-a3f5-fc3536fe76fd</MasterID><TargetField>t_leaves.lid</TargetField><ValueType>expression</ValueType><ValueField>@lid</ValueField></dtTableColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UR_addToLeavesTable" instanceName="保存实体到数据库_请假单表" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"t_leaves.applicantId","colValue":"leaveEntity.applicantId","valueType":"entityField"},{"colName":"t_leaves.applylength","colValue":"leaveEntity.applyLength","valueType":"entityField"},{"colName":"t_leaves.applyTime","colValue":"leaveEntity.applyTime","valueType":"entityField"},{"colName":"t_leaves.endTime","colValue":"leaveEntity.endTime","valueType":"entityField"},{"colName":"t_leaves.levelId","colValue":"leaveEntity.levelId","valueType":"entityField"},{"colName":"t_leaves.reason","colValue":"leaveEntity.reason","valueType":"entityField"},{"colName":"t_leaves.role","colValue":"leaveEntity.role","valueType":"entityField"},{"colName":"t_leaves.sort","colValue":"leaveEntity.sort","valueType":"entityField"},{"colName":"t_leaves.startTime","colValue":"leaveEntity.startTime","valueType":"entityField"},{"colName":"t_leaves.statusId","colValue":"leaveEntity.statusId","valueType":"entityField"}],"dataSource":"leaveEntity","dataSourceType":"window","destTab":"t_leaves","isSaveAll":false}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>206efb64eda64bafa0d8639c5ed925a1</ID><SourceName>leaveEntity</SourceName><SourceType>window</SourceType><SourceNameType>leaveEntity(界面实体)</SourceNameType><IsSaveAll>False</IsSaveAll><TableName>t_leaves</TableName></dtMaster><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.applicantId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applicantId</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.applylength</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applyLength</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.applyTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applyTime</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.endTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.endTime</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.levelId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.levelId</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.reason</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.reason</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.role</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.role</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.sort</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.sort</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.startTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.startTime</Value></dtDetails><dtDetails><PID>206efb64eda64bafa0d8639c5ed925a1</PID><SourceField>t_leaves.statusId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.statusId</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SelectionConfirm" ruleName="退出窗体" instanceCode="BR_SelectionConfirm1" instanceName="退出窗体" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"SelectionConfirm":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><SelectionConfirm>1</SelectionConfirm></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"@applicantId","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>@applicantId</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[leaveEntity].[role]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[leaveEntity].[role]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UpdateRecord1" instanceName="保存实体到数据库" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"t_leaves.applicantId","colValue":"leaveEntity.applicantId","valueType":"entityField"},{"colName":"t_leaves.applylength","colValue":"leaveEntity.applyLength","valueType":"entityField"},{"colName":"t_leaves.applyTime","colValue":"leaveEntity.applyTime","valueType":"entityField"},{"colName":"t_leaves.endTime","colValue":"leaveEntity.endTime","valueType":"entityField"},{"colName":"t_leaves.levelId","colValue":"leaveEntity.levelId","valueType":"entityField"},{"colName":"t_leaves.lid","colValue":"leaveEntity.lid","valueType":"entityField"},{"colName":"t_leaves.reason","colValue":"leaveEntity.reason","valueType":"entityField"},{"colName":"t_leaves.role","colValue":"leaveEntity.role","valueType":"entityField"},{"colName":"t_leaves.sort","colValue":"leaveEntity.sort","valueType":"entityField"},{"colName":"t_leaves.startTime","colValue":"leaveEntity.startTime","valueType":"entityField"},{"colName":"t_leaves.statusId","colValue":"leaveEntity.statusId","valueType":"entityField"},{"colName":"t_leaves.collegeId","colValue":"leaveEntity.collegeId","valueType":"entityField"},{"colName":"t_leaves.classId","colValue":"leaveEntity.classId","valueType":"entityField"}],"dataSource":"leaveEntity","dataSourceType":"window","destTab":"t_leaves","isSaveAll":false}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>dee405a07b7646d0be1fd78dd606359a</ID><SourceName>leaveEntity</SourceName><SourceType>window</SourceType><SourceNameType>leaveEntity(界面实体)</SourceNameType><IsSaveAll>False</IsSaveAll><TableName>t_leaves</TableName></dtMaster><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.applicantId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applicantId</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.applylength</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applyLength</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.applyTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.applyTime</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.endTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.endTime</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.levelId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.levelId</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.lid</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.lid</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.reason</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.reason</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.role</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.role</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.sort</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.sort</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.startTime</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.startTime</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.statusId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.statusId</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.collegeId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.collegeId</Value></dtDetails><dtDetails><PID>dee405a07b7646d0be1fd78dd606359a</PID><SourceField>t_leaves.classId</SourceField><DataFrom>entityField</DataFrom><Value>leaveEntity.classId</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_jumpSchedule" instanceName="打开窗体并返回数据_跳转到首页" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"StuHomeForm","windowName":"StuHome","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"currentWindowRedirection","browerWindowTitle":"\"首页\"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"source","paramType":"expression","paramValue":"1","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"@role","paramEntityType":"","entityFieldMapping":null},{"paramName":"userId","paramType":"expression","paramValue":"@applicantId","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>StuHomeForm</WindowCode><WindowName>StuHome</WindowName><TargetContainerType>currentWindowRedirection</TargetContainerType><BrowerWindowTitle>"首页"</BrowerWindowTitle><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>source</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>1</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@role</SourceValue></dtParam><dtParam><WindowVariant>userId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>@applicantId</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_提示已申请" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"已经申请过，不必重复申请。请到待办事项查看\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"已经申请过，不必重复申请。请到待办事项查看"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

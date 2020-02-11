@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/24 19:51:48-->
+<Methods>
+  <Method Code="f_loadForm" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DBDTIE_addDataToEntity" />
+  <foreach isEnabled="True" isDebug="False" code="ForeachCode1">
+    <define>
+      <varCode>leaveIndividual</varCode>
+      <entityType>window</entityType>
+      <entityCode>leaveEntity</entityCode>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage1" />
+    </sequence>
+  </foreach>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DBDTIE_addDataToEntity" instanceName="从数据库获取数据到实体_请假单表映射到实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_leaves.collegeId","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@collegeId","valueType":"9"}],"entityType":"window","entityName":"leaveEntity","itemqueryparam":null,"items":[{"destName":"leaveEntity.applyLength","sourceName":"t_leaves.applylength","type":"entityField"},{"destName":"leaveEntity.applyTime","sourceName":"t_leaves.applyTime","type":"entityField"},{"destName":"leaveEntity.endTime","sourceName":"t_leaves.endTime","type":"entityField"},{"destName":"leaveEntity.levelId","sourceName":"t_leaves.levelId","type":"entityField"},{"destName":"leaveEntity.reason","sourceName":"t_leaves.reason","type":"entityField"},{"destName":"leaveEntity.role","sourceName":"t_leaves.role","type":"entityField"},{"destName":"leaveEntity.sort","sourceName":"t_leaves.sort","type":"entityField"},{"destName":"leaveEntity.startTime","sourceName":"t_leaves.startTime","type":"entityField"},{"destName":"leaveEntity.statusId","sourceName":"t_leaves.statusId","type":"entityField"},{"destName":"leaveEntity.applicantId","sourceName":"t_leaves.applicantId","type":"entityField"},{"destName":"leaveEntity.lid","sourceName":"t_leaves.lid","type":"entityField"}],"orderBy":null,"sourceName":"t_leaves","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>leaveEntity</EntityName><SourceType>Table</SourceType><SourceName>t_leaves</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_leaves.collegeId</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@collegeId</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>17c2b88af0d3429888858d464958956b</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applyLength</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applylength</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applyTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applyTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.endTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.endTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.levelId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.levelId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.reason</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.reason</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.role</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.role</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.sort</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.sort</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.startTime</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.startTime</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.statusId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.statusId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.applicantId</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.applicantId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>17c2b88af0d3429888858d464958956b</MasterID><DestName>leaveEntity.lid</DestName><SourceType>entityField</SourceType><SourceName>t_leaves.lid</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>17c2b88af0d3429888858d464958956b</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>17c2b88af0d3429888858d464958956b</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False" lastModifiedUser="user_20190504002" lastModifiedTime="2019-07-25 14:31:54">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"LV.leaveIndividual.applicantName","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>LV.leaveIndividual.applicantName</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

@@ -1,0 +1,31 @@
+﻿<form type="1002" code="testVSQLForm" isEntendable="false" owner="15013952708" IsLocked="False">
+  <propertys>
+    <property name="Width"><![CDATA[960]]></property>
+    <property name="Height"><![CDATA[450]]></property>
+    <property name="HeightSet"><![CDATA[StaticHeight]]></property>
+    <property name="LayoutType"><![CDATA[None]]></property>
+    <property name="TableName"><![CDATA[]]></property>
+    <property name="FormLoadAction"><![CDATA[f_load]]></property>
+    <property name="FormCloseAction"><![CDATA[]]></property>
+    <property name="FormClosingAction"><![CDATA[]]></property>
+    <property name="BackColor"><![CDATA[]]></property>
+    <property name="Padding"><![CDATA[0, 0, 0, 0]]></property>
+    <property name="Name"><![CDATA[testVSQL]]></property>
+    <property name="FormBorderStyle"><![CDATA[FixedSingle]]></property>
+    <property name="WindowState"><![CDATA[Normal]]></property>
+    <property name="MaximizeBox"><![CDATA[True]]></property>
+    <property name="RefResources"><![CDATA[]]></property>
+    <property name="ThemeVar"><![CDATA[]]></property>
+  </propertys>
+  <controls>
+    <JGTextBox Code="JGTextBox1" LabelText="文本" PercentHeight="5.8%" PercentWidth="24.5%" Top="92" Left="100" TabIndex="4" LastModifiedTime="2019-07-22 15:07:16" LastModifiedUser="15013952708" />
+    <JGButton Code="JGButton1" LabelText="按钮" PercentHeight="5.8%" PercentWidth="5.4%" Top="189" Left="189" TabIndex="3" OnClick="JGButton1_OnClick" LastModifiedTime="2019-07-22 15:33:48" LastModifiedUser="15013952708" />
+    <JGDataGrid Code="JGDataGrid1" LabelText="列表" PercentHeight="33.3%" PercentWidth="25%" Top="65" Left="388" TabIndex="0" TableName="info" LastModifiedTime="2019-07-22 15:06:49" LastModifiedUser="15013952708">
+      <JGTextBoxColumn Code="JGTextBoxColumn1" ColumnName="major" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="专业" LastModifiedTime="2019-07-17 17:51:54" LastModifiedUser="15013952708" TableName="info" />
+      <JGTextBoxColumn Code="JGTextBoxColumn2" ColumnName="majorId" ControlDocInfo="{&quot;ControlDefine&quot;:&quot;&quot;,&quot;DataSourceDesc&quot;:&quot;&quot;,&quot;FusionDesc&quot;:&quot;&quot;}" LabelText="专业编号" LastModifiedTime="2019-07-17 17:51:56" LastModifiedUser="15013952708" TableName="info" />
+    </JGDataGrid>
+  </controls>
+  <outputs />
+  <inputs />
+  <remark><![CDATA[]]></remark>
+</form>

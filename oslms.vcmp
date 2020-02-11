@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Component code="oslms" name="在线校园请假系统" version="1.0.0" type="Business" category="">
+  <Provider><![CDATA[pomelorange]]></Provider>
+  <Description><![CDATA[]]></Description>
+  <References>
+    <Reference path="ReferenceComponent\LoginComp.xml" srcPath="ReferenceComponent\LoginComp_3.12.0.zip" />
+  </References>
+  <UpgradeItemRoot>
+    <UpgradeItem DataVersion="1" PluginKeyValue="Toone.V3.DevSystem.EntityDesigner" BranchValueKey="" />
+    <UpgradeItem DataVersion="2" PluginKeyValue="Toone.V3.DevSystem.RefSearch" BranchValueKey="" />
+    <UpgradeItem DataVersion="7" PluginKeyValue="Toone.V3.DevSystem.FormDesignManager" BranchValueKey="" />
+    <UpgradeItem DataVersion="3" PluginKeyValue="Toone.V3.DevSystem.MethodEditor" BranchValueKey="ExecuteRuleSet" />
+    <UpgradeItem DataVersion="3" PluginKeyValue="Toone.V3.DevSystem.MethodEditor" BranchValueKey="OpenComponentReturnData" />
+    <UpgradeItem DataVersion="4" PluginKeyValue="Toone.V3.DevSystem.MethodEditor" BranchValueKey="" />
+  </UpgradeItemRoot>
+</Component>

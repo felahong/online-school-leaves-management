@@ -1,0 +1,55 @@
+﻿<Table id="4f2d6de3c5ca40b6ae4492840eaf21bd" code="t_status" name="请假状态表">
+  <Remark><![CDATA[状态情况有：已经申请；审核通过；审核不通过；已经销假等]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 20:07:40]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-15 22:51:39]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="279e80301b1a40b1a0b9d1321bfa5b81" code="statusId" name="状态id" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="47276f2a8a9c42d38acc75741d88154d" code="statusName" name="状态" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[d34904a894634bf08c9e58f887619a4d]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[1]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[辅导员审核中]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[9cb1077e616a4ea7ab7f04f77122aa13]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[2]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[院领导审核中]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[60d7d825757c4b158346f70d1a9f7fe0]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[3]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[校领导审核中]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[d4a4b358c341411da639f6fa0fabb4f9]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[4]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[通过审核]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[1465496c812845a092ac7204b3bdf5a0]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[5]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[未通过审核]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[d2b5ef1a5f204419a2d7e17dd8408d45]]></ColumnData>
+      <ColumnData code="statusId"><![CDATA[6]]></ColumnData>
+      <ColumnData code="statusName"><![CDATA[已销假]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

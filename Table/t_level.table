@@ -1,0 +1,40 @@
+﻿<Table id="1367b8900ca24abc9a6d1c014e748eb9" code="t_level" name="请假等级表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-07-17 15:46:48]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-17 15:47:39]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="81df3a3d146042dab6aa8532135e96d2" code="levelId" name="等级id" domain="" dataType="integer" length="50" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="a9b865bbf9884dbf868f4f6deab45f91" code="level" name="等级名" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[d961c97248dd4cb9ae595fa6b53ca198]]></ColumnData>
+      <ColumnData code="levelId"><![CDATA[1]]></ColumnData>
+      <ColumnData code="level"><![CDATA[一级]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[f2e8a962d2e542ac99dd931f815042ff]]></ColumnData>
+      <ColumnData code="levelId"><![CDATA[2]]></ColumnData>
+      <ColumnData code="level"><![CDATA[二级]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[e78761851bd0441fb92bbf247c653be1]]></ColumnData>
+      <ColumnData code="levelId"><![CDATA[3]]></ColumnData>
+      <ColumnData code="level"><![CDATA[三级]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

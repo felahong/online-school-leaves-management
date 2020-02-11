@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Created: 2019/7/7 10:16:47-->
+<Methods>
+  <Method Code="f_formLoad" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[自动填写申请人]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ATR_addEntity" />
+  <evaluateRule code="BR_SCP_setApplicant" />
+  <evaluateRule code="BR_ShowMessage1" />
+  <evaluateRule code="BR_SCP_setTimeisNow" />
+  <if isEnabled="False" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNull(CC.JGDTP_startTime.Value,True)&amp;&amp;IsNull(CC.JGDTP_endTime.Value,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage2" />
+    </sequence>
+  </if>
+  <else isEnabled="False" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SetControlPropertys1" />
+    </sequence>
+  </else>
+  <if isEnabled="False" isDebug="False" code="IfCode3">
+    <define>
+      <expression>IsNull(CC.JGIB_Days.Value,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="False" isDebug="False" code="IfCode2">
+        <define>
+          <expression>[LeaveApplyEntity].[duration]&lt;=7&amp;&amp;[LeaveApplyEntity].[duration]&gt;=4</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SEVCV_level02" />
+        </sequence>
+      </if>
+      <if isEnabled="False" isDebug="False" code="IfCode4">
+        <define>
+          <expression>[LeaveApplyEntity].[duration]&gt;7</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SEVCV_level03" />
+        </sequence>
+      </if>
+    </sequence>
+  </if>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addEntity" instanceName="新增实体记录" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"LeaveApplyEntity.id","fieldtype":"expression","srcField":"@applicantNum"},{"destField":"LeaveApplyEntity.Name","fieldtype":"expression","srcField":"@applicantName"}],"TableType":"window","TableName":"LeaveApplyEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>LeaveApplyEntity</EntityName></dtMaster><dtEntityColumns><DestName>LeaveApplyEntity.id</DestName><SourceType>expression</SourceType><SourceName>@applicantNum</SourceName></dtEntityColumns><dtEntityColumns><DestName>LeaveApplyEntity.Name</DestName><SourceType>expression</SourceType><SourceName>@applicantName</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setApplicant" instanceName="控件属性设置_申请人姓名" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_applicant","propertyCode":"Value","values":"@applicantName","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>ee9506441855457db6755bd3cff26ccc</ConditionID><ControlCode>JGTB_applicant</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>@applicantName</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>ee9506441855457db6755bd3cff26ccc</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[LeaveApplyEntity].[applicantName]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[LeaveApplyEntity].[applicantName]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setTimeisNow" instanceName="控件属性设置_设置开始时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_startTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>5080216cc2e1400180cae7170640f6b0</ConditionID><ControlCode>JGDTP_startTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>5080216cc2e1400180cae7170640f6b0</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level02" instanceName="给界面实体/控件/变量赋值_申请等级02" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"LeaveApplyEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"\"al02\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>LeaveApplyEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"al02"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGL_applyDays","propertyCode":"LabelText","values":"\"请先设置时间\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>42f0015f6eb94019998d977fe6e05215</ConditionID><ControlCode>JGL_applyDays</ControlCode><PropertyName>LabelText(标题)</PropertyName><PropertyCode>LabelText</PropertyCode><PropertyValue>"请先设置时间"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>42f0015f6eb94019998d977fe6e05215</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level03" instanceName="给界面实体/控件/变量赋值_申请等级03" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"LeaveApplyEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"\"al03\"","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>LeaveApplyEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>"al03"</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"都不为空\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"都不为空"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_verifyStartTime" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[如果申请开始日期已经过去，则跳出窗口提示]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>IsNull(CC.JGDTP_startTime.Value,True)&amp;&amp;IsNull(CC.JGDTP_endTime.Value,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="True" isDebug="False" code="IfCode1">
+        <define>
+          <expression>Datediff(ShortDateNow(),CC.JGDTP_startTime.Value,"d")&lt;0</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SM_startTimePassed" />
+          <evaluateRule code="BR_SCP_setStartTimeIsNow" />
+        </sequence>
+      </if>
+      <if isEnabled="True" isDebug="False" code="IfCode3">
+        <define>
+          <expression>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")&lt;0</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SM_startTimeError" />
+          <evaluateRule code="BR_SCP_setStartTimeIsNow_1" />
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SCP_calcDays" />
+        </sequence>
+      </else>
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SCP_DaysClear" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_calcDays" instanceName="控件属性设置_计算申请时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGIB_Days","propertyCode":"Value","values":"Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,\"d\")","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>ff8fa231315c4f91a4deab3d48bfd141</ConditionID><ControlCode>JGIB_Days</ControlCode><PropertyName>Value(整数值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>ff8fa231315c4f91a4deab3d48bfd141</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_startTimePassed" instanceName="显示设置的提示信息_开始时间已过" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"申请日期已过\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"申请日期已过"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setStartTimeIsNow" instanceName="控件属性设置_设置开始时间为当前时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_startTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>f41c2fc2a6c6498eb2131e266fa6d230</ConditionID><ControlCode>JGDTP_startTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>f41c2fc2a6c6498eb2131e266fa6d230</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_DaysClear" instanceName="控件属性设置_申请时间设置为空" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGIB_Days","propertyCode":"Value","values":"Null()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>3fafd705149f4ea69a0310f63a2167db</ConditionID><ControlCode>JGIB_Days</ControlCode><PropertyName>Value(整数值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>Null()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>3fafd705149f4ea69a0310f63a2167db</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_startTimeError" instanceName="显示设置的提示信息_开始时间晚于结束时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"开始时间不能晚于结束时间\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"开始时间不能晚于结束时间"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setStartTimeIsNow_1" instanceName="控件属性设置_设置开始时间为当前时间_1" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_startTime","propertyCode":"Value","values":"ShortDateNow()","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>f41c2fc2a6c6498eb2131e266fa6d230</ConditionID><ControlCode>JGDTP_startTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>ShortDateNow()</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>f41c2fc2a6c6498eb2131e266fa6d230</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_verifyEndTime" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[如果结束时间早于开始时间]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>IsNull(CC.JGDTP_endTime.Value,True)&amp;&amp;IsNull(CC.JGDTP_startTime.Value,True)</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="True" isDebug="False" code="IfCode1">
+        <define>
+          <expression>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")&lt;0</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SM_endTimeError" />
+          <evaluateRule code="BR_SCP_setEndTimeIsStartTime" />
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SetControlPropertys1" />
+        </sequence>
+      </else>
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_RSCV_clearDays" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ResetSelectedControlValue" ruleName="清空控件数值" instanceCode="BR_RSCV_clearDays" instanceName="清空控件数值_清空申请时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"componentControlCodes":[{"componentControlCode":"JGIB_Days"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtControl><Code>JGIB_Days</Code><CodeName>JGIB_Days(申请天数)</CodeName></dtControl></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_endTimeError" instanceName="显示设置的提示信息_结束时间不能早于开始时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"结束时间不能早于开始时间\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"结束时间不能早于开始时间"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setEndTimeIsStartTime" instanceName="控件属性设置_重置结束时间_设置为开始时间" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGDTP_endTime","propertyCode":"Value","values":"CC.JGDTP_startTime.Value","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>ae8f1dfaa3b84c638b5f5c29daf065e1</ConditionID><ControlCode>JGDTP_endTime</ControlCode><PropertyName>Value(值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>CC.JGDTP_startTime.Value</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>ae8f1dfaa3b84c638b5f5c29daf065e1</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SetControlPropertys1" instanceName="控件属性设置" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGIB_Days","propertyCode":"Value","values":"Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,\"d\")","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>6909e562a57e4b2eba1d5f9954148598</ConditionID><ControlCode>JGIB_Days</ControlCode><PropertyName>Value(整数值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>Datediff(CC.JGDTP_startTime.Value,CC.JGDTP_endTime.Value,"d")</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>6909e562a57e4b2eba1d5f9954148598</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_submit" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[1、]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_DataBaseDataToInterfaceEntity1" />
+  <evaluateRule code="BR_ShowMessage5" />
+  <evaluateRule code="BR_DataBaseDataToInterfaceEntity2" />
+  <evaluateRule code="BR_ShowMessage6" />
+  <evaluateRule code="BR_ATR_addApplyEntity" />
+  <evaluateRule code="BR_ShowMessage1" />
+  <if isEnabled="True" isDebug="False" code="IfCode5">
+    <define>
+      <expression>[leaveEntity].[applyLength]&lt;=3</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level01" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode2">
+    <define>
+      <expression>[leaveEntity].[applyLength]&lt;=7&amp;&amp;[leaveEntity].[applyLength]&gt;=4</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level02" />
+    </sequence>
+  </if>
+  <if isEnabled="True" isDebug="False" code="IfCode3">
+    <define>
+      <expression>[leaveEntity].[applyLength]&gt;7</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_SEVCV_level03" />
+    </sequence>
+  </if>
+  <evaluateRule code="BR_SM_ensureSubmit" />
+  <evaluateRule code="BR_ShowMessage4" />
+  <evaluateRule code="BR_OCRD_popDetails" />
+  <if isEnabled="False" isDebug="False" code="IfCode4">
+    <define>
+      <expression>BR_OUT.BR_SM_ensureSubmit.confirm</expression>
+      <remark></remark>
+    </define>
+    <sequence />
+  </if>
+  <else isEnabled="False" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_UR_addToLeavesTable" />
+    </sequence>
+  </else>
+  <evaluateRule code="BR_SM_applySucc" />
+  <if isEnabled="False" isDebug="False" code="IfCode1">
+    <define>
+      <expression>BR_OUT.BR_SM_applySucc.confirm</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage2" />
+    </sequence>
+  </if>
+  <else isEnabled="False" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_ShowMessage3" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity1" instanceName="从数据库获取数据到实体_获取学生专业和班级" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Table","dsWhere":[{"columnType":"1","field":"t_students.sno","fieldType":"char","leftBracket":"(","logicOperation":null,"operation":"=","rightBracket":")","value":"@applicantNum","valueType":"9"}],"entityType":"window","entityName":"stuInfo","itemqueryparam":null,"items":[{"destName":"stuInfo.majorId","sourceName":"t_students.majorId","type":"entityField"},{"destName":"stuInfo.classId","sourceName":"t_students.classId","type":"entityField"}],"orderBy":null,"sourceName":"t_students","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>stuInfo</EntityName><SourceType>Table</SourceType><SourceName>t_students</SourceName><dsWhere><![CDATA[<NewDataSet><dtWhere><columnType>1</columnType><field>t_students.sno</field><fieldType>char</fieldType><leftBracket>(</leftBracket><operation>=</operation><rightBracket>)</rightBracket><value>@applicantNum</value><valueType>9</valueType></dtWhere></NewDataSet>]]]]><![CDATA[></dsWhere><dsSort><![CDATA[<dsSort />]]]]><![CDATA[></dsSort><ID>636a287af3824bb1a6d22a8aa6eb0207</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>636a287af3824bb1a6d22a8aa6eb0207</MasterID><DestName>stuInfo.majorId</DestName><SourceType>entityField</SourceType><SourceName>t_students.majorId</SourceName></dtEntityColumnRelation><dtEntityColumnRelation><MasterID>636a287af3824bb1a6d22a8aa6eb0207</MasterID><DestName>stuInfo.classId</DestName><SourceType>entityField</SourceType><SourceName>t_students.classId</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>636a287af3824bb1a6d22a8aa6eb0207</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>636a287af3824bb1a6d22a8aa6eb0207</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage5" instanceName="显示设置的提示信息_4" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[stuInfo].[majorId]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[stuInfo].[majorId]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="DataBaseDataToInterfaceEntity" ruleName="从数据库获取数据到实体" instanceCode="BR_DataBaseDataToInterfaceEntity2" instanceName="从数据库获取数据到实体_获取学院信息" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"isAsyn":false,"itemsConfig":[{"Istype":"Query","dsWhere":null,"entityType":"window","entityName":"collegeInfo","itemqueryparam":[{"queryfield":"mid","queryfieldValue":"[stuInfo].[majorId]"}],"items":[{"destName":"collegeInfo.collegeId","sourceName":"s_getCollegeByMajor.collegeId","type":"entityField"}],"orderBy":null,"sourceName":"s_getCollegeByMajor","dataLoad":"","pager":[{"isPaging":false,"pageSize":"","pageNo":"","totalRecordSave":[{"isSaveTotalRecord":false,"targetType":"methodVariant","target":""}]}]}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtEntityRelation><EntityType>window</EntityType><EntityName>collegeInfo</EntityName><SourceType>Query</SourceType><SourceName>s_getCollegeByMajor</SourceName><dsWhere><![CDATA[<NewDataSet />]]]]><![CDATA[></dsWhere><dsQueryParam><![CDATA[<dsQueryParam><dtQueryParam><QueryParam>mid</QueryParam><QueryParamDisplay>mid(专业编码)</QueryParamDisplay><QueryParamValue>[stuInfo].[majorId]</QueryParamValue></dtQueryParam></dsQueryParam>]]]]><![CDATA[></dsQueryParam><ID>a45136f84a074bf0ba747bb3919dbee3</ID><DataLoad /></dtEntityRelation><dtEntityColumnRelation><MasterID>a45136f84a074bf0ba747bb3919dbee3</MasterID><DestName>collegeInfo.collegeId</DestName><SourceType>entityField</SourceType><SourceName>s_getCollegeByMajor.collegeId</SourceName></dtEntityColumnRelation><dtIsAsyn><isAsyn>False</isAsyn></dtIsAsyn><dtPager><PagerMasterID>a45136f84a074bf0ba747bb3919dbee3</PagerMasterID><isPaging>False</isPaging><pageNo /><pageSize /></dtPager><dtTotalRecordSave><TotalRecordSaveMasterID>a45136f84a074bf0ba747bb3919dbee3</TotalRecordSaveMasterID><isSaveTotalRecord>False</isSaveTotalRecord><targetType>methodVariant</targetType></dtTotalRecordSave></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage6" instanceName="显示设置的提示信息_5" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[collegeInfo].[collegeId]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[collegeInfo].[collegeId]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="AddTableRecord" ruleName="新增实体记录" instanceCode="BR_ATR_addApplyEntity" instanceName="新增实体记录_请假实体" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"AddLocation":"3","Mappings":[{"destField":"leaveEntity.applicantId","fieldtype":"expression","srcField":"@applicantNum"},{"destField":"leaveEntity.applicantName","fieldtype":"expression","srcField":"@applicantName"},{"destField":"leaveEntity.applyLength","fieldtype":"expression","srcField":"CC.JGIB_Days.Value"},{"destField":"leaveEntity.applyTime","fieldtype":"expression","srcField":"LocateDateTimeNow()"},{"destField":"leaveEntity.endTime","fieldtype":"expression","srcField":"CC.JGDTP_endTime.Value"},{"destField":"leaveEntity.reason","fieldtype":"expression","srcField":"CC.JGTB_detailedReason.Value"},{"destField":"leaveEntity.role","fieldtype":"expression","srcField":"@applicantRole"},{"destField":"leaveEntity.sort","fieldtype":"expression","srcField":"CC.JGRG_sortChoose.Value"},{"destField":"leaveEntity.startTime","fieldtype":"expression","srcField":"CC.JGDTP_startTime.Value"},{"destField":"leaveEntity.statusId","fieldtype":"expression","srcField":"1"},{"destField":"leaveEntity.lid","fieldtype":"expression","srcField":"ConcatStr(@applicantNum,GetDateSection(CC.JGDTP_startTime.Value,1),GetDateSection(CC.JGDTP_startTime.Value,2),GetDateSection(CC.JGDTP_startTime.Value,3),Convert(CC.JGIB_Days.Value,2))"},{"destField":"leaveEntity.collegeId","fieldtype":"expression","srcField":"[collegeInfo].[collegeId]"},{"destField":"leaveEntity.classId","fieldtype":"expression","srcField":"[stuInfo].[classId]"}],"TableType":"window","TableName":"leaveEntity","NumCount":"1"}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><RangCount>1</RangCount><Location>3</Location><EntityType>window</EntityType><EntityName>leaveEntity</EntityName></dtMaster><dtEntityColumns><DestName>leaveEntity.applicantId</DestName><SourceType>expression</SourceType><SourceName>@applicantNum</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applicantName</DestName><SourceType>expression</SourceType><SourceName>@applicantName</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applyLength</DestName><SourceType>expression</SourceType><SourceName>CC.JGIB_Days.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.applyTime</DestName><SourceType>expression</SourceType><SourceName>LocateDateTimeNow()</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.endTime</DestName><SourceType>expression</SourceType><SourceName>CC.JGDTP_endTime.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.reason</DestName><SourceType>expression</SourceType><SourceName>CC.JGTB_detailedReason.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.role</DestName><SourceType>expression</SourceType><SourceName>@applicantRole</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.sort</DestName><SourceType>expression</SourceType><SourceName>CC.JGRG_sortChoose.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.startTime</DestName><SourceType>expression</SourceType><SourceName>CC.JGDTP_startTime.Value</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.statusId</DestName><SourceType>expression</SourceType><SourceName>1</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.lid</DestName><SourceType>expression</SourceType><SourceName>ConcatStr(@applicantNum,GetDateSection(CC.JGDTP_startTime.Value,1),GetDateSection(CC.JGDTP_startTime.Value,2),GetDateSection(CC.JGDTP_startTime.Value,3),Convert(CC.JGIB_Days.Value,2))</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.collegeId</DestName><SourceType>expression</SourceType><SourceName>[collegeInfo].[collegeId]</SourceName></dtEntityColumns><dtEntityColumns><DestName>leaveEntity.classId</DestName><SourceType>expression</SourceType><SourceName>[stuInfo].[classId]</SourceName></dtEntityColumns></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[leaveEntity].[collegeId]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[leaveEntity].[collegeId]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_ensureSubmit" instanceName="显示设置的提示信息_确认提交" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"3","time":null,"simpleChinesePrompt":{"msgnote":"\"确认提交？\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>3</MsgType><SimpleChinese>"确认提交？"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示设置的提示信息_3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[leaveEntity].[role]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[leaveEntity].[role]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="OpenComponentReturnData" ruleName="打开窗体并返回数据" instanceCode="BR_OCRD_popDetails" instanceName="打开窗体并返回数据_弹出详情页" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"openType":"appoint","windowCode":"LeaveDetailsForm","windowName":"LeaveDetails","languageType":"","languageCode":"","windowNumSource":"","targetContainerType":"dialogWindow","browerWindowTitle":"","browerWindowFlag":"","isDynamicContainer":false,"windowContainer":"","heightExp":"","widthExp":"","isAsyn":false,"divCode":"","openLocation":"","dialogType":"","dialogFlag":"","heightType":"","heightUnit":"","widthType":"","widthUnit":"","isPushMainWindow":false,"inputParams":[{"paramName":"applicantId","paramType":"expression","paramValue":"[leaveEntity].[applicantId]","paramEntityType":"","entityFieldMapping":null},{"paramName":"applicantName","paramType":"expression","paramValue":"[leaveEntity].[applicantName]","paramEntityType":"","entityFieldMapping":null},{"paramName":"statusId","paramType":"expression","paramValue":"[leaveEntity].[statusId]","paramEntityType":"","entityFieldMapping":null},{"paramName":"role","paramType":"expression","paramValue":"[leaveEntity].[role]","paramEntityType":"","entityFieldMapping":null},{"paramName":"applyTime","paramType":"expression","paramValue":"[leaveEntity].[applyTime]","paramEntityType":"","entityFieldMapping":null},{"paramName":"startIime","paramType":"expression","paramValue":"[leaveEntity].[startTime]","paramEntityType":"","entityFieldMapping":null},{"paramName":"endTime","paramType":"expression","paramValue":"[leaveEntity].[endTime]","paramEntityType":"","entityFieldMapping":null},{"paramName":"applyLength","paramType":"expression","paramValue":"[leaveEntity].[applyLength]","paramEntityType":"","entityFieldMapping":null},{"paramName":"levelId","paramType":"expression","paramValue":"[leaveEntity].[levelId]","paramEntityType":"","entityFieldMapping":null},{"paramName":"sort","paramType":"expression","paramValue":"[leaveEntity].[sort]","paramEntityType":"","entityFieldMapping":null},{"paramName":"reason","paramType":"expression","paramValue":"[leaveEntity].[reason]","paramEntityType":"","entityFieldMapping":null},{"paramName":"level","paramType":"expression","paramValue":"CC.JGTB_level.Value","paramEntityType":"","entityFieldMapping":null},{"paramName":"lid","paramType":"expression","paramValue":"[leaveEntity].[lid]","paramEntityType":"","entityFieldMapping":null},{"paramName":"cllgId","paramType":"expression","paramValue":"[leaveEntity].[collegeId]","paramEntityType":"","entityFieldMapping":null},{"paramName":"classId","paramType":"expression","paramValue":"[leaveEntity].[classId]","paramEntityType":"","entityFieldMapping":null}],"returnMapping":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><OpenType>appoint</OpenType><WindowCode>LeaveDetailsForm</WindowCode><WindowName>LeaveDetails</WindowName><TargetContainerType>dialogWindow</TargetContainerType><BrowerWindowTitle /><IsDynamicContainer>False</IsDynamicContainer><IsChooseLanguage>False</IsChooseLanguage><HeightExp /><WidthExp /><IsAsyn>False</IsAsyn></dtMaster><dtParam><WindowVariant>applicantId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[applicantId]</SourceValue></dtParam><dtParam><WindowVariant>applicantName</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[applicantName]</SourceValue></dtParam><dtParam><WindowVariant>statusId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[statusId]</SourceValue></dtParam><dtParam><WindowVariant>role</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[role]</SourceValue></dtParam><dtParam><WindowVariant>applyTime</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[applyTime]</SourceValue></dtParam><dtParam><WindowVariant>startIime</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[startTime]</SourceValue></dtParam><dtParam><WindowVariant>endTime</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[endTime]</SourceValue></dtParam><dtParam><WindowVariant>applyLength</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[applyLength]</SourceValue></dtParam><dtParam><WindowVariant>levelId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[levelId]</SourceValue></dtParam><dtParam><WindowVariant>sort</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[sort]</SourceValue></dtParam><dtParam><WindowVariant>reason</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[reason]</SourceValue></dtParam><dtParam><WindowVariant>level</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>CC.JGTB_level.Value</SourceValue></dtParam><dtParam><WindowVariant>lid</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[lid]</SourceValue></dtParam><dtParam><WindowVariant>cllgId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[collegeId]</SourceValue></dtParam><dtParam><WindowVariant>classId</WindowVariant><SourceType>expression</SourceType><SourceTypeDisplayText>表达式</SourceTypeDisplayText><SourceValue>[leaveEntity].[classId]</SourceValue></dtParam></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_SM_applySucc" instanceName="显示设置的提示信息_是否查看请假信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"3","time":null,"simpleChinesePrompt":{"msgnote":"\"请假成功！是否查看请假信息\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>3</MsgType><SimpleChinese>"请假成功！是否查看请假信息"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level02" instanceName="给界面实体/控件/变量赋值_申请等级02" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"2","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>2</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level03" instanceName="给界面实体/控件/变量赋值_申请等级03" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"3","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>3</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"弹出详情页\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"弹出详情页"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="UpdateRecord" ruleName="保存实体到数据库" instanceCode="BR_UR_addToLeavesTable" instanceName="保存实体到数据库_请假单表" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"dataSourceMap":[{"dataMap":[{"colName":"t_leaves.applicantId","colValue":"LeaveApplyEntity.applicantId","valueType":"entityField"},{"colName":"t_leaves.applylength","colValue":"LeaveApplyEntity.duration","valueType":"entityField"},{"colName":"t_leaves.applyTime","colValue":"LeaveApplyEntity.applyTime","valueType":"entityField"},{"colName":"t_leaves.endTime","colValue":"LeaveApplyEntity.endTime","valueType":"entityField"},{"colName":"t_leaves.reason","colValue":"LeaveApplyEntity.reason","valueType":"entityField"},{"colName":"t_leaves.role","colValue":"LeaveApplyEntity.Role","valueType":"entityField"},{"colName":"t_leaves.sort","colValue":"LeaveApplyEntity.sort","valueType":"entityField"},{"colName":"t_leaves.startTime","colValue":"LeaveApplyEntity.startTime","valueType":"entityField"},{"colName":"t_leaves.levelId","colValue":"LeaveApplyEntity.levelId","valueType":"entityField"},{"colName":"t_leaves.statusId","colValue":"LeaveApplyEntity.statusId","valueType":"entityField"}],"dataSource":"LeaveApplyEntity","dataSourceType":"window","destTab":"t_leaves","isSaveAll":true}],"treeStruct":null}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ID>784feb9ae014498c979e23f98b152d13</ID><SourceName>LeaveApplyEntity</SourceName><SourceType>window</SourceType><SourceNameType>LeaveApplyEntity(界面实体)</SourceNameType><IsSaveAll>True</IsSaveAll><TableName>t_leaves</TableName></dtMaster><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.applicantId</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.applicantId</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.applylength</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.duration</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.applyTime</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.applyTime</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.endTime</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.endTime</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.reason</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.reason</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.role</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.Role</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.sort</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.sort</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.startTime</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.startTime</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.levelId</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.levelId</Value></dtDetails><dtDetails><PID>784feb9ae014498c979e23f98b152d13</PID><SourceField>t_leaves.statusId</SourceField><DataFrom>entityField</DataFrom><Value>LeaveApplyEntity.statusId</Value></dtDetails></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_level01" instanceName="给界面实体/控件/变量赋值_申请等级01" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"1","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>1</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示设置的提示信息_2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"不打开详情页\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"不打开详情页"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="JGB_cancel" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ResetSelectedControlValue1" />
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ResetSelectedControlValue" ruleName="清空控件数值" instanceCode="BR_ResetSelectedControlValue1" instanceName="清空控件数值" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"componentControlCodes":[{"componentControlCode":"JGDTP_endTime"},{"componentControlCode":"JGRG_sortChoose"},{"componentControlCode":"JGTB_detailedReason"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtControl><Code>JGDTP_endTime</Code><CodeName>JGDTP_endTime(结束时间)</CodeName></dtControl><dtControl><Code>JGRG_sortChoose</Code><CodeName>JGRG_sortChoose(单选组)</CodeName></dtControl><dtControl><Code>JGTB_detailedReason</Code><CodeName>JGTB_detailedReason(详细原因)</CodeName></dtControl></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_generateLevel" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNull(CC.JGIB_Days.Value,True)&amp;&amp;CC.JGIB_Days.Value&gt;=0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="True" isDebug="False" code="IfCode3">
+        <define>
+          <expression>CC.JGIB_Days.Value&gt;3</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <if isEnabled="True" isDebug="False" code="IfCode5">
+            <define>
+              <expression>CC.JGIB_Days.Value&gt;7</expression>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SCP_setLevel_3" />
+            </sequence>
+          </if>
+          <else isEnabled="True" isDebug="False">
+            <define>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SCP_setLevel_2" />
+            </sequence>
+          </else>
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SCP_setLevel1" />
+        </sequence>
+      </else>
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_RSCV_clearLevel" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel1" instanceName="控件属性设置_一级审核_2" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"一级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>c9cebe9995664aefa3efd350256cbc3f</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"一级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>c9cebe9995664aefa3efd350256cbc3f</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel_2" instanceName="控件属性设置_二级审核" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"二级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>1c76d0454f284a84ba1a8173499e363e</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"二级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>1c76d0454f284a84ba1a8173499e363e</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ResetSelectedControlValue" ruleName="清空控件数值" instanceCode="BR_RSCV_clearLevel" instanceName="清空控件数值_清空审核等级设置" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"componentControlCodes":[{"componentControlCode":"JGTB_level"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtControl><Code>JGTB_level</Code><CodeName>JGTB_level(审核等级)</CodeName></dtControl></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel_3" instanceName="控件属性设置_三级审核" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"三级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>c9cebe9995664aefa3efd350256cbc3f</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"三级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>c9cebe9995664aefa3efd350256cbc3f</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+  <Method Code="f_generateLevel_backup" Type="Client" InterfaceType="Local" RestrictType="Private" IsExtendable="false" IsRuleChainVisible="false">
+    <Description><![CDATA[]]></Description>
+    <Remark><![CDATA[]]></Remark>
+    <MethodChain><![CDATA[
+  <evaluateRule code="BR_ShowMessage2" />
+  <if isEnabled="True" isDebug="False" code="IfCode1">
+    <define>
+      <expression>IsNull(CC.JGIB_Days.Value,True)&amp;&amp;CC.JGIB_Days.Value&gt;=0</expression>
+      <remark></remark>
+    </define>
+    <sequence>
+      <if isEnabled="False" isDebug="False" code="IfCode2">
+        <define>
+          <expression>CC.JGIB_Days.Value&gt;=0&amp;&amp;CC.JGIB_Days.Value&lt;=3</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SCP_setLevel_1" />
+          <evaluateRule code="BR_SEVCV_setLevelId1" />
+          <evaluateRule code="BR_ShowMessage3" />
+        </sequence>
+      </if>
+      <if isEnabled="True" isDebug="False" code="IfCode3">
+        <define>
+          <expression>CC.JGIB_Days.Value&gt;3</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SEVCV_setLevelId2" />
+          <evaluateRule code="BR_ShowMessage4" />
+          <if isEnabled="True" isDebug="False" code="IfCode5">
+            <define>
+              <expression>CC.JGIB_Days.Value&gt;7</expression>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SCP_setLevel_3" />
+            </sequence>
+          </if>
+          <else isEnabled="True" isDebug="False">
+            <define>
+              <remark></remark>
+            </define>
+            <sequence>
+              <evaluateRule code="BR_SCP_setLevel_2" />
+            </sequence>
+          </else>
+        </sequence>
+      </if>
+      <else isEnabled="True" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SCP_setLevel1" />
+        </sequence>
+      </else>
+      <if isEnabled="False" isDebug="False" code="IfCode4">
+        <define>
+          <expression>CC.JGIB_Days.Value&gt;7</expression>
+          <remark></remark>
+        </define>
+        <sequence>
+          <evaluateRule code="BR_SEVCV_setLevelId3" />
+          <evaluateRule code="BR_ShowMessage5" />
+        </sequence>
+      </if>
+      <else isEnabled="False" isDebug="False">
+        <define>
+          <remark></remark>
+        </define>
+        <sequence />
+      </else>
+      <evaluateRule code="BR_ShowMessage1" />
+      <evaluateRule code="BR_ExecuteRuleSet1" />
+    </sequence>
+  </if>
+  <else isEnabled="True" isDebug="False">
+    <define>
+      <remark></remark>
+    </define>
+    <sequence>
+      <evaluateRule code="BR_RSCV_clearLevel" />
+    </sequence>
+  </else>
+]]></MethodChain>
+    <RuleInstances>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage2" instanceName="显示设置的提示信息_1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"IsNull(CC.JGIB_Days.Value,True)&&CC.JGIB_Days.Value>=0","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>IsNull(CC.JGIB_Days.Value,True)&amp;&amp;CC.JGIB_Days.Value&gt;=0</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage1" instanceName="显示设置的提示信息" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"[leaveEntity].[levelId]","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>[leaveEntity].[levelId]</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ExecuteRuleSet" ruleName="执行方法" instanceCode="BR_ExecuteRuleSet1" instanceName="执行方法_f_convertLevel(请假等级转换)" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"filter":{"windowInstanceCode":""},"invokeTarget":{"sourceType":"client-ruleSet","invokeType":"local","ruleLocation":"window","componentCode":"","windowCode":"scheduleForm","ruleSetCode":"f_convertLevel","isParallelism":"False"},"invokeParams":[{"paramCode":"levelId","paramType":"expression","paramValue":"[leaveEntity].[levelId]","paramSource":"","dataFilterType":"","paramFieldMapping":null}],"returnMapping":[{"destType":"control","dest":"JGTB_level","srcType":"returnValue","src":"Level","updateDestEntityMethod":"","isCleanDestEntityData":false,"destFieldMapping":null,"filterCondition":null,"orderBy":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFilter><windowInstanceCode /></dtFilter><dtInvokeTarget><sourceType>client-ruleSet</sourceType><invokeType>local</invokeType><ruleLocation>window</ruleLocation><componentCode /><windowCode>scheduleForm</windowCode><ruleSetCode>f_convertLevel</ruleSetCode><isParallelism>False</isParallelism></dtInvokeTarget><dtInvokeParams><paramCode>levelId</paramCode><paramType>expression</paramType><paramValue>[leaveEntity].[levelId]</paramValue><paramSource /><paramSourceDisplayText>表达式</paramSourceDisplayText></dtInvokeParams><dtReturnMapping><destType>control</destType><dest>JGTB_level</dest><srcType>returnValue</srcType><src>Level</src></dtReturnMapping></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel_2" instanceName="控件属性设置_二级审核" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"二级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>1c76d0454f284a84ba1a8173499e363e</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"二级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>1c76d0454f284a84ba1a8173499e363e</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setLevelId2" instanceName="给界面实体/控件/变量赋值_设置levelId=2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"2","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>2</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage4" instanceName="显示设置的提示信息_3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"二级\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"二级"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel_3" instanceName="控件属性设置_三级审核" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"三级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>c9cebe9995664aefa3efd350256cbc3f</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"三级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>c9cebe9995664aefa3efd350256cbc3f</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel_1" instanceName="控件属性设置_一级审核" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"二级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>8fe988c755de4c6fbab8aef2e60ea58a</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"二级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>8fe988c755de4c6fbab8aef2e60ea58a</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setLevelId1" instanceName="给界面实体/控件/变量赋值_设置levelId=1" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"1","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>1</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage3" instanceName="显示设置的提示信息_2" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"CC.JGIB_Days.Value>=0&&CC.JGIB_Days.Value<=3\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"CC.JGIB_Days.Value&gt;=0&amp;&amp;CC.JGIB_Days.Value&lt;=3"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetEntityVarControlValue" ruleName="给界面实体/控件/变量赋值" instanceCode="BR_SEVCV_setLevelId3" instanceName="给界面实体/控件/变量赋值_设置levelId=3" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"FieldMap":[{"TargetType":"3","Target":"leaveEntity.levelId","SourceType":"expression","SourceEntityType":"","Source":"3","entityFieldMapping":null}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtFieldMap><TargetType>3</TargetType><Target>leaveEntity.levelId</Target><SourceType>expression</SourceType><SourceEntityType /><Source>3</Source></dtFieldMap></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ShowMessage" ruleName="显示设置的提示信息" instanceCode="BR_ShowMessage5" instanceName="显示设置的提示信息_4" isNeedLog="False" isEnabled="False" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"showType":"0","time":"3","simpleChinesePrompt":{"msgnote":"\"三级\"","type":"1"}}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><MsgType>0</MsgType><SimpleChinese>"三级"</SimpleChinese><SimpleChinesetype>1</SimpleChinesetype><ShowTime>3</ShowTime></dtMaster></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="SetControlPropertys" ruleName="控件属性设置" instanceCode="BR_SCP_setLevel1" instanceName="控件属性设置_一级审核_2" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"condition":[{"items":[{"controlCode":"JGTB_level","propertyCode":"Value","values":"\"一级\"","valuetype":"1"}],"name":"True"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtMaster><ConditionID>c9cebe9995664aefa3efd350256cbc3f</ConditionID><ControlCode>JGTB_level</ControlCode><PropertyName>Value(文本值)</PropertyName><PropertyCode>Value</PropertyCode><PropertyValue>"一级"</PropertyValue><valuetype>1</valuetype></dtMaster><dtCondition><ID>c9cebe9995664aefa3efd350256cbc3f</ID><Name>True</Name></dtCondition></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+      <RuleInstance ruleCode="ResetSelectedControlValue" ruleName="清空控件数值" instanceCode="BR_RSCV_clearLevel" instanceName="清空控件数值_清空审核等级设置" isNeedLog="False" isEnabled="True" isDebug="False">
+        <Remark><![CDATA[]]></Remark>
+        <Condition><![CDATA[]]></Condition>
+        <DebugCondition><![CDATA[]]></DebugCondition>
+        <RuleConfig><![CDATA[{"componentControlCodes":[{"componentControlCode":"JGTB_level"}]}]]></RuleConfig>
+        <XmlRuleConfig><![CDATA[<dsConfig><dtControl><Code>JGTB_level</Code><CodeName>JGTB_level(审核等级)</CodeName></dtControl></dsConfig>]]></XmlRuleConfig>
+      </RuleInstance>
+    </RuleInstances>
+  </Method>
+</Methods>

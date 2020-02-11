@@ -1,0 +1,105 @@
+﻿<Table id="eb281009a11c4416b5ff3c55d37cc6c2" code="t_students" name="学生表">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-05-13 20:08:20]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-08-07 14:12:45]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="3412951dbb734eb59a919c315f08835c" code="sno" name="学号" domain="" dataType="char" length="8" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="d4cffc1af5c64395a8e0feae71a228a5" code="sname" name="姓名" domain="" dataType="char" length="8" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="dbc81060ad3c4f989cc4af942d03596c" code="spw" name="学生密码" domain="" dataType="char" length="32" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="4c188df53a2346e3a002e065d6ffc231" code="classId" name="班级Id" domain="" dataType="char" length="8" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="32a72ca697394276b794b67b8d89e369" code="majorId" name="专业Id" domain="" dataType="char" length="20" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="908dd4a9e3e1433684853109bb7db869" code="ssex" name="学生性别" domain="" dataType="char" length="4" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="238824b848ce4453b82ba648e241c2bc" code="sphone" name="手机号码" domain="" dataType="char" length="16" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="e9d26c353471449492c13f08bdbb1ca7" code="semail" name="邮箱地址" domain="" dataType="char" length="24" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="007a3774e6584532bdd6314350bb0326" code="sdigitalAutograph" name="电子签名" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[3440ad91d5884430b09be313e0a88b49]]></ColumnData>
+      <ColumnData code="sno"><![CDATA[03171210]]></ColumnData>
+      <ColumnData code="sname"><![CDATA[李兴]]></ColumnData>
+      <ColumnData code="spw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="ssex"><![CDATA[女]]></ColumnData>
+      <ColumnData code="sphone"><![CDATA[13839353422]]></ColumnData>
+      <ColumnData code="semail"><![CDATA[13839353422@163.com]]></ColumnData>
+      <ColumnData code="sdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[119eb5fd1cda491fa6f6ee69426b07f2]]></ColumnData>
+      <ColumnData code="sno"><![CDATA[03170831]]></ColumnData>
+      <ColumnData code="sname"><![CDATA[蔡少灿]]></ColumnData>
+      <ColumnData code="spw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="ssex"><![CDATA[男]]></ColumnData>
+      <ColumnData code="sphone"><![CDATA[15013952708]]></ColumnData>
+      <ColumnData code="semail"><![CDATA[965162652@qq.com]]></ColumnData>
+      <ColumnData code="sdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[76156c7c5001456b923f89f170d9d714]]></ColumnData>
+      <ColumnData code="sno"><![CDATA[04170812]]></ColumnData>
+      <ColumnData code="sname"><![CDATA[上官婉儿]]></ColumnData>
+      <ColumnData code="spw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041708]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="ssex"><![CDATA[女]]></ColumnData>
+      <ColumnData code="sphone"><![CDATA[]]></ColumnData>
+      <ColumnData code="semail"><![CDATA[]]></ColumnData>
+      <ColumnData code="sdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[fe748cc2b11e40fe950316a36aec08a0]]></ColumnData>
+      <ColumnData code="sno"><![CDATA[04170912]]></ColumnData>
+      <ColumnData code="sname"><![CDATA[王昭君]]></ColumnData>
+      <ColumnData code="spw"><![CDATA[4QrcOUm6Wau+VuBX8g+IPg==	
+]]></ColumnData>
+      <ColumnData code="classId"><![CDATA[041709]]></ColumnData>
+      <ColumnData code="majorId"><![CDATA[m0401]]></ColumnData>
+      <ColumnData code="ssex"><![CDATA[女]]></ColumnData>
+      <ColumnData code="sphone"><![CDATA[]]></ColumnData>
+      <ColumnData code="semail"><![CDATA[]]></ColumnData>
+      <ColumnData code="sdigitalAutograph"><![CDATA[]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

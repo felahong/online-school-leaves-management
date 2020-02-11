@@ -1,0 +1,93 @@
+﻿<EntityConfig version="2.0">
+  <Entitys>
+    <Entity Code="registerEntity" Name="注册用户实体" IsExtendable="false" EntityType="" TableOrQueryCode="" TemplateId="" TemplateCode="">
+      <Columns>
+        <Column>
+          <Code>uid</Code>
+          <Name>用户id</Name>
+          <DataType>char</DataType>
+          <Length>12</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>uname</Code>
+          <Name>用户姓名</Name>
+          <DataType>char</DataType>
+          <Length>12</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>upw</Code>
+          <Name>用户密码</Name>
+          <DataType>char</DataType>
+          <Length>20</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>urole</Code>
+          <Name>用户角色</Name>
+          <DataType>char</DataType>
+          <Length>4</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>uphone</Code>
+          <Name>用户手机号码</Name>
+          <DataType>char</DataType>
+          <Length>20</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>uclass</Code>
+          <Name>用户所在班级</Name>
+          <DataType>char</DataType>
+          <Length>12</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>ucollege</Code>
+          <Name>用户所属学院</Name>
+          <DataType>char</DataType>
+          <Length>12</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>uemail</Code>
+          <Name>用户邮箱</Name>
+          <DataType>char</DataType>
+          <Length>30</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+        <Column>
+          <Code>usex</Code>
+          <Name>用户性别</Name>
+          <DataType>char</DataType>
+          <Length>2</Length>
+          <Precision></Precision>
+          <DefaultValue />
+          <Expression />
+        </Column>
+      </Columns>
+      <Events>
+        <EntityEvent Code="OnLoaded" Value="" />
+      </Events>
+    </Entity>
+  </Entitys>
+  <Relations />
+</EntityConfig>

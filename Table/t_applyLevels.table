@@ -1,0 +1,42 @@
+﻿<Table id="d960657eb8124be286766f62f32602fc" code="t_applyLevels" name="请假等级表">
+  <Remark><![CDATA[1~3天	辅导员
+4~7天	院领导
+7天以上	校领导]]></Remark>
+  <Creator><![CDATA[]]></Creator>
+  <CreationTime><![CDATA[2019-07-10 15:19:25]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-10 15:22:47]]></ModificationTime>
+  <Columns>
+    <Column id="Column_id" code="id" name="" domain="" dataType="char" length="128" precision="" isPrimaryKey="true" isMandratory="true">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="cae9cfefc270405e90d0df119d7b1c8f" code="alid" name="请假等级id" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+    <Column id="07aa2c32e213468f93abd645413d02d9" code="alname" name="请假等级称谓" domain="" dataType="char" length="255" precision="" isPrimaryKey="false" isMandratory="false">
+      <DefaultValue><![CDATA[]]></DefaultValue>
+      <Remark><![CDATA[]]></Remark>
+    </Column>
+  </Columns>
+  <Indexes />
+  <TreeTableStruct treeType="0" parentColumn="" innerCodeColumn="" orderNoColumn="" leafColumn="" />
+  <Data isInitialData="true" isReplaceDataById="true">
+    <RowData>
+      <ColumnData code="id"><![CDATA[3616904a1fa0426f8631d9c4205010cc]]></ColumnData>
+      <ColumnData code="alid"><![CDATA[al01]]></ColumnData>
+      <ColumnData code="alname"><![CDATA[一级]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[92759e2adaf54436ad610d1a6562e5f2]]></ColumnData>
+      <ColumnData code="alid"><![CDATA[al02]]></ColumnData>
+      <ColumnData code="alname"><![CDATA[二级]]></ColumnData>
+    </RowData>
+    <RowData>
+      <ColumnData code="id"><![CDATA[5f0a37a027fd4fd1bf8ceb04b510b128]]></ColumnData>
+      <ColumnData code="alid"><![CDATA[al03]]></ColumnData>
+      <ColumnData code="alname"><![CDATA[三级]]></ColumnData>
+    </RowData>
+  </Data>
+</Table>

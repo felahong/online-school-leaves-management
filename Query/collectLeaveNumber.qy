@@ -1,0 +1,22 @@
+﻿<Query id="d333b17815e542aeb0c8651c893f64b6" code="collectLeaveNumber" name="计算请假人数" type="VSql">
+  <Remark><![CDATA[]]></Remark>
+  <Creator><![CDATA[user_20190504002]]></Creator>
+  <CreationTime><![CDATA[2019-07-25 18:21:42]]></CreationTime>
+  <Modifier><![CDATA[user_20190504002]]></Modifier>
+  <ModificationTime><![CDATA[2019-07-25 22:53:07]]></ModificationTime>
+  <VSql><![CDATA[select classId, (count(classId)) ccc from t_leaves group by classId having classId = '041709'
+
+--select classId, count(classId) from t_leaves group_exp ::= classId]]></VSql>
+  <Columns>
+    <Column id="Column_0" code="classId" name="" dataType="char" length="" precision="">
+      <Remark></Remark>
+    </Column>
+    <Column id="Column_1" code="ccc" name="" dataType="integer" length="" precision="">
+      <Remark></Remark>
+    </Column>
+  </Columns>
+  <Params />
+  <DataItems>
+    <DataItem type="Table" key="t_leaves" tokenIndexes="16" />
+  </DataItems>
+</Query>
